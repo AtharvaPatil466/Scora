@@ -22,7 +22,7 @@ const mockStats: StudentStats = {
 };
 
 const getIcon = (iconName: string, unlocked: boolean) => {
-    const color = unlocked ? '#FBBF24' : '#64748B';
+    const color = unlocked ? '#D97706' : '#8C8C8C';
     switch (iconName) {
         case 'fire': return <LocalFireDepartmentIcon sx={{ color, fontSize: 36 }} />;
         case 'trophy': return <EmojiEventsIcon sx={{ color, fontSize: 36 }} />;
@@ -45,18 +45,17 @@ export const Achievements: React.FC = () => {
 
     return (
         <Card elevation={0} sx={{
-            bgcolor: 'rgba(10, 10, 15, 0.6)',
-            backdropFilter: 'blur(16px)',
-            border: '1px solid rgba(255,255,255,0.06)',
+            bgcolor: '#FFFFFF',
+            border: '1px solid rgba(0,0,0,0.08)',
         }}>
             <CardContent sx={{ p: 2.5 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2.5 }}>
-                    <Typography variant="body1" fontWeight={700} sx={{ color: 'text.primary' }}>
+                    <Typography variant="body1" fontWeight={700} sx={{ color: '#1A1A1A' }}>
                         {earnedCount}/{mockStats.achievements.length} Unlocked
                     </Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                        <LocalFireDepartmentIcon sx={{ color: '#F59E0B', fontSize: 18 }} />
-                        <Typography variant="body2" sx={{ fontWeight: 700, color: '#FBBF24' }}>{mockStats.currentStreak} Day</Typography>
+                        <LocalFireDepartmentIcon sx={{ color: '#D97706', fontSize: 18 }} />
+                        <Typography variant="body2" sx={{ fontWeight: 700, color: '#D97706' }}>{mockStats.currentStreak} Day</Typography>
                     </Box>
                 </Box>
 
@@ -79,10 +78,10 @@ export const Achievements: React.FC = () => {
                                 >
                                     <Avatar sx={{
                                         width: 56, height: 56,
-                                        bgcolor: unlocked ? 'rgba(251, 191, 36, 0.1)' : 'rgba(255,255,255,0.03)',
-                                        border: unlocked ? '2px solid rgba(251, 191, 36, 0.4)' : '2px solid rgba(255,255,255,0.06)',
+                                        bgcolor: unlocked ? 'rgba(217, 119, 6, 0.08)' : 'rgba(0,0,0,0.03)',
+                                        border: unlocked ? '2px solid rgba(217, 119, 6, 0.3)' : '2px solid rgba(0,0,0,0.08)',
                                         ...(unlocked && {
-                                            boxShadow: '0 0 16px rgba(251, 191, 36, 0.2)',
+                                            boxShadow: '0 0 12px rgba(217, 119, 6, 0.15)',
                                         }),
                                     }}>
                                         {getIcon(ach.icon, unlocked)}
@@ -101,56 +100,56 @@ export const Achievements: React.FC = () => {
                 fullWidth
                 PaperProps={{
                     sx: {
-                        bgcolor: 'rgba(10, 10, 15, 0.95)',
-                        backdropFilter: 'blur(24px)',
-                        border: '1px solid rgba(255,255,255,0.08)',
+                        bgcolor: '#FFFFFF',
+                        border: '1px solid rgba(0,0,0,0.08)',
                         borderRadius: 4,
+                        boxShadow: '0 24px 64px rgba(0,0,0,0.15)',
                     }
                 }}
             >
                 {selectedAch && (
                     <>
-                        <DialogTitle sx={{ textAlign: 'center', color: 'text.primary', fontWeight: 700 }}>
+                        <DialogTitle sx={{ textAlign: 'center', color: '#1A1A1A', fontWeight: 700, fontFamily: '"Playfair Display", serif' }}>
                             {selectedAch.title}
                         </DialogTitle>
                         <DialogContent sx={{ textAlign: 'center', pb: 4 }}>
                             <Avatar sx={{
                                 width: 88, height: 88, mx: 'auto', my: 2,
-                                bgcolor: selectedAch.progress >= 100 ? 'rgba(251, 191, 36, 0.12)' : 'rgba(255,255,255,0.03)',
-                                border: selectedAch.progress >= 100 ? '3px solid rgba(251, 191, 36, 0.4)' : '3px solid rgba(255,255,255,0.06)',
+                                bgcolor: selectedAch.progress >= 100 ? 'rgba(217, 119, 6, 0.08)' : 'rgba(0,0,0,0.03)',
+                                border: selectedAch.progress >= 100 ? '3px solid rgba(217, 119, 6, 0.3)' : '3px solid rgba(0,0,0,0.08)',
                                 ...(selectedAch.progress >= 100 && {
-                                    boxShadow: '0 0 24px rgba(251, 191, 36, 0.25)',
+                                    boxShadow: '0 0 20px rgba(217, 119, 6, 0.15)',
                                 }),
                             }}>
                                 {getIcon(selectedAch.icon, selectedAch.progress >= 100)}
                             </Avatar>
-                            <Typography variant="body1" color="text.secondary" gutterBottom>
+                            <Typography variant="body1" sx={{ color: '#5C5C5C' }} gutterBottom>
                                 {selectedAch.description}
                             </Typography>
 
                             <Box sx={{ mt: 3, px: 2 }}>
                                 <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                                    <Typography variant="caption" sx={{ color: 'text.muted' }}>Progress</Typography>
-                                    <Typography variant="caption" sx={{ color: 'text.primary', fontWeight: 700 }}>{selectedAch.progress}%</Typography>
+                                    <Typography variant="caption" sx={{ color: '#8C8C8C' }}>Progress</Typography>
+                                    <Typography variant="caption" sx={{ color: '#1A1A1A', fontWeight: 700 }}>{selectedAch.progress}%</Typography>
                                 </Box>
                                 <LinearProgress
                                     variant="determinate"
                                     value={selectedAch.progress}
                                     sx={{
                                         height: 8, borderRadius: 4,
-                                        bgcolor: 'rgba(255,255,255,0.06)',
+                                        bgcolor: 'rgba(0,0,0,0.06)',
                                         '& .MuiLinearProgress-bar': {
                                             borderRadius: 4,
                                             background: selectedAch.progress >= 100
-                                                ? 'linear-gradient(90deg, #F59E0B, #FBBF24)'
-                                                : 'linear-gradient(90deg, #3B82F6, #60A5FA)',
+                                                ? 'linear-gradient(90deg, #D97706, #F59E0B)'
+                                                : 'linear-gradient(90deg, #2D5A3D, #4A8C62)',
                                         }
                                     }}
                                 />
                             </Box>
 
                             {selectedAch.unlockedAt && (
-                                <Typography variant="caption" sx={{ color: 'secondary.main', display: 'block', mt: 2, fontWeight: 600 }}>
+                                <Typography variant="caption" sx={{ color: '#2D5A3D', display: 'block', mt: 2, fontWeight: 600 }}>
                                     ✓ Unlocked {new Date(selectedAch.unlockedAt).toLocaleDateString()}
                                 </Typography>
                             )}

@@ -63,23 +63,22 @@ export const StudyGroups: React.FC = () => {
 
     return (
         <Card elevation={0} sx={{
-            bgcolor: 'rgba(10, 10, 15, 0.6)',
-            backdropFilter: 'blur(16px)',
-            border: '1px solid rgba(255,255,255,0.06)',
+            bgcolor: '#FFFFFF',
+            border: '1px solid rgba(0,0,0,0.08)',
         }}>
             <CardContent sx={{ p: 2.5 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                    <Typography variant="body1" fontWeight={700} sx={{ display: 'flex', alignItems: 'center', gap: 1, color: 'text.primary' }}>
-                        <GroupIcon sx={{ color: 'primary.light', fontSize: 20 }} /> My Groups
+                    <Typography variant="body1" fontWeight={700} sx={{ display: 'flex', alignItems: 'center', gap: 1, color: '#1A1A1A' }}>
+                        <GroupIcon sx={{ color: '#2D5A3D', fontSize: 20 }} /> My Groups
                     </Typography>
                     <Button
                         size="small"
                         variant="outlined"
                         sx={{
                             fontSize: '0.7rem',
-                            borderColor: 'rgba(255,255,255,0.1)',
-                            color: 'text.secondary',
-                            '&:hover': { borderColor: 'rgba(255,255,255,0.2)' },
+                            borderColor: 'rgba(0,0,0,0.12)',
+                            color: '#5C5C5C',
+                            '&:hover': { borderColor: 'rgba(0,0,0,0.2)' },
                         }}
                     >
                         Find Group
@@ -87,21 +86,21 @@ export const StudyGroups: React.FC = () => {
                 </Box>
 
                 <Box sx={{ mb: 2.5 }}>
-                    <Typography variant="subtitle2" fontWeight="bold" sx={{ color: 'text.primary' }}>{activeGroup.name}</Typography>
-                    <Typography variant="caption" sx={{ color: 'text.muted' }}>Focusing on: {activeGroup.topic}</Typography>
+                    <Typography variant="subtitle2" fontWeight="bold" sx={{ color: '#1A1A1A' }}>{activeGroup.name}</Typography>
+                    <Typography variant="caption" sx={{ color: '#8C8C8C' }}>Focusing on: {activeGroup.topic}</Typography>
 
                     <Box sx={{ mt: 2, mb: 0.5, display: 'flex', justifyContent: 'space-between' }}>
-                        <Typography variant="caption" sx={{ color: 'text.muted', fontSize: '0.65rem' }}>{activeGroup.goal}</Typography>
-                        <Typography variant="caption" sx={{ fontWeight: 700, color: 'text.primary', fontSize: '0.65rem' }}>{activeGroup.progress}%</Typography>
+                        <Typography variant="caption" sx={{ color: '#8C8C8C', fontSize: '0.65rem' }}>{activeGroup.goal}</Typography>
+                        <Typography variant="caption" sx={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.65rem' }}>{activeGroup.progress}%</Typography>
                     </Box>
                     <LinearProgress
                         variant="determinate"
                         value={activeGroup.progress}
                         sx={{
                             height: 4, borderRadius: 2,
-                            bgcolor: 'rgba(255,255,255,0.06)',
+                            bgcolor: 'rgba(0,0,0,0.06)',
                             '& .MuiLinearProgress-bar': {
-                                background: 'linear-gradient(90deg, #3B82F6, #38BDF8)',
+                                background: 'linear-gradient(90deg, #2D5A3D, #4A8C62)',
                                 borderRadius: 2,
                             }
                         }}
@@ -109,17 +108,17 @@ export const StudyGroups: React.FC = () => {
                 </Box>
 
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                    <Typography variant="caption" sx={{ color: 'text.muted', fontWeight: 600, letterSpacing: 0.5, textTransform: 'uppercase', fontSize: '0.6rem' }}>Members</Typography>
-                    <AvatarGroup max={4} sx={{ '& .MuiAvatar-root': { width: 28, height: 28, fontSize: '0.7rem', border: '2px solid #0A0A0F' } }}>
+                    <Typography variant="caption" sx={{ color: '#8C8C8C', fontWeight: 600, letterSpacing: 0.5, textTransform: 'uppercase', fontSize: '0.6rem' }}>Members</Typography>
+                    <AvatarGroup max={4} sx={{ '& .MuiAvatar-root': { width: 28, height: 28, fontSize: '0.7rem', border: '2px solid #FFFFFF' } }}>
                         {activeGroup.members.map((member) => (
                             <Avatar key={member.id} sx={{ bgcolor: stringToColor(member.name) }}>{member.name.charAt(0)}</Avatar>
                         ))}
                     </AvatarGroup>
                 </Box>
 
-                <Divider sx={{ borderColor: 'rgba(255,255,255,0.04)', my: 2 }} />
+                <Divider sx={{ borderColor: 'rgba(0,0,0,0.06)', my: 2 }} />
 
-                <Typography variant="caption" sx={{ color: 'text.muted', fontWeight: 600, letterSpacing: 0.5, textTransform: 'uppercase', fontSize: '0.6rem', display: 'block', mb: 1.5 }}>
+                <Typography variant="caption" sx={{ color: '#8C8C8C', fontWeight: 600, letterSpacing: 0.5, textTransform: 'uppercase', fontSize: '0.6rem', display: 'block', mb: 1.5 }}>
                     Active Discussions
                 </Typography>
                 <List disablePadding sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -130,19 +129,19 @@ export const StudyGroups: React.FC = () => {
                                 size="small"
                                 label="Help"
                                 sx={{
-                                    bgcolor: 'rgba(239, 68, 68, 0.1)',
-                                    color: '#EF4444',
+                                    bgcolor: 'rgba(220, 38, 38, 0.06)',
+                                    color: '#DC2626',
                                     fontWeight: 600,
                                     fontSize: '0.6rem',
                                     height: 22,
-                                    border: '1px solid rgba(239, 68, 68, 0.2)',
+                                    border: '1px solid rgba(220, 38, 38, 0.15)',
                                 }}
                             />
                         }
                         sx={{
                             p: 1.5, borderRadius: 2,
-                            bgcolor: 'rgba(255,255,255,0.02)',
-                            '&:hover': { bgcolor: 'rgba(255,255,255,0.04)' },
+                            bgcolor: 'rgba(0,0,0,0.02)',
+                            '&:hover': { bgcolor: 'rgba(0,0,0,0.04)' },
                         }}
                     >
                         <ListItemAvatar sx={{ minWidth: 36 }}>
@@ -151,19 +150,19 @@ export const StudyGroups: React.FC = () => {
                             </Avatar>
                         </ListItemAvatar>
                         <ListItemText
-                            primary={<Typography variant="body2" sx={{ color: 'text.primary', fontSize: '0.8rem' }}>Alex asks:</Typography>}
-                            secondary={<Typography variant="caption" sx={{ color: 'text.muted' }}>"I'm stuck on isolating variables..."</Typography>}
+                            primary={<Typography variant="body2" sx={{ color: '#1A1A1A', fontSize: '0.8rem' }}>Alex asks:</Typography>}
+                            secondary={<Typography variant="caption" sx={{ color: '#8C8C8C' }}>"I'm stuck on isolating variables..."</Typography>}
                         />
                     </ListItem>
                     <ListItem
                         disableGutters
                         secondaryAction={
-                            <Button size="small" sx={{ color: 'primary.light', fontSize: '0.7rem', minWidth: 'auto' }}>Reply</Button>
+                            <Button size="small" sx={{ color: '#2D5A3D', fontSize: '0.7rem', minWidth: 'auto', fontWeight: 600 }}>Reply</Button>
                         }
                         sx={{
                             p: 1.5, borderRadius: 2,
-                            bgcolor: 'rgba(255,255,255,0.02)',
-                            '&:hover': { bgcolor: 'rgba(255,255,255,0.04)' },
+                            bgcolor: 'rgba(0,0,0,0.02)',
+                            '&:hover': { bgcolor: 'rgba(0,0,0,0.04)' },
                         }}
                     >
                         <ListItemAvatar sx={{ minWidth: 36 }}>
@@ -172,8 +171,8 @@ export const StudyGroups: React.FC = () => {
                             </Avatar>
                         </ListItemAvatar>
                         <ListItemText
-                            primary={<Typography variant="body2" sx={{ color: 'text.primary', fontSize: '0.8rem' }}>Jordan shared:</Typography>}
-                            secondary={<Typography variant="caption" sx={{ color: 'text.muted' }}>"Here is a great visual trick I found..."</Typography>}
+                            primary={<Typography variant="body2" sx={{ color: '#1A1A1A', fontSize: '0.8rem' }}>Jordan shared:</Typography>}
+                            secondary={<Typography variant="caption" sx={{ color: '#8C8C8C' }}>"Here is a great visual trick I found..."</Typography>}
                         />
                     </ListItem>
                 </List>

@@ -46,16 +46,16 @@ export const ProgressMap: React.FC = () => {
 
     const getNodeColor = (status: string) => {
         switch (status) {
-            case 'mastered': return '#38BDF8';
-            case 'ready': return '#F59E0B';
-            case 'locked': default: return '#475569';
+            case 'mastered': return '#2D5A3D';
+            case 'ready': return '#D97706';
+            case 'locked': default: return '#B0B0B0';
         }
     };
 
     const getNodeGlow = (status: string) => {
         switch (status) {
-            case 'mastered': return '0 0 12px rgba(56, 189, 248, 0.3)';
-            case 'ready': return '0 0 16px rgba(245, 158, 11, 0.3)';
+            case 'mastered': return '0 0 8px rgba(45, 90, 61, 0.2)';
+            case 'ready': return '0 0 10px rgba(217, 119, 6, 0.2)';
             default: return 'none';
         }
     };
@@ -67,12 +67,12 @@ export const ProgressMap: React.FC = () => {
             border: 'none',
         }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2, zIndex: 10, position: 'relative' }}>
-                <Typography variant="body1" fontWeight={700} sx={{ color: 'text.primary' }}>Learning Journey</Typography>
+                <Typography variant="body1" fontWeight={700} sx={{ color: '#1A1A1A' }}>Learning Journey</Typography>
                 <Box>
-                    <IconButton onClick={handleZoomOut} size="small" sx={{ color: 'text.muted', '&:hover': { color: 'text.primary' } }}>
+                    <IconButton onClick={handleZoomOut} size="small" sx={{ color: '#8C8C8C', '&:hover': { color: '#1A1A1A' } }}>
                         <ZoomOutIcon fontSize="small" />
                     </IconButton>
-                    <IconButton onClick={handleZoomIn} size="small" sx={{ color: 'text.muted', '&:hover': { color: 'text.primary' } }}>
+                    <IconButton onClick={handleZoomIn} size="small" sx={{ color: '#8C8C8C', '&:hover': { color: '#1A1A1A' } }}>
                         <ZoomInIcon fontSize="small" />
                     </IconButton>
                 </Box>
@@ -115,7 +115,7 @@ export const ProgressMap: React.FC = () => {
                                     y1={sourceNode.y + 25}
                                     x2={targetNode.x}
                                     y2={targetNode.y + 25}
-                                    stroke={isLocked ? 'rgba(255,255,255,0.06)' : 'rgba(59, 130, 246, 0.25)'}
+                                    stroke={isLocked ? 'rgba(0,0,0,0.1)' : 'rgba(45, 90, 61, 0.3)'}
                                     strokeWidth="2"
                                     strokeDasharray={isLocked ? "6,4" : "none"}
                                 />
@@ -139,23 +139,22 @@ export const ProgressMap: React.FC = () => {
                                 elevation={0}
                                 sx={{
                                     p: 1.5,
-                                    bgcolor: node.status === 'locked' ? 'rgba(255,255,255,0.02)' : 'rgba(10, 10, 15, 0.7)',
+                                    bgcolor: node.status === 'locked' ? 'rgba(0,0,0,0.02)' : '#FFFFFF',
                                     border: `2px solid ${getNodeColor(node.status)}`,
-                                    borderColor: node.status === 'locked' ? 'rgba(255,255,255,0.08)' : getNodeColor(node.status),
+                                    borderColor: node.status === 'locked' ? 'rgba(0,0,0,0.1)' : getNodeColor(node.status),
                                     opacity: node.status === 'locked' ? 0.5 : 1,
                                     borderRadius: 2.5,
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     boxShadow: getNodeGlow(node.status),
-                                    backdropFilter: 'blur(8px)',
                                     transition: 'all 250ms ease',
                                     '&:hover': {
                                         transform: node.status !== 'locked' ? 'scale(1.05)' : 'none',
                                     },
                                 }}
                             >
-                                <Typography variant="caption" fontWeight="bold" noWrap sx={{ width: '100%', color: 'text.primary', fontSize: '0.7rem' }}>
+                                <Typography variant="caption" fontWeight="bold" noWrap sx={{ width: '100%', color: '#1A1A1A', fontSize: '0.7rem' }}>
                                     {node.label}
                                 </Typography>
                                 {node.status !== 'locked' && (
@@ -164,12 +163,12 @@ export const ProgressMap: React.FC = () => {
                                         value={node.mastery * 100}
                                         sx={{
                                             width: '80%', mt: 1, height: 3, borderRadius: 2,
-                                            bgcolor: 'rgba(255,255,255,0.06)',
+                                            bgcolor: 'rgba(0,0,0,0.06)',
                                             '& .MuiLinearProgress-bar': {
                                                 borderRadius: 2,
                                                 background: node.status === 'mastered'
-                                                    ? 'linear-gradient(90deg, #38BDF8, #7DD3FC)'
-                                                    : 'linear-gradient(90deg, #F59E0B, #FBBF24)',
+                                                    ? 'linear-gradient(90deg, #2D5A3D, #4A8C62)'
+                                                    : 'linear-gradient(90deg, #D97706, #F59E0B)',
                                             }
                                         }}
                                     />
@@ -183,11 +182,10 @@ export const ProgressMap: React.FC = () => {
                                         mt: 0.5,
                                         fontSize: '0.55rem',
                                         height: 18,
-                                        bgcolor: 'rgba(245, 158, 11, 0.15)',
-                                        color: '#FBBF24',
+                                        bgcolor: 'rgba(217, 119, 6, 0.1)',
+                                        color: '#D97706',
                                         fontWeight: 700,
-                                        border: '1px solid rgba(245, 158, 11, 0.3)',
-                                        animation: 'pulseGlow 3s ease-in-out infinite',
+                                        border: '1px solid rgba(217, 119, 6, 0.25)',
                                     }}
                                 />
                             )}

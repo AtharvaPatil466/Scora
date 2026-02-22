@@ -75,7 +75,7 @@ const KnowledgeGraphViz: React.FC = () => {
                 .selectAll('line')
                 .data(links)
                 .join('line')
-                .attr('stroke', 'rgba(59, 130, 246, 0.25)')
+                .attr('stroke', 'rgba(45, 90, 61, 0.25)')
                 .attr('stroke-width', d => Math.sqrt((d as any).strength) * 2);
 
             const colorScale = d3.scaleSequential(d3.interpolateRdYlGn).domain([0, 1]);
@@ -119,7 +119,7 @@ const KnowledgeGraphViz: React.FC = () => {
             nodeGroup.append('circle')
                 .attr('r', 18)
                 .attr('fill', (d: any) => colorScale(d.mastery))
-                .attr('stroke', 'rgba(255,255,255,0.2)')
+                .attr('stroke', 'rgba(0,0,0,0.15)')
                 .attr('stroke-width', 1.5)
                 .attr('filter', (d: any) => d.mastery > 0.7 ? 'url(#node-glow)' : 'none');
 
@@ -128,7 +128,7 @@ const KnowledgeGraphViz: React.FC = () => {
                 .attr('text-anchor', 'middle')
                 .text((d: any) => d.label)
                 .attr('font-size', '11px')
-                .attr('fill', '#94A3B8')
+                .attr('fill', '#5C5C5C')
                 .attr('font-family', 'Inter, sans-serif');
 
             nodeGroup.append('title')
@@ -151,10 +151,10 @@ const KnowledgeGraphViz: React.FC = () => {
         <Box sx={{ height: 'calc(100vh - 100px)', display: 'flex', flexDirection: 'column' }} className="animate-in">
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2, px: 1 }}>
                 <Box>
-                    <Typography variant="caption" sx={{ color: 'text.muted', fontWeight: 700, letterSpacing: 2, fontSize: '0.65rem' }}>
+                    <Typography variant="caption" sx={{ color: '#2D5A3D', fontWeight: 700, letterSpacing: 2, fontSize: '0.65rem' }}>
                         VISUALIZATION
                     </Typography>
-                    <Typography variant="h5" fontWeight="bold">
+                    <Typography variant="h5" sx={{ fontWeight: 700, color: '#1A1A1A', fontFamily: '"Playfair Display", serif' }}>
                         Knowledge Graph
                     </Typography>
                 </Box>
@@ -162,15 +162,15 @@ const KnowledgeGraphViz: React.FC = () => {
                 <Box sx={{ display: 'flex', gap: 1.5, alignItems: 'center' }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                         <Box sx={{ width: 10, height: 10, borderRadius: '50%', bgcolor: '#ef4444' }} />
-                        <Typography variant="caption" sx={{ color: 'text.muted', fontSize: '0.65rem' }}>Low</Typography>
+                        <Typography variant="caption" sx={{ color: '#8C8C8C', fontSize: '0.65rem' }}>Low</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                         <Box sx={{ width: 10, height: 10, borderRadius: '50%', bgcolor: '#eab308' }} />
-                        <Typography variant="caption" sx={{ color: 'text.muted', fontSize: '0.65rem' }}>Mid</Typography>
+                        <Typography variant="caption" sx={{ color: '#8C8C8C', fontSize: '0.65rem' }}>Mid</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                         <Box sx={{ width: 10, height: 10, borderRadius: '50%', bgcolor: '#22c55e' }} />
-                        <Typography variant="caption" sx={{ color: 'text.muted', fontSize: '0.65rem' }}>High</Typography>
+                        <Typography variant="caption" sx={{ color: '#8C8C8C', fontSize: '0.65rem' }}>High</Typography>
                     </Box>
                 </Box>
             </Box>
@@ -180,19 +180,19 @@ const KnowledgeGraphViz: React.FC = () => {
                     flexGrow: 1, overflow: 'hidden',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     mb: 2, borderRadius: 3,
-                    bgcolor: 'rgba(10, 10, 15, 0.4)',
-                    border: '1px solid rgba(255,255,255,0.06)',
+                    bgcolor: '#FFFFFF',
+                    border: '1px solid rgba(0,0,0,0.08)',
                 }}
             >
                 {loading || !graphData ? (
-                    <CircularProgress sx={{ color: 'primary.main' }} />
+                    <CircularProgress sx={{ color: '#2D5A3D' }} />
                 ) : (
                     <svg
                         className="d3-component"
                         width="100%"
                         height="100%"
                         ref={d3Container}
-                        style={{ background: '#060918', display: 'block' }}
+                        style={{ background: '#F8F5F0', display: 'block' }}
                     />
                 )}
             </Paper>

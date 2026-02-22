@@ -25,9 +25,8 @@ const DemoMode: React.FC = () => {
         <Box sx={{ p: 4, maxWidth: 600, mx: 'auto', mt: 8 }} className="animate-in">
             <Paper elevation={0} sx={{
                 p: 5, textAlign: 'center',
-                bgcolor: 'rgba(10, 10, 15, 0.6)',
-                backdropFilter: 'blur(16px)',
-                border: '1px solid rgba(255,255,255,0.06)',
+                bgcolor: '#FFFFFF',
+                border: '1px solid rgba(0,0,0,0.08)',
                 borderRadius: 4,
                 position: 'relative',
                 overflow: 'hidden',
@@ -35,33 +34,33 @@ const DemoMode: React.FC = () => {
                 {/* Top gradient */}
                 <Box sx={{
                     position: 'absolute', top: 0, left: 0, right: 0, height: 3,
-                    background: 'linear-gradient(90deg, #3B82F6, #38BDF8)',
+                    background: 'linear-gradient(90deg, #2D5A3D, #4A8C62)',
                 }} />
 
                 <Box sx={{
                     width: 64, height: 64, borderRadius: 3, mx: 'auto', mb: 3,
-                    background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(56, 189, 248, 0.15))',
+                    background: 'rgba(45, 90, 61, 0.06)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    border: '1px solid rgba(59, 130, 246, 0.2)',
+                    border: '1px solid rgba(45, 90, 61, 0.15)',
                 }}>
-                    <RocketLaunchIcon sx={{ fontSize: 32, color: 'primary.light' }} />
+                    <RocketLaunchIcon sx={{ fontSize: 32, color: '#2D5A3D' }} />
                 </Box>
 
-                <Typography variant="h5" fontWeight="bold" gutterBottom>
+                <Typography variant="h5" sx={{ fontWeight: 700, color: '#1A1A1A', fontFamily: '"Playfair Display", serif' }} gutterBottom>
                     Demo Environment
                 </Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary', mb: 4, maxWidth: 400, mx: 'auto', lineHeight: 1.7 }}>
+                <Typography variant="body2" sx={{ color: '#5C5C5C', mb: 4, maxWidth: 400, mx: 'auto', lineHeight: 1.7 }}>
                     Initialize the backend with mock students. This provides varied data for the Knowledge Graph, Recommendations, and Analytics.
                 </Typography>
 
                 {setupDone && (
                     <Alert
-                        icon={<CheckCircleIcon sx={{ color: '#38BDF8' }} />}
+                        icon={<CheckCircleIcon sx={{ color: '#2D5A3D' }} />}
                         sx={{
                             mb: 3,
-                            bgcolor: 'rgba(56, 189, 248, 0.08)',
-                            border: '1px solid rgba(56, 189, 248, 0.2)',
-                            color: '#38BDF8',
+                            bgcolor: 'rgba(45, 90, 61, 0.06)',
+                            border: '1px solid rgba(45, 90, 61, 0.15)',
+                            color: '#2D5A3D',
                             borderRadius: 3,
                             animation: 'fadeInUp 400ms cubic-bezier(0.16, 1, 0.3, 1) both',
                         }}
@@ -77,15 +76,15 @@ const DemoMode: React.FC = () => {
                     disabled={loading || setupDone}
                     sx={{
                         mb: 2.5, px: 4, py: 1.5, fontWeight: 700, borderRadius: 3,
-                        background: 'linear-gradient(135deg, #3B82F6, #2563EB)',
-                        boxShadow: '0 4px 16px rgba(59, 130, 246, 0.3)',
+                        background: '#2D5A3D',
+                        boxShadow: '0 4px 16px rgba(45, 90, 61, 0.2)',
                         '&:hover': {
-                            background: 'linear-gradient(135deg, #60A5FA, #3B82F6)',
-                            boxShadow: '0 8px 24px rgba(59, 130, 246, 0.4)',
+                            background: '#1B4332',
+                            boxShadow: '0 8px 24px rgba(45, 90, 61, 0.3)',
                         },
                         '&.Mui-disabled': {
-                            background: setupDone ? 'rgba(56, 189, 248, 0.12)' : 'rgba(255,255,255,0.06)',
-                            color: setupDone ? '#38BDF8' : 'rgba(255,255,255,0.25)',
+                            background: setupDone ? 'rgba(45, 90, 61, 0.08)' : 'rgba(0,0,0,0.06)',
+                            color: setupDone ? '#2D5A3D' : 'rgba(0,0,0,0.25)',
                             boxShadow: 'none',
                         }
                     }}
@@ -93,7 +92,7 @@ const DemoMode: React.FC = () => {
                     {loading ? <CircularProgress size={24} color="inherit" /> : setupDone ? "✓ Initialized" : "Initialize Mock Data"}
                 </Button>
 
-                <Typography variant="caption" sx={{ color: 'text.muted', display: 'block' }}>
+                <Typography variant="caption" sx={{ color: '#8C8C8C', display: 'block' }}>
                     Creates 'alex' (beginner) · 'sam' (intermediate) · 'jo' (advanced)
                 </Typography>
             </Paper>

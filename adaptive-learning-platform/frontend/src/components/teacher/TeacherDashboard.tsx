@@ -41,9 +41,9 @@ export const TeacherDashboard: React.FC = () => {
     const activeAlert = alerts.length > 0 ? alerts[0] : null;
 
     const kpiCards = [
-        { label: 'Total Enrolled', value: classStats.enrollment.toString(), icon: <PeopleIcon />, color: '#3B82F6', glow: 'rgba(59, 130, 246, 0.2)' },
-        { label: 'Class Mastery', value: `${classStats.avgMastery}%`, icon: <TrendingUpIcon />, color: '#38BDF8', glow: 'rgba(56, 189, 248, 0.2)', badge: `+${classStats.masteryTrend}%` },
-        { label: 'At Risk', value: classStats.atRiskStudents.toString(), icon: <WarningAmberIcon />, color: '#EF4444', glow: 'rgba(239, 68, 68, 0.2)' },
+        { label: 'Total Enrolled', value: classStats.enrollment.toString(), icon: <PeopleIcon />, color: '#2D5A3D', glow: 'rgba(45, 90, 61, 0.1)' },
+        { label: 'Class Mastery', value: `${classStats.avgMastery}%`, icon: <TrendingUpIcon />, color: '#2D5A3D', glow: 'rgba(45, 90, 61, 0.1)', badge: `+${classStats.masteryTrend}%` },
+        { label: 'At Risk', value: classStats.atRiskStudents.toString(), icon: <WarningAmberIcon />, color: '#DC2626', glow: 'rgba(220, 38, 38, 0.1)' },
     ];
 
     return (
@@ -51,10 +51,10 @@ export const TeacherDashboard: React.FC = () => {
             {/* Header */}
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
                 <Box>
-                    <Typography variant="caption" sx={{ color: 'text.muted', fontWeight: 700, letterSpacing: 2, fontSize: '0.65rem' }}>
+                    <Typography variant="caption" sx={{ color: '#2D5A3D', fontWeight: 700, letterSpacing: 2, fontSize: '0.65rem' }}>
                         INSTRUCTOR
                     </Typography>
-                    <Typography variant="h4" fontWeight="bold" sx={{ mt: 0.5 }}>
+                    <Typography variant="h4" sx={{ mt: 0.5, fontWeight: 700, color: '#1A1A1A', fontFamily: '"Playfair Display", serif' }}>
                         Analytics Dashboard
                     </Typography>
                 </Box>
@@ -62,9 +62,9 @@ export const TeacherDashboard: React.FC = () => {
                     label={isConnected ? "Real-time Sync" : "Connecting..."}
                     size="small"
                     sx={{
-                        bgcolor: isConnected ? 'rgba(56, 189, 248, 0.1)' : 'rgba(255,255,255,0.05)',
-                        color: isConnected ? '#38BDF8' : 'text.muted',
-                        border: `1px solid ${isConnected ? 'rgba(56, 189, 248, 0.3)' : 'rgba(255,255,255,0.08)'}`,
+                        bgcolor: isConnected ? 'rgba(45, 90, 61, 0.06)' : 'rgba(0,0,0,0.04)',
+                        color: isConnected ? '#2D5A3D' : '#8C8C8C',
+                        border: `1px solid ${isConnected ? 'rgba(45, 90, 61, 0.2)' : 'rgba(0,0,0,0.08)'}`,
                         fontWeight: 600,
                         '& .MuiChip-label::before': {
                             content: '""',
@@ -72,7 +72,7 @@ export const TeacherDashboard: React.FC = () => {
                             width: 6,
                             height: 6,
                             borderRadius: '50%',
-                            bgcolor: isConnected ? '#38BDF8' : '#64748B',
+                            bgcolor: isConnected ? '#2D5A3D' : '#8C8C8C',
                             mr: 1,
                         }
                     }}
@@ -87,10 +87,9 @@ export const TeacherDashboard: React.FC = () => {
             >
                 {activeAlert ? (
                     <Alert severity={activeAlert.severity === 'high' ? 'error' : 'warning'} sx={{
-                        bgcolor: activeAlert.severity === 'high' ? 'rgba(239, 68, 68, 0.15)' : 'rgba(245, 158, 11, 0.15)',
-                        border: `1px solid ${activeAlert.severity === 'high' ? 'rgba(239, 68, 68, 0.3)' : 'rgba(245, 158, 11, 0.3)'}`,
+                        bgcolor: activeAlert.severity === 'high' ? 'rgba(220, 38, 38, 0.08)' : 'rgba(217, 119, 6, 0.08)',
+                        border: `1px solid ${activeAlert.severity === 'high' ? 'rgba(220, 38, 38, 0.2)' : 'rgba(217, 119, 6, 0.2)'}`,
                         borderRadius: 3,
-                        backdropFilter: 'blur(16px)',
                     }}>
                         <Typography variant="subtitle2" fontWeight="bold">{activeAlert.title}</Typography>
                         <Typography variant="body2">{activeAlert.message}</Typography>
@@ -106,25 +105,26 @@ export const TeacherDashboard: React.FC = () => {
                             className={`animate-in animate-in-delay-${i + 1}`}
                             sx={{
                                 position: 'relative', overflow: 'hidden',
+                                bgcolor: '#FFFFFF',
+                                border: '1px solid rgba(0,0,0,0.08)',
                                 '&:hover': {
                                     transform: 'translateY(-4px)',
-                                    boxShadow: `0 12px 40px ${kpi.glow}`,
+                                    boxShadow: `0 8px 24px ${kpi.glow}`,
                                 },
                             }}
                         >
-                            <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, ${kpi.color}, transparent)` }} />
                             <CardContent sx={{ p: 2.5 }}>
                                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                                     <Box>
-                                        <Typography variant="caption" sx={{ color: 'text.muted', fontWeight: 600, letterSpacing: 0.5, textTransform: 'uppercase', fontSize: '0.6rem' }}>
+                                        <Typography variant="caption" sx={{ color: '#8C8C8C', fontWeight: 600, letterSpacing: 0.5, textTransform: 'uppercase', fontSize: '0.6rem' }}>
                                             {kpi.label}
                                         </Typography>
                                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5 }}>
-                                            <Typography variant="h3" sx={{ fontWeight: 800, color: 'text.primary' }}>{kpi.value}</Typography>
+                                            <Typography variant="h3" sx={{ fontWeight: 800, color: '#1A1A1A', fontFamily: '"Playfair Display", serif' }}>{kpi.value}</Typography>
                                             {kpi.badge && (
                                                 <Chip label={kpi.badge} size="small" sx={{
-                                                    bgcolor: 'rgba(56, 189, 248, 0.12)',
-                                                    color: '#38BDF8',
+                                                    bgcolor: 'rgba(45, 90, 61, 0.08)',
+                                                    color: '#2D5A3D',
                                                     fontWeight: 700,
                                                     fontSize: '0.65rem',
                                                     height: 22,
@@ -134,7 +134,7 @@ export const TeacherDashboard: React.FC = () => {
                                     </Box>
                                     <Box sx={{
                                         width: 44, height: 44, borderRadius: 2.5,
-                                        bgcolor: `${kpi.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        bgcolor: `${kpi.color}10`, display: 'flex', alignItems: 'center', justifyContent: 'center',
                                         color: kpi.color,
                                     }}>
                                         {kpi.icon}
@@ -150,8 +150,8 @@ export const TeacherDashboard: React.FC = () => {
                 {/* Student Roster */}
                 <Grid size={{ xs: 12, md: 7 }}>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                        <Typography variant="h6" fontWeight="bold">Student Roster</Typography>
-                        <Button size="small" endIcon={<ArrowForwardIcon sx={{ fontSize: 14 }} />} sx={{ color: 'primary.light', fontSize: '0.8rem' }}>
+                        <Typography variant="h6" sx={{ fontWeight: 700, color: '#1A1A1A', fontFamily: '"Playfair Display", serif' }}>Student Roster</Typography>
+                        <Button size="small" endIcon={<ArrowForwardIcon sx={{ fontSize: 14 }} />} sx={{ color: '#2D5A3D', fontSize: '0.8rem', fontWeight: 600 }}>
                             Export
                         </Button>
                     </Box>
@@ -159,14 +159,14 @@ export const TeacherDashboard: React.FC = () => {
                         component={Paper}
                         elevation={0}
                         sx={{
-                            bgcolor: 'rgba(10, 10, 15, 0.5)',
-                            border: '1px solid rgba(255,255,255,0.06)',
+                            bgcolor: '#FFFFFF',
+                            border: '1px solid rgba(0,0,0,0.08)',
                             borderRadius: 3,
                         }}
                     >
                         <Table size="small">
                             <TableHead>
-                                <TableRow sx={{ '& th': { borderBottom: '1px solid rgba(255,255,255,0.06)', color: 'text.muted', fontWeight: 600, fontSize: '0.7rem', letterSpacing: 0.5, textTransform: 'uppercase' } }}>
+                                <TableRow sx={{ '& th': { borderBottom: '1px solid rgba(0,0,0,0.08)', color: '#8C8C8C', fontWeight: 600, fontSize: '0.7rem', letterSpacing: 0.5, textTransform: 'uppercase' } }}>
                                     <TableCell>Student</TableCell>
                                     <TableCell>Mastery</TableCell>
                                     <TableCell>Status</TableCell>
@@ -179,9 +179,9 @@ export const TeacherDashboard: React.FC = () => {
                                     <TableRow
                                         key={student.id}
                                         sx={{
-                                            '& td': { borderBottom: '1px solid rgba(255,255,255,0.03)' },
+                                            '& td': { borderBottom: '1px solid rgba(0,0,0,0.04)' },
                                             transition: 'background 200ms ease',
-                                            '&:hover': { bgcolor: 'rgba(255,255,255,0.02)' },
+                                            '&:hover': { bgcolor: 'rgba(0,0,0,0.02)' },
                                         }}
                                     >
                                         <TableCell>
@@ -189,7 +189,7 @@ export const TeacherDashboard: React.FC = () => {
                                                 <Avatar sx={{ width: 30, height: 30, bgcolor: stringToColor(student.name), fontSize: '0.7rem' }}>
                                                     {student.name.charAt(0)}
                                                 </Avatar>
-                                                <Typography variant="body2" sx={{ color: 'text.primary', fontWeight: 500 }}>{student.name}</Typography>
+                                                <Typography variant="body2" sx={{ color: '#1A1A1A', fontWeight: 500 }}>{student.name}</Typography>
                                             </Box>
                                         </TableCell>
                                         <TableCell>
@@ -199,41 +199,41 @@ export const TeacherDashboard: React.FC = () => {
                                                     value={student.mastery}
                                                     sx={{
                                                         width: 80, height: 4, borderRadius: 2,
-                                                        bgcolor: 'rgba(255,255,255,0.06)',
+                                                        bgcolor: 'rgba(0,0,0,0.06)',
                                                         '& .MuiLinearProgress-bar': {
                                                             borderRadius: 2,
                                                             background: student.mastery > 70
-                                                                ? 'linear-gradient(90deg, #38BDF8, #7DD3FC)'
+                                                                ? 'linear-gradient(90deg, #2D5A3D, #4A8C62)'
                                                                 : student.mastery > 50
-                                                                    ? 'linear-gradient(90deg, #F59E0B, #FBBF24)'
-                                                                    : 'linear-gradient(90deg, #EF4444, #F87171)',
+                                                                    ? 'linear-gradient(90deg, #D97706, #F59E0B)'
+                                                                    : 'linear-gradient(90deg, #DC2626, #EF4444)',
                                                         }
                                                     }}
                                                 />
-                                                <Typography variant="caption" sx={{ color: 'text.primary', fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}>
+                                                <Typography variant="caption" sx={{ color: '#1A1A1A', fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}>
                                                     {student.mastery}%
                                                 </Typography>
                                             </Box>
                                         </TableCell>
                                         <TableCell>
-                                            {student.status === 'on_track' && <Chip label="On Track" size="small" sx={{ bgcolor: 'rgba(56, 189, 248, 0.12)', color: '#38BDF8', fontWeight: 600, fontSize: '0.65rem', height: 24, border: '1px solid rgba(56, 189, 248, 0.25)' }} />}
-                                            {student.status === 'needs_attention' && <Chip label="Attention" size="small" sx={{ bgcolor: 'rgba(245, 158, 11, 0.12)', color: '#F59E0B', fontWeight: 600, fontSize: '0.65rem', height: 24, border: '1px solid rgba(245, 158, 11, 0.25)' }} />}
-                                            {student.status === 'at_risk' && <Chip label="At Risk" size="small" sx={{ bgcolor: 'rgba(239, 68, 68, 0.12)', color: '#EF4444', fontWeight: 600, fontSize: '0.65rem', height: 24, border: '1px solid rgba(239, 68, 68, 0.25)' }} />}
+                                            {student.status === 'on_track' && <Chip label="On Track" size="small" sx={{ bgcolor: 'rgba(45, 90, 61, 0.08)', color: '#2D5A3D', fontWeight: 600, fontSize: '0.65rem', height: 24, border: '1px solid rgba(45, 90, 61, 0.2)' }} />}
+                                            {student.status === 'needs_attention' && <Chip label="Attention" size="small" sx={{ bgcolor: 'rgba(217, 119, 6, 0.08)', color: '#D97706', fontWeight: 600, fontSize: '0.65rem', height: 24, border: '1px solid rgba(217, 119, 6, 0.2)' }} />}
+                                            {student.status === 'at_risk' && <Chip label="At Risk" size="small" sx={{ bgcolor: 'rgba(220, 38, 38, 0.08)', color: '#DC2626', fontWeight: 600, fontSize: '0.65rem', height: 24, border: '1px solid rgba(220, 38, 38, 0.2)' }} />}
                                         </TableCell>
                                         <TableCell>
-                                            <Typography variant="caption" sx={{ color: student.status === 'at_risk' ? '#EF4444' : 'text.muted' }}>
+                                            <Typography variant="caption" sx={{ color: student.status === 'at_risk' ? '#DC2626' : '#8C8C8C' }}>
                                                 {student.lastActive}
                                             </Typography>
                                         </TableCell>
                                         <TableCell align="right">
                                             <Button size="small" variant="outlined" sx={{
-                                                borderColor: 'rgba(255,255,255,0.1)', color: 'text.secondary', fontSize: '0.7rem',
-                                                '&:hover': { borderColor: 'rgba(255,255,255,0.2)' },
+                                                borderColor: 'rgba(0,0,0,0.12)', color: '#5C5C5C', fontSize: '0.7rem',
+                                                '&:hover': { borderColor: 'rgba(0,0,0,0.2)' },
                                             }}>
                                                 Profile
                                             </Button>
                                             {student.status !== 'on_track' && (
-                                                <Button size="small" sx={{ color: 'primary.light', ml: 1, fontSize: '0.7rem' }}>Nudge</Button>
+                                                <Button size="small" sx={{ color: '#2D5A3D', ml: 1, fontSize: '0.7rem', fontWeight: 600 }}>Nudge</Button>
                                             )}
                                         </TableCell>
                                     </TableRow>
@@ -245,38 +245,38 @@ export const TeacherDashboard: React.FC = () => {
 
                 {/* Concept Bottlenecks */}
                 <Grid size={{ xs: 12, md: 5 }}>
-                    <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>Concept Bottlenecks</Typography>
-                    <Card elevation={0}>
+                    <Typography variant="h6" sx={{ mb: 2, fontWeight: 700, color: '#1A1A1A', fontFamily: '"Playfair Display", serif' }}>Concept Bottlenecks</Typography>
+                    <Card elevation={0} sx={{ bgcolor: '#FFFFFF', border: '1px solid rgba(0,0,0,0.08)' }}>
                         <CardContent>
-                            <Typography variant="body2" sx={{ color: 'text.muted', mb: 3 }}>
+                            <Typography variant="body2" sx={{ color: '#8C8C8C', mb: 3 }}>
                                 Concepts where the class is struggling most, based on quiz failure rates and hint usage.
                             </Typography>
 
                             {bottleneckConcepts.map((concept) => (
                                 <Box key={concept.id} sx={{
                                     mb: 2.5, p: 2.5, borderRadius: 3,
-                                    bgcolor: 'rgba(245, 158, 11, 0.04)',
-                                    borderLeft: '3px solid rgba(245, 158, 11, 0.5)',
-                                    border: '1px solid rgba(245, 158, 11, 0.1)',
+                                    bgcolor: 'rgba(217, 119, 6, 0.03)',
+                                    borderLeft: '3px solid rgba(217, 119, 6, 0.4)',
+                                    border: '1px solid rgba(217, 119, 6, 0.08)',
                                     borderLeftWidth: 3,
                                 }}>
                                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
-                                        <Typography variant="subtitle2" fontWeight="bold" sx={{ color: 'text.primary' }}>{concept.name}</Typography>
+                                        <Typography variant="subtitle2" fontWeight="bold" sx={{ color: '#1A1A1A' }}>{concept.name}</Typography>
                                         <Chip label={`${concept.avgMastery}%`} size="small" sx={{
-                                            bgcolor: 'rgba(239, 68, 68, 0.1)', color: '#EF4444',
+                                            bgcolor: 'rgba(220, 38, 38, 0.06)', color: '#DC2626',
                                             fontWeight: 700, fontSize: '0.65rem', height: 22,
-                                            border: '1px solid rgba(239, 68, 68, 0.2)',
+                                            border: '1px solid rgba(220, 38, 38, 0.15)',
                                         }} />
                                     </Box>
-                                    <Typography variant="caption" sx={{ color: 'text.muted' }}>
+                                    <Typography variant="caption" sx={{ color: '#8C8C8C' }}>
                                         Failed {concept.timesFailed} times this week across {classStats.enrollment} students
                                     </Typography>
                                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 2 }}>
                                         <Chip label={`Review: ${concept.relatedContent}`} size="small" sx={{
-                                            bgcolor: 'rgba(255,255,255,0.04)', color: 'text.secondary', fontSize: '0.65rem',
-                                            border: '1px solid rgba(255,255,255,0.06)',
+                                            bgcolor: 'rgba(0,0,0,0.03)', color: '#5C5C5C', fontSize: '0.65rem',
+                                            border: '1px solid rgba(0,0,0,0.08)',
                                         }} />
-                                        <Button size="small" endIcon={<AssessmentIcon sx={{ fontSize: 14 }} />} sx={{ color: 'primary.light', fontSize: '0.75rem' }}>
+                                        <Button size="small" endIcon={<AssessmentIcon sx={{ fontSize: 14 }} />} sx={{ color: '#DC2626', fontSize: '0.75rem', fontWeight: 600 }}>
                                             Analyze
                                         </Button>
                                     </Box>
@@ -284,8 +284,8 @@ export const TeacherDashboard: React.FC = () => {
                             ))}
 
                             <Button fullWidth variant="outlined" sx={{
-                                mt: 1, borderColor: 'rgba(255,255,255,0.1)', color: 'text.secondary',
-                                '&:hover': { borderColor: 'rgba(255,255,255,0.2)' },
+                                mt: 1, borderColor: 'rgba(0,0,0,0.12)', color: '#5C5C5C',
+                                '&:hover': { borderColor: 'rgba(0,0,0,0.2)' },
                             }}>
                                 Generate Alternative Explanations
                             </Button>

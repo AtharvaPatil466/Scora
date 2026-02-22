@@ -60,7 +60,7 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
         <Box sx={{ maxWidth: 1000, mx: 'auto', p: { xs: 1, md: 3 }, mt: 2 }} className="animate-in">
             {/* Top Toolbar */}
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
-                <Typography variant="h6" fontWeight="bold" sx={{ color: 'text.primary', display: 'flex', alignItems: 'center', gap: 1 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#1A1A1A', display: 'flex', alignItems: 'center', gap: 1, fontFamily: '"Playfair Display", serif' }}>
                     {title || 'Concepts Overview'}
                 </Typography>
                 <Box sx={{ display: 'flex', gap: 0.5 }}>
@@ -69,10 +69,10 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
                             key={i}
                             size="small"
                             sx={{
-                                color: 'text.muted',
-                                bgcolor: 'rgba(255,255,255,0.03)',
-                                border: '1px solid rgba(255,255,255,0.06)',
-                                '&:hover': { bgcolor: 'rgba(255,255,255,0.08)', color: 'text.primary' },
+                                color: '#8C8C8C',
+                                bgcolor: 'rgba(0,0,0,0.03)',
+                                border: '1px solid rgba(0,0,0,0.08)',
+                                '&:hover': { bgcolor: 'rgba(0,0,0,0.06)', color: '#1A1A1A' },
                             }}
                         >
                             <Icon fontSize="small" />
@@ -86,7 +86,7 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
                 elevation={0}
                 sx={{
                     position: 'relative',
-                    bgcolor: '#000',
+                    bgcolor: '#1A1A1A',
                     height: 420,
                     borderRadius: 4,
                     overflow: 'hidden',
@@ -95,7 +95,7 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
                     justifyContent: 'center',
                     alignItems: 'center',
                     mb: 4,
-                    border: '1px solid rgba(255,255,255,0.06)',
+                    border: '1px solid rgba(0,0,0,0.12)',
                 }}
             >
                 {/* Animated background */}
@@ -104,9 +104,9 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
                     width: '100%',
                     height: '100%',
                     background: `
-                        radial-gradient(ellipse at 30% 50%, rgba(99,102,241,0.15) 0%, transparent 50%),
-                        radial-gradient(ellipse at 70% 50%, rgba(16,185,129,0.1) 0%, transparent 50%),
-                        radial-gradient(circle at center, rgba(99,102,241,0.08) 0%, black 70%)
+                        radial-gradient(ellipse at 30% 50%, rgba(45, 90, 61, 0.2) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(74, 140, 98, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at center, rgba(45, 90, 61, 0.1) 0%, #1A1A1A 70%)
                     `,
                     zIndex: 0,
                 }} />
@@ -157,7 +157,7 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
                                 '& .MuiLinearProgress-bar': {
                                     bgcolor: 'primary.main',
                                     borderRadius: 2,
-                                    background: 'linear-gradient(90deg, #3B82F6, #60A5FA)',
+                                    background: 'linear-gradient(90deg, #2D5A3D, #4A8C62)',
                                 }
                             }}
                         />
@@ -181,20 +181,20 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
                 elevation={0}
                 sx={{
                     p: 3, mb: 4, borderRadius: 3,
-                    border: '1px solid rgba(59, 130, 246, 0.15)',
-                    bgcolor: 'rgba(59, 130, 246, 0.04)',
+                    border: '1px solid rgba(45, 90, 61, 0.12)',
+                    bgcolor: 'rgba(45, 90, 61, 0.03)',
                     position: 'relative', overflow: 'hidden',
                 }}
                 className="animate-in animate-in-delay-1"
             >
-                <Box sx={{ position: 'absolute', top: 0, left: 0, width: 4, height: '100%', background: 'linear-gradient(180deg, #3B82F6, #38BDF8)' }} />
+                <Box sx={{ position: 'absolute', top: 0, left: 0, width: 4, height: '100%', background: 'linear-gradient(180deg, #2D5A3D, #4A8C62)' }} />
                 <Box sx={{ display: 'flex', gap: 2, pl: 1 }}>
-                    <AutoAwesomeIcon sx={{ color: 'primary.light', mt: 0.3 }} />
+                    <AutoAwesomeIcon sx={{ color: '#2D5A3D', mt: 0.3 }} />
                     <Box sx={{ flexGrow: 1 }}>
-                        <Typography variant="caption" fontWeight="bold" sx={{ color: 'primary.light', display: 'block', letterSpacing: 1, fontSize: '0.65rem', mb: 1 }}>
+                        <Typography variant="caption" fontWeight="bold" sx={{ color: '#2D5A3D', display: 'block', letterSpacing: 1, fontSize: '0.65rem', mb: 1 }}>
                             AI-GENERATED FOR YOU
                         </Typography>
-                        <Typography variant="body1" sx={{ color: 'text.primary', fontStyle: 'italic', mb: 2, lineHeight: 1.7 }}>
+                        <Typography variant="body1" sx={{ color: '#1A1A1A', fontStyle: 'italic', mb: 2, lineHeight: 1.7 }}>
                             {safeTitle.toLowerCase().includes('fraction')
                                 ? '"Think of fractions like pizza slices. When adding fractions, you need everyone to have the same size slices (common denominator) before you can combine them!"'
                                 : safeTitle.toLowerCase().includes('geometry')
@@ -204,8 +204,8 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
                                         : `"Let's explore ${safeTitle} step by step. This AI-generated insight is tailored to help you connect new concepts to what you already know!"`}
                         </Typography>
                         <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
-                            <Button size="small" startIcon={<SyncIcon sx={{ fontSize: 14 }} />} sx={{ color: 'text.muted', fontSize: '0.75rem' }}>Regenerate</Button>
-                            <Button size="small" startIcon={<StarBorderIcon sx={{ fontSize: 14 }} />} sx={{ color: 'text.muted', fontSize: '0.75rem' }}>Save</Button>
+                            <Button size="small" startIcon={<SyncIcon sx={{ fontSize: 14 }} />} sx={{ color: '#8C8C8C', fontSize: '0.75rem' }}>Regenerate</Button>
+                            <Button size="small" startIcon={<StarBorderIcon sx={{ fontSize: 14 }} />} sx={{ color: '#8C8C8C', fontSize: '0.75rem' }}>Save</Button>
                         </Box>
                     </Box>
                 </Box>
@@ -215,7 +215,7 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
             <Box sx={{ display: 'flex', gap: 4, flexDirection: { xs: 'column', md: 'row' } }} className="animate-in animate-in-delay-2">
                 {/* Chapters */}
                 <Box sx={{ flex: 1 }}>
-                    <Typography variant="caption" sx={{ color: 'text.muted', fontWeight: 700, letterSpacing: 2, fontSize: '0.65rem', display: 'block', mb: 2 }}>
+                    <Typography variant="caption" sx={{ color: '#2D5A3D', fontWeight: 700, letterSpacing: 2, fontSize: '0.65rem', display: 'block', mb: 2 }}>
                         CHAPTERS
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -242,22 +242,22 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
                                 sx={{
                                     display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                                     p: 1.5, borderRadius: 2,
-                                    bgcolor: ch.current ? 'rgba(59, 130, 246, 0.08)' : 'transparent',
-                                    border: ch.current ? '1px solid rgba(59, 130, 246, 0.2)' : '1px solid transparent',
+                                    bgcolor: ch.current ? 'rgba(45, 90, 61, 0.04)' : 'transparent',
+                                    border: ch.current ? '1px solid rgba(45, 90, 61, 0.15)' : '1px solid transparent',
                                     transition: 'all 200ms ease',
-                                    '&:hover': { bgcolor: 'rgba(255,255,255,0.03)' },
+                                    '&:hover': { bgcolor: 'rgba(0,0,0,0.02)' },
                                 }}
                             >
                                 <Typography
                                     variant="body2"
                                     sx={{
                                         display: 'flex', gap: 1, alignItems: 'center',
-                                        color: ch.done ? 'secondary.main' : ch.current ? 'primary.light' : 'text.muted',
+                                        color: ch.done ? '#2D5A3D' : ch.current ? '#2D5A3D' : '#8C8C8C',
                                         fontWeight: ch.current ? 600 : 400,
                                     }}
                                 >
                                     {ch.done
-                                        ? <CheckCircleIcon sx={{ fontSize: 18, color: 'secondary.main' }} />
+                                        ? <CheckCircleIcon sx={{ fontSize: 18, color: '#2D5A3D' }} />
                                         : ch.current
                                             ? <PlayCircleFilledIcon sx={{ fontSize: 18 }} />
                                             : <RadioButtonUncheckedIcon sx={{ fontSize: 18, opacity: 0.4 }} />
@@ -266,8 +266,8 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
                                 </Typography>
                                 {ch.current && (
                                     <Chip label="Current" size="small" sx={{
-                                        bgcolor: 'rgba(59, 130, 246, 0.15)',
-                                        color: 'primary.light',
+                                        bgcolor: 'rgba(45, 90, 61, 0.08)',
+                                        color: '#2D5A3D',
                                         fontWeight: 600,
                                         fontSize: '0.6rem',
                                         height: 22,
@@ -280,25 +280,25 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
 
                 {/* Interaction Tabs */}
                 <Box sx={{ flex: 1 }}>
-                    <Box sx={{ display: 'flex', gap: 0, mb: 2, borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative' }}>
+                    <Box sx={{ display: 'flex', gap: 0, mb: 2, borderBottom: '1px solid rgba(0,0,0,0.06)', position: 'relative' }}>
                         {tabs.map((tab) => (
                             <Button
                                 key={tab.key}
                                 variant="text"
                                 onClick={() => setActiveTab(tab.key)}
                                 sx={{
-                                    color: activeTab === tab.key ? 'primary.light' : 'text.muted',
+                                    color: activeTab === tab.key ? '#2D5A3D' : '#8C8C8C',
                                     fontWeight: activeTab === tab.key ? 700 : 400,
                                     fontSize: '0.85rem',
                                     pb: 1.5,
                                     px: 2,
                                     borderRadius: 0,
                                     borderBottom: activeTab === tab.key ? '2px solid' : '2px solid transparent',
-                                    borderColor: activeTab === tab.key ? 'primary.main' : 'transparent',
+                                    borderColor: activeTab === tab.key ? '#2D5A3D' : 'transparent',
                                     transition: 'all 200ms ease',
                                     '&:hover': {
                                         bgcolor: 'transparent',
-                                        color: 'text.primary',
+                                        color: '#1A1A1A',
                                     },
                                 }}
                             >
@@ -310,16 +310,16 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
                     {activeTab === 'notes' && (
                         <Paper elevation={0} sx={{
                             p: 2.5, borderRadius: 2, minHeight: 150,
-                            bgcolor: 'rgba(10, 10, 15, 0.5)',
-                            border: '1px solid rgba(255,255,255,0.06)',
+                            bgcolor: '#FFFFFF',
+                            border: '1px solid rgba(0,0,0,0.08)',
                         }}>
-                            <Typography variant="caption" sx={{ color: 'text.muted', display: 'block', mb: 1, fontWeight: 600, letterSpacing: 0.5, fontSize: '0.6rem' }}>
+                            <Typography variant="caption" sx={{ color: '#8C8C8C', display: 'block', mb: 1, fontWeight: 600, letterSpacing: 0.5, fontSize: '0.6rem' }}>
                                 YOUR NOTES (auto-saved)
                             </Typography>
-                            <Typography variant="body2" sx={{ color: 'text.primary', lineHeight: 1.7 }}>
+                            <Typography variant="body2" sx={{ color: '#1A1A1A', lineHeight: 1.7 }}>
                                 "Remember: check discriminant first!"
                             </Typography>
-                            <Typography variant="caption" sx={{ color: 'text.muted', display: 'block', mt: 4, textAlign: 'right' }}>
+                            <Typography variant="caption" sx={{ color: '#8C8C8C', display: 'block', mt: 4, textAlign: 'right' }}>
                                 Last edited: 2 min ago
                             </Typography>
                         </Paper>
@@ -333,9 +333,9 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
                     variant="outlined"
                     onClick={() => setProgress(100)}
                     sx={{
-                        borderColor: 'rgba(255,255,255,0.12)',
-                        color: 'text.secondary',
-                        '&:hover': { borderColor: 'rgba(255,255,255,0.25)' },
+                        borderColor: 'rgba(0,0,0,0.12)',
+                        color: '#5C5C5C',
+                        '&:hover': { borderColor: 'rgba(0,0,0,0.2)' },
                     }}
                 >
                     Mark Complete
@@ -345,14 +345,14 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
                     onClick={handleComplete}
                     disabled={progress < 100}
                     sx={{
-                        background: 'linear-gradient(135deg, #38BDF8, #0EA5E9)',
+                        background: '#2D5A3D',
                         '&:hover': {
-                            background: 'linear-gradient(135deg, #7DD3FC, #38BDF8)',
-                            boxShadow: '0 8px 24px rgba(56, 189, 248, 0.3)',
+                            background: '#1B4332',
+                            boxShadow: '0 8px 24px rgba(45, 90, 61, 0.2)',
                         },
                         '&.Mui-disabled': {
-                            background: 'rgba(255,255,255,0.08)',
-                            color: 'rgba(255,255,255,0.3)',
+                            background: 'rgba(0,0,0,0.06)',
+                            color: 'rgba(0,0,0,0.25)',
                         }
                     }}
                 >

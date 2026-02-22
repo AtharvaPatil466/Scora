@@ -122,17 +122,16 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
     };
 
     const difficultyLabel = currentDifficulty > 0.7 ? 'Hard' : currentDifficulty > 0.4 ? 'Medium' : 'Easy';
-    const difficultyColor = currentDifficulty > 0.7 ? '#EF4444' : currentDifficulty > 0.4 ? '#F59E0B' : '#38BDF8';
+    const difficultyColor = currentDifficulty > 0.7 ? '#DC2626' : currentDifficulty > 0.4 ? '#D97706' : '#2D5A3D';
 
     return (
         <Paper
             elevation={0}
             sx={{
                 maxWidth: 800, mx: 'auto', p: { xs: 2, md: 4 }, mt: 4,
-                bgcolor: 'rgba(10, 10, 15, 0.6)',
-                backdropFilter: 'blur(16px)',
+                bgcolor: '#FFFFFF',
                 borderRadius: 4,
-                border: '1px solid rgba(255, 255, 255, 0.06)',
+                border: '1px solid rgba(0,0,0,0.08)',
                 position: 'relative',
                 overflow: 'hidden',
             }}
@@ -141,16 +140,16 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
             {/* Top gradient line */}
             <Box sx={{
                 position: 'absolute', top: 0, left: 0, right: 0, height: 3,
-                background: 'linear-gradient(90deg, #3B82F6, #38BDF8, #F59E0B)',
+                background: 'linear-gradient(90deg, #2D5A3D, #4A8C62, #D97706)',
             }} />
 
             {/* Header */}
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
                 <Box>
-                    <Typography variant="caption" sx={{ color: 'text.muted', fontWeight: 700, letterSpacing: 2, fontSize: '0.6rem' }}>
+                    <Typography variant="caption" sx={{ color: '#2D5A3D', fontWeight: 700, letterSpacing: 2, fontSize: '0.6rem' }}>
                         ASSESSMENT
                     </Typography>
-                    <Typography variant="h6" fontWeight="bold" color="text.primary" sx={{ mt: 0.3 }}>
+                    <Typography variant="h6" sx={{ fontWeight: 700, color: '#1A1A1A', mt: 0.3, fontFamily: '"Playfair Display", serif' }}>
                         Adaptive Quiz
                     </Typography>
                 </Box>
@@ -159,19 +158,19 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
                         label={difficultyLabel}
                         size="small"
                         sx={{
-                            bgcolor: `${difficultyColor}15`,
+                            bgcolor: `${difficultyColor}10`,
                             color: difficultyColor,
                             fontWeight: 700,
                             fontSize: '0.65rem',
-                            border: `1px solid ${difficultyColor}30`,
+                            border: `1px solid ${difficultyColor}25`,
                         }}
                     />
                     <Chip
                         label={`${questionIndex + 1}/${maxQuestions}`}
                         size="small"
                         sx={{
-                            bgcolor: 'rgba(59, 130, 246, 0.12)',
-                            color: 'primary.light',
+                            bgcolor: 'rgba(45, 90, 61, 0.06)',
+                            color: '#2D5A3D',
                             fontWeight: 700,
                             fontSize: '0.7rem',
                         }}
@@ -188,13 +187,13 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
                             sx={{
                                 flex: 1, height: 4, borderRadius: 2,
                                 bgcolor: i < questionIndex
-                                    ? 'secondary.main'
+                                    ? '#2D5A3D'
                                     : i === questionIndex
-                                        ? 'primary.main'
-                                        : 'rgba(255,255,255,0.08)',
+                                        ? '#4A8C62'
+                                        : 'rgba(0,0,0,0.06)',
                                 transition: 'all 400ms cubic-bezier(0.16, 1, 0.3, 1)',
                                 ...(i === questionIndex && {
-                                    boxShadow: '0 0 8px rgba(59, 130, 246, 0.4)',
+                                    boxShadow: '0 0 8px rgba(45, 90, 61, 0.3)',
                                 }),
                             }}
                         />
@@ -203,7 +202,7 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
             </Box>
 
             {/* Question Box */}
-            <Typography variant="h5" color="text.primary" sx={{ mb: 4, lineHeight: 1.5, minHeight: 80, fontWeight: 600 }}>
+            <Typography variant="h5" sx={{ mb: 4, lineHeight: 1.5, minHeight: 80, fontWeight: 600, color: '#1A1A1A' }}>
                 {currentQuestion.text}
             </Typography>
 
@@ -225,34 +224,34 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
                                 borderRadius: 3,
                                 border: '1px solid',
                                 borderColor: isCorrectAnswer
-                                    ? 'secondary.main'
+                                    ? '#2D5A3D'
                                     : isSelected
-                                        ? 'primary.main'
-                                        : 'rgba(255,255,255,0.08)',
+                                        ? '#2D5A3D'
+                                        : 'rgba(0,0,0,0.08)',
                                 bgcolor: isCorrectAnswer
-                                    ? 'rgba(56, 189, 248, 0.08)'
+                                    ? 'rgba(45, 90, 61, 0.06)'
                                     : isSelected
-                                        ? 'rgba(59, 130, 246, 0.08)'
+                                        ? 'rgba(45, 90, 61, 0.04)'
                                         : 'transparent',
                                 cursor: feedbackState === 'correct' ? 'default' : 'pointer',
                                 transition: 'all 200ms cubic-bezier(0.16, 1, 0.3, 1)',
                                 '&:hover': {
-                                    borderColor: feedbackState !== 'correct' ? 'rgba(59, 130, 246, 0.4)' : undefined,
+                                    borderColor: feedbackState !== 'correct' ? 'rgba(45, 90, 61, 0.4)' : undefined,
                                     transform: feedbackState !== 'correct' ? 'translateX(6px)' : 'none',
-                                    bgcolor: feedbackState !== 'correct' && !isSelected ? 'rgba(255,255,255,0.02)' : undefined,
+                                    bgcolor: feedbackState !== 'correct' && !isSelected ? 'rgba(0,0,0,0.02)' : undefined,
                                 },
                                 ...(isCorrectAnswer && {
-                                    boxShadow: '0 0 20px rgba(56, 189, 248, 0.15)',
+                                    boxShadow: '0 0 16px rgba(45, 90, 61, 0.1)',
                                 }),
                             }}
                         >
                             <Box sx={{
                                 width: 36, height: 36, borderRadius: 2.5,
                                 border: '2px solid',
-                                borderColor: isCorrectAnswer ? 'secondary.main' : isSelected ? 'primary.main' : 'rgba(255,255,255,0.12)',
+                                borderColor: isCorrectAnswer ? '#2D5A3D' : isSelected ? '#2D5A3D' : 'rgba(0,0,0,0.12)',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center', mr: 2,
-                                bgcolor: isCorrectAnswer ? 'rgba(56, 189, 248, 0.15)' : isSelected ? 'rgba(59, 130, 246, 0.15)' : 'transparent',
-                                color: isCorrectAnswer ? 'secondary.main' : isSelected ? 'primary.light' : 'text.muted',
+                                bgcolor: isCorrectAnswer ? 'rgba(45, 90, 61, 0.1)' : isSelected ? 'rgba(45, 90, 61, 0.08)' : 'transparent',
+                                color: isCorrectAnswer ? '#2D5A3D' : isSelected ? '#2D5A3D' : '#8C8C8C',
                                 fontWeight: 700,
                                 fontSize: '0.85rem',
                                 transition: 'all 200ms ease',
@@ -260,7 +259,7 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
                                 {isCorrectAnswer ? '✓' : isSelected ? '●' : letter}
                             </Box>
                             <Typography variant="body1" sx={{
-                                color: isCorrectAnswer ? 'secondary.light' : isSelected ? 'text.primary' : 'text.secondary',
+                                color: isCorrectAnswer ? '#2D5A3D' : isSelected ? '#1A1A1A' : '#5C5C5C',
                                 fontWeight: isSelected ? 600 : 400,
                             }}>
                                 {opt}
@@ -275,30 +274,30 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
                 {feedbackState === 'correct' && (
                     <Box sx={{
                         p: 3, mb: 3, borderRadius: 3,
-                        bgcolor: 'rgba(56, 189, 248, 0.08)',
-                        border: '1px solid rgba(56, 189, 248, 0.3)',
+                        bgcolor: 'rgba(45, 90, 61, 0.06)',
+                        border: '1px solid rgba(45, 90, 61, 0.2)',
                         display: 'flex', alignItems: 'center', gap: 2,
                         animation: 'fadeInUp 400ms cubic-bezier(0.16, 1, 0.3, 1) both',
                     }}>
-                        <CheckCircleOutlineIcon sx={{ color: '#38BDF8', fontSize: 44 }} />
+                        <CheckCircleOutlineIcon sx={{ color: '#2D5A3D', fontSize: 44 }} />
                         <Box>
-                            <Typography variant="h6" sx={{ color: '#38BDF8', fontWeight: 700 }}>Correct! 🎉</Typography>
-                            <Typography variant="body2" color="text.secondary">+15% mastery • Moving to next question...</Typography>
+                            <Typography variant="h6" sx={{ color: '#2D5A3D', fontWeight: 700 }}>Correct! 🎉</Typography>
+                            <Typography variant="body2" sx={{ color: '#5C5C5C' }}>+15% mastery • Moving to next question...</Typography>
                         </Box>
                     </Box>
                 )}
                 {feedbackState === 'incorrect' && (
                     <Box sx={{
                         p: 3, mb: 3, borderRadius: 3,
-                        bgcolor: 'rgba(239, 68, 68, 0.06)',
-                        border: '1px solid rgba(239, 68, 68, 0.2)',
+                        bgcolor: 'rgba(220, 38, 38, 0.04)',
+                        border: '1px solid rgba(220, 38, 38, 0.15)',
                         display: 'flex', alignItems: 'flex-start', gap: 2,
                         animation: 'fadeInUp 400ms cubic-bezier(0.16, 1, 0.3, 1) both',
                     }}>
-                        <SmartToyIcon sx={{ color: '#EF4444', fontSize: 40, mt: 0.5 }} />
+                        <SmartToyIcon sx={{ color: '#DC2626', fontSize: 40, mt: 0.5 }} />
                         <Box sx={{ flexGrow: 1 }}>
-                            <Typography variant="h6" sx={{ color: '#EF4444', fontWeight: 700 }}>Not quite</Typography>
-                            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                            <Typography variant="h6" sx={{ color: '#DC2626', fontWeight: 700 }}>Not quite</Typography>
+                            <Typography variant="body2" sx={{ color: '#5C5C5C', mb: 2 }}>
                                 Let's think about this together. I've sent a hint to your TutorChat.
                             </Typography>
                             <Box sx={{ display: 'flex', gap: 1 }}>
@@ -307,15 +306,15 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
                                     variant="contained"
                                     onClick={() => setFeedbackState('idle')}
                                     sx={{
-                                        bgcolor: 'rgba(59, 130, 246, 0.2)',
-                                        color: 'primary.light',
-                                        '&:hover': { bgcolor: 'rgba(59, 130, 246, 0.3)' },
+                                        bgcolor: 'rgba(45, 90, 61, 0.1)',
+                                        color: '#2D5A3D',
+                                        '&:hover': { bgcolor: 'rgba(45, 90, 61, 0.15)' },
                                         boxShadow: 'none',
                                     }}
                                 >
                                     ↻ Try Again
                                 </Button>
-                                <Button size="small" sx={{ color: 'text.muted' }} onClick={handleNextQuestion}>Skip →</Button>
+                                <Button size="small" sx={{ color: '#8C8C8C' }} onClick={handleNextQuestion}>Skip →</Button>
                             </Box>
                         </Box>
                     </Box>
@@ -326,15 +325,15 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
             <Collapse in={hintsUsed > 0}>
                 <Box sx={{
                     mb: 3, p: 2.5, borderRadius: 2,
-                    bgcolor: 'rgba(245, 158, 11, 0.06)',
-                    borderLeft: '3px solid rgba(245, 158, 11, 0.4)',
+                    bgcolor: 'rgba(217, 119, 6, 0.04)',
+                    borderLeft: '3px solid rgba(217, 119, 6, 0.4)',
                 }}>
-                    <Typography variant="subtitle2" sx={{ color: '#F59E0B', display: 'flex', alignItems: 'center', gap: 1, mb: 1, fontWeight: 700 }}>
+                    <Typography variant="subtitle2" sx={{ color: '#D97706', display: 'flex', alignItems: 'center', gap: 1, mb: 1, fontWeight: 700 }}>
                         <LightbulbIcon sx={{ fontSize: 18 }} /> Hints Revealed
                     </Typography>
                     <Box component="ul" sx={{ m: 0, pl: 2 }}>
                         {currentQuestion.hints.slice(0, hintsUsed).map((hint, i) => (
-                            <li key={i}><Typography variant="body2" color="text.secondary">{hint}</Typography></li>
+                            <li key={i}><Typography variant="body2" sx={{ color: '#5C5C5C' }}>{hint}</Typography></li>
                         ))}
                     </Box>
                 </Box>
@@ -343,7 +342,7 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
             {/* Bottom Controls */}
             <Box sx={{
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                pt: 3, borderTop: '1px solid rgba(255,255,255,0.06)',
+                pt: 3, borderTop: '1px solid rgba(0,0,0,0.06)',
             }}>
                 <Button
                     variant="outlined"
@@ -351,18 +350,18 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
                     disabled={hintsUsed >= currentQuestion.hints.length || feedbackState === 'correct'}
                     startIcon={<LightbulbIcon sx={{ fontSize: 16 }} />}
                     sx={{
-                        borderColor: 'rgba(245, 158, 11, 0.3)',
-                        color: '#F59E0B',
-                        '&:hover': { borderColor: 'rgba(245, 158, 11, 0.5)', bgcolor: 'rgba(245, 158, 11, 0.05)' },
-                        '&.Mui-disabled': { borderColor: 'rgba(255,255,255,0.06)', color: 'text.muted' },
+                        borderColor: 'rgba(217, 119, 6, 0.3)',
+                        color: '#D97706',
+                        '&:hover': { borderColor: 'rgba(217, 119, 6, 0.5)', bgcolor: 'rgba(217, 119, 6, 0.04)' },
+                        '&.Mui-disabled': { borderColor: 'rgba(0,0,0,0.08)', color: '#8C8C8C' },
                     }}
                 >
                     Use Hint (−5%)
                 </Button>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                        <TimerIcon sx={{ fontSize: 16, color: 'text.muted' }} />
-                        <Typography variant="caption" sx={{ color: 'text.muted', fontVariantNumeric: 'tabular-nums', fontWeight: 500 }}>
+                        <TimerIcon sx={{ fontSize: 16, color: '#8C8C8C' }} />
+                        <Typography variant="caption" sx={{ color: '#8C8C8C', fontVariantNumeric: 'tabular-nums', fontWeight: 500 }}>
                             {Math.floor(timeElapsed / 60)}:{(timeElapsed % 60).toString().padStart(2, '0')}
                         </Typography>
                     </Box>
@@ -373,15 +372,15 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
                         disabled={!selectedAnswer || feedbackState !== 'idle'}
                         sx={{
                             px: 4, py: 1.5, fontWeight: 700, borderRadius: 3,
-                            background: 'linear-gradient(135deg, #3B82F6, #2563EB)',
-                            boxShadow: '0 4px 16px rgba(59, 130, 246, 0.3)',
+                            background: '#2D5A3D',
+                            boxShadow: '0 4px 16px rgba(45, 90, 61, 0.2)',
                             '&:hover': {
-                                background: 'linear-gradient(135deg, #60A5FA, #3B82F6)',
-                                boxShadow: '0 8px 24px rgba(59, 130, 246, 0.4)',
+                                background: '#1B4332',
+                                boxShadow: '0 8px 24px rgba(45, 90, 61, 0.3)',
                             },
                             '&.Mui-disabled': {
-                                background: 'rgba(255,255,255,0.06)',
-                                color: 'rgba(255,255,255,0.25)',
+                                background: 'rgba(0,0,0,0.06)',
+                                color: 'rgba(0,0,0,0.25)',
                                 boxShadow: 'none',
                             }
                         }}
