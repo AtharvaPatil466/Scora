@@ -364,21 +364,23 @@ const StudentDashboard: React.FC = () => {
                                 <CardContent sx={{ flexGrow: 1, p: 3 }}>
                                     <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2, alignItems: 'flex-start' }}>
                                         <Box>
-                                            {index === 0 && (
-                                                <Chip
-                                                    label="RECOMMENDED"
-                                                    size="small"
-                                                    sx={{
-                                                        bgcolor: 'rgba(45, 90, 61, 0.1)',
-                                                        color: '#2D5A3D',
-                                                        fontWeight: 700,
-                                                        fontSize: '0.6rem',
-                                                        height: 22,
-                                                        mb: 1,
-                                                        letterSpacing: 1,
-                                                    }}
-                                                />
-                                            )}
+                                            <Box sx={{ minHeight: 30 }}>
+                                                {index === 0 && (
+                                                    <Chip
+                                                        label="RECOMMENDED"
+                                                        size="small"
+                                                        sx={{
+                                                            bgcolor: 'rgba(45, 90, 61, 0.1)',
+                                                            color: '#2D5A3D',
+                                                            fontWeight: 700,
+                                                            fontSize: '0.6rem',
+                                                            height: 22,
+                                                            mb: 1,
+                                                            letterSpacing: 1,
+                                                        }}
+                                                    />
+                                                )}
+                                            </Box>
                                             <Typography variant="h6" sx={{ lineHeight: 1.3, fontWeight: 700, color: '#1A1A1A', fontFamily: '"Playfair Display", serif' }}>
                                                 {rec.concept_name}
                                             </Typography>
