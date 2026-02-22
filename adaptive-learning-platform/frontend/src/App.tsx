@@ -211,134 +211,138 @@ const AppShell: React.FC = () => {
 
           {/* Nav Links — centered */}
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.3, position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
-            {navItems.map((item) => (
-              <Box
-                key={item.path}
-                onMouseEnter={() => setHoveredNav(item.path)}
-                onMouseLeave={() => setHoveredNav(null)}
-                sx={{ position: 'relative' }}
-              >
+            {navItems.map((item, idx) => (
+              <React.Fragment key={item.path}>
+                {idx > 0 && navItems[idx - 1].section !== item.section && (
+                  <Box sx={{ width: 1, height: 20, bgcolor: 'rgba(0,0,0,0.1)', mx: 0.8, borderRadius: 1 }} />
+                )}
                 <Box
-                  component={RouterLink}
-                  to={item.path}
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 0.7,
-                    px: 1.3,
-                    py: 0.8,
-                    borderRadius: '10px',
-                    textDecoration: 'none',
-                    color: isActive(item.path) ? '#2D5A3D' : '#5C5C5C',
-                    bgcolor: isActive(item.path) ? 'rgba(45, 90, 61, 0.08)' : 'transparent',
-                    transition: 'all 200ms ease',
-                    cursor: 'pointer',
-                    flexShrink: 0,
-                    '&:hover': {
-                      color: '#2D5A3D',
-                      bgcolor: 'rgba(45, 90, 61, 0.05)',
-                    },
-                    '& .MuiSvgIcon-root': {
-                      fontSize: 18,
-                    }
-                  }}
+                  onMouseEnter={() => setHoveredNav(item.path)}
+                  onMouseLeave={() => setHoveredNav(null)}
+                  sx={{ position: 'relative' }}
                 >
-                  {item.icon}
-                  <Typography
-                    sx={{
-                      fontSize: '0.8rem',
-                      fontWeight: isActive(item.path) ? 600 : 500,
-                      whiteSpace: 'nowrap',
-                      letterSpacing: '-0.01em',
-                    }}
-                  >
-                    {item.label}
-                  </Typography>
-                </Box>
-
-                {/* ── Hover Preview Card ── */}
-                {hoveredNav === item.path && (
                   <Box
+                    component={RouterLink}
+                    to={item.path}
                     sx={{
-                      position: 'absolute',
-                      top: '100%',
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      mt: 1,
-                      width: 280,
-                      p: 2,
-                      borderRadius: '14px',
-                      background: '#FFFFFF',
-                      border: '1px solid rgba(0, 0, 0, 0.08)',
-                      boxShadow: '0 16px 48px rgba(0, 0, 0, 0.1)',
-                      animation: 'previewIn 200ms cubic-bezier(0.16, 1, 0.3, 1)',
-                      zIndex: 1300,
-                      pointerEvents: 'none',
-                      '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: -6,
-                        left: '50%',
-                        transform: 'translateX(-50%) rotate(45deg)',
-                        width: 12,
-                        height: 12,
-                        background: '#FFFFFF',
-                        border: '1px solid rgba(0, 0, 0, 0.08)',
-                        borderBottom: 'none',
-                        borderRight: 'none',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 0.7,
+                      px: 1.3,
+                      py: 0.8,
+                      borderRadius: '10px',
+                      textDecoration: 'none',
+                      color: isActive(item.path) ? '#2D5A3D' : '#5C5C5C',
+                      bgcolor: isActive(item.path) ? 'rgba(45, 90, 61, 0.08)' : 'transparent',
+                      transition: 'all 200ms ease',
+                      cursor: 'pointer',
+                      flexShrink: 0,
+                      '&:hover': {
+                        color: '#2D5A3D',
+                        bgcolor: 'rgba(45, 90, 61, 0.05)',
+                      },
+                      '& .MuiSvgIcon-root': {
+                        fontSize: 18,
                       }
                     }}
                   >
-                    {/* Preview header */}
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.2 }}>
-                      <Box sx={{
-                        width: 32,
-                        height: 32,
-                        borderRadius: '8px',
-                        bgcolor: 'rgba(45, 90, 61, 0.08)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: '#2D5A3D',
-                        '& .MuiSvgIcon-root': { fontSize: 17 },
-                      }}>
-                        {item.icon}
-                      </Box>
-                      <Typography sx={{ fontWeight: 700, fontSize: '0.88rem', color: '#1A1A1A' }}>
-                        {item.label}
-                      </Typography>
-                    </Box>
-                    {/* Description */}
-                    <Typography sx={{ fontSize: '0.75rem', color: '#5C5C5C', lineHeight: 1.5, mb: 1.5 }}>
-                      {item.description}
+                    {item.icon}
+                    <Typography
+                      sx={{
+                        fontSize: '0.8rem',
+                        fontWeight: isActive(item.path) ? 600 : 500,
+                        whiteSpace: 'nowrap',
+                        letterSpacing: '-0.01em',
+                      }}
+                    >
+                      {item.label}
                     </Typography>
-                    {/* Preview tags */}
-                    <Box sx={{ display: 'flex', gap: 0.8 }}>
-                      {item.preview.split(' · ').map((tag) => (
-                        <Box
-                          key={tag}
-                          sx={{
-                            px: 1,
-                            py: 0.3,
-                            borderRadius: '6px',
-                            bgcolor: 'rgba(45, 90, 61, 0.06)',
-                            border: '1px solid rgba(45, 90, 61, 0.1)',
-                          }}
-                        >
-                          <Typography sx={{ fontSize: '0.62rem', color: '#2D5A3D', fontWeight: 600, letterSpacing: '0.03em' }}>
-                            {tag}
-                          </Typography>
-                        </Box>
-                      ))}
-                    </Box>
                   </Box>
-                )}
-              </Box>
+
+                  {/* ── Hover Preview Card ── */}
+                  {hoveredNav === item.path && (
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: '100%',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        mt: 1,
+                        width: 280,
+                        p: 2,
+                        borderRadius: '14px',
+                        background: '#FFFFFF',
+                        border: '1px solid rgba(0, 0, 0, 0.08)',
+                        boxShadow: '0 16px 48px rgba(0, 0, 0, 0.1)',
+                        animation: 'previewIn 200ms cubic-bezier(0.16, 1, 0.3, 1)',
+                        zIndex: 1300,
+                        pointerEvents: 'none',
+                        '&::before': {
+                          content: '""',
+                          position: 'absolute',
+                          top: -6,
+                          left: '50%',
+                          transform: 'translateX(-50%) rotate(45deg)',
+                          width: 12,
+                          height: 12,
+                          background: '#FFFFFF',
+                          border: '1px solid rgba(0, 0, 0, 0.08)',
+                          borderBottom: 'none',
+                          borderRight: 'none',
+                        }
+                      }}
+                    >
+                      {/* Preview header */}
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.2 }}>
+                        <Box sx={{
+                          width: 32,
+                          height: 32,
+                          borderRadius: '8px',
+                          bgcolor: 'rgba(45, 90, 61, 0.08)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: '#2D5A3D',
+                          '& .MuiSvgIcon-root': { fontSize: 17 },
+                        }}>
+                          {item.icon}
+                        </Box>
+                        <Typography sx={{ fontWeight: 700, fontSize: '0.88rem', color: '#1A1A1A' }}>
+                          {item.label}
+                        </Typography>
+                      </Box>
+                      {/* Description */}
+                      <Typography sx={{ fontSize: '0.75rem', color: '#5C5C5C', lineHeight: 1.5, mb: 1.5 }}>
+                        {item.description}
+                      </Typography>
+                      {/* Preview tags */}
+                      <Box sx={{ display: 'flex', gap: 0.8 }}>
+                        {item.preview.split(' · ').map((tag) => (
+                          <Box
+                            key={tag}
+                            sx={{
+                              px: 1,
+                              py: 0.3,
+                              borderRadius: '6px',
+                              bgcolor: 'rgba(45, 90, 61, 0.06)',
+                              border: '1px solid rgba(45, 90, 61, 0.1)',
+                            }}
+                          >
+                            <Typography sx={{ fontSize: '0.62rem', color: '#2D5A3D', fontWeight: 600, letterSpacing: '0.03em' }}>
+                              {tag}
+                            </Typography>
+                          </Box>
+                        ))}
+                      </Box>
+                    </Box>
+                  )}
+                </Box>
+              </React.Fragment>
             ))}
           </Box>
 
           {/* Right side utilities */}
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, flexShrink: 0 }}>
+          < Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, flexShrink: 0 }}>
             <IconButton size="small" sx={{
               color: '#5C5C5C',
               bgcolor: 'rgba(0,0,0,0.04)',

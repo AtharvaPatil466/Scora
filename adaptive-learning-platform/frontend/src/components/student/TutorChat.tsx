@@ -5,15 +5,28 @@ import CloseIcon from '@mui/icons-material/Close';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import MicIcon from '@mui/icons-material/Mic';
 import { TutorChatProps, ChatMessage } from '../../types/tutor';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 
 export const TutorChat: React.FC<TutorChatProps> = ({ studentId, currentConceptId, currentProblem, context }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [socraticMode, setSocraticMode] = useState(true);
+    const conceptName = currentConceptId ? currentConceptId.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : null;
+
+    const getContextWelcome = () => {
+        if (context === 'quiz' && currentProblem) {
+            return `I can see you're working on a quiz about ${conceptName || 'a topic'}. I won't give away answers, but I can help you think through the problem. What's tripping you up?`;
+        }
+        if (context === 'content' && conceptName) {
+            return `I see you're studying ${conceptName}. I can walk you through the key ideas, give practice problems, or answer specific questions. What would help?`;
+        }
+        return `Hi there! I'm your AI Tutor. How can I help you today?`;
+    };
+
     const [messages, setMessages] = useState<ChatMessage[]>([{
         id: 'msg_0',
         role: 'tutor',
-        content: `Hi there! I'm your AI Tutor. I notice you're working on ${currentConceptId || 'a new concept'}. How can I help you today?`,
+        content: getContextWelcome(),
         timestamp: Date.now()
     }]);
     const [input, setInput] = useState('');
@@ -49,15 +62,35 @@ export const TutorChat: React.FC<TutorChatProps> = ({ studentId, currentConceptI
             let response = "That's an interesting thought! What happens if we consider it from another perspective?";
 
             if (!socraticMode) {
-                response = "Since Socratic mode is off, here is a direct explanation: The quadratic formula is used to solve equations of the form ax^2 + bx + c = 0.";
+                if (conceptName) {
+                    response = `Here's a direct explanation for ${conceptName}: This concept involves understanding the fundamental relationships between quantities. The key insight is to identify the pattern and apply the relevant formula step by step.`;
+                } else {
+                    response = "Since 'Just tell me' mode is on: The key is to identify the pattern, apply the relevant formula, and verify your answer by substituting back.";
+                }
             } else if (text.toLowerCase().includes('explain like i\'m 5')) {
-                response = "Imagine you have a magic box that turns numbers into larger numbers based on a secret rule. We're trying to figure out what number we can put in to get exactly zero back!";
+                response = conceptName
+                    ? `Let me explain ${conceptName} simply: Imagine you have a magic box that follows special rules. We're trying to figure out what number makes the magic box happy!`
+                    : "Imagine you have a magic box that turns numbers into larger numbers based on a secret rule. We're trying to figure out what number we can put in to get exactly zero back!";
             } else if (text.toLowerCase().includes('hint')) {
-                response = `Focus on the first part of the equation. What is 'a' in your current problem?`;
+                response = conceptName
+                    ? `Here's a hint for ${conceptName}: Focus on the relationship between the parts. What changes when you modify one variable?`
+                    : `Focus on the first part of the equation. What is 'a' in your current problem?`;
+            } else if (text.toLowerCase().includes('prerequisite') || text.toLowerCase().includes('prereq')) {
+                response = conceptName
+                    ? `Before diving deeper into ${conceptName}, make sure you're solid on the foundational concepts. These are the building blocks that make this topic click.`
+                    : "Check your Knowledge Map to see which concepts feed into this one.";
+            } else if (text.toLowerCase().includes('practice') || text.toLowerCase().includes('problem')) {
+                response = conceptName
+                    ? `Here's a practice problem for ${conceptName}: Try solving this step by step, and tell me where you get stuck. I'll guide you through it!`
+                    : "Let me generate a practice problem that matches your current level. What topic are you working on?";
             } else if (text.toLowerCase().includes('example')) {
-                response = `Sure, let's look at x² - 5x + 6 = 0. Here, a=1, b=-5, c=6. Can you try plugging those into the formula?`;
+                response = conceptName
+                    ? `Let's work through an example of ${conceptName} together. I'll show you the first step: identify what you're solving for. Now, what do you think comes next?`
+                    : `Sure, let's look at x² - 5x + 6 = 0. Here, a=1, b=-5, c=6. Can you try plugging those into the formula?`;
             } else if (context === 'quiz' && currentProblem) {
                 response = `Instead of giving you the exact answer to "${currentProblem}", try to think about the inverse operation. What would that look like?`;
+            } else if (conceptName) {
+                response = `That's a great question about ${conceptName}! Think about how the pieces connect — what happens if you change one part? That's often the key insight.`;
             }
 
             const aiMsg: ChatMessage = {
@@ -79,11 +112,14 @@ export const TutorChat: React.FC<TutorChatProps> = ({ studentId, currentConceptI
         }
     };
 
-    const quickActions = [
-        "Explain like I'm 5",
-        "Give me a hint",
-        "Show me an example"
-    ];
+    const getQuickActions = () => {
+        const base = ["Explain like I'm 5", "Give me a hint"];
+        if (conceptName) {
+            return [`Explain ${conceptName}`, "Give me a practice problem", "Show prerequisites"];
+        }
+        return [...base, "Show me an example"];
+    };
+    const quickActions = getQuickActions();
 
     return (
         <>
@@ -182,7 +218,7 @@ export const TutorChat: React.FC<TutorChatProps> = ({ studentId, currentConceptI
                                 '& .MuiSwitch-switchBase.Mui-checked': { color: '#2D5A3D' },
                                 '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': { backgroundColor: '#2D5A3D' },
                             }} />}
-                            label={<Typography variant="caption" sx={{ fontSize: '0.65rem', color: '#8C8C8C' }}>{socraticMode ? 'Socratic' : 'Direct'}</Typography>}
+                            label={<Typography variant="caption" sx={{ fontSize: '0.65rem', color: '#8C8C8C' }}>{socraticMode ? 'Guide me' : 'Just tell me'}</Typography>}
                             labelPlacement="start"
                             sx={{ m: 0 }}
                         />
@@ -198,6 +234,21 @@ export const TutorChat: React.FC<TutorChatProps> = ({ studentId, currentConceptI
                         </IconButton>
                     </Box>
                 </Box>
+
+                {/* Context banner */}
+                {conceptName && context !== 'general' && (
+                    <Box sx={{
+                        px: 2, py: 1,
+                        bgcolor: 'rgba(45, 90, 61, 0.04)',
+                        borderBottom: '1px solid rgba(0,0,0,0.06)',
+                        display: 'flex', alignItems: 'center', gap: 1,
+                    }}>
+                        <MenuBookIcon sx={{ fontSize: 14, color: '#2D5A3D' }} />
+                        <Typography sx={{ fontSize: '0.68rem', color: '#2D5A3D', fontWeight: 600 }}>
+                            {context === 'quiz' ? '📝 Quizzing' : '📖 Studying'}: {conceptName}
+                        </Typography>
+                    </Box>
+                )}
 
                 {/* Messages Area */}
                 <Box sx={{

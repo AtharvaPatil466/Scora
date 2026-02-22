@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
 import {
     Box, Typography, Card, CardContent, CircularProgress,
-    Button, CardActions, Chip, Divider, Skeleton, IconButton
+    Button, CardActions, Chip, Divider, Skeleton, IconButton,
+    LinearProgress, Snackbar
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
@@ -12,12 +13,15 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
+import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined';
+import BoltIcon from '@mui/icons-material/Bolt';
 import Grid from '@mui/material/Grid2';
 import {
     setStudent, setRecommendations, setLoading
 } from '../store';
 import * as api from '../api';
-import { Recommendation } from '../types';
+import { Recommendation, KnowledgeGraphData } from '../types';
 
 import ContentViewer from './student/ContentViewer';
 import AdaptiveQuiz from './student/AdaptiveQuiz';
@@ -25,6 +29,8 @@ import TutorChat from './student/TutorChat';
 import Achievements from './student/Achievements';
 import ProgressMap from './student/ProgressMap';
 import StudyGroups from './student/StudyGroups';
+import LearningPath from './student/LearningPath';
+import MasteryRipple from './student/MasteryRipple';
 import { CompletionData } from '../types/content';
 import { QuizResult } from '../types/quiz';
 
@@ -34,6 +40,10 @@ const StudentDashboard: React.FC = () => {
 
     const [activeContent, setActiveContent] = useState<Recommendation | null>(null);
     const [quizMode, setQuizMode] = useState(false);
+    const [kgData, setKgData] = useState<KnowledgeGraphData | null>(null);
+    const [feedbackSnack, setFeedbackSnack] = useState(false);
+    const [rippleOpen, setRippleOpen] = useState(false);
+    const [rippleData, setRippleData] = useState<{ conceptId: number; conceptName: string; score: number } | null>(null);
 
     const DEMO_STUDENT_ID = 'sam';
 
@@ -53,6 +63,12 @@ const StudentDashboard: React.FC = () => {
 
                 const recs = await api.getRecommendations(DEMO_STUDENT_ID, 5, studentData.knowledge_state);
                 dispatch(setRecommendations(recs));
+
+                // Fetch KG data for Top Skills card + mini graph
+                try {
+                    const kg = await api.getKnowledgeGraph(DEMO_STUDENT_ID);
+                    setKgData(kg);
+                } catch { /* KG is optional, degrade gracefully */ }
             } catch (error) {
                 console.error("Error fetching data:", error);
             } finally {
@@ -89,9 +105,18 @@ const StudentDashboard: React.FC = () => {
             }
         }
 
-        alert(`Quiz Complete! Score: ${(result.raw_score * 100).toFixed(0)}%.`);
-        setActiveContent(null);
-        setQuizMode(false);
+        // Show Mastery Ripple instead of alert
+        if (kgData && activeContent) {
+            setRippleData({
+                conceptId: activeContent.concept_id,
+                conceptName: activeContent.concept_name,
+                score: result.raw_score,
+            });
+            setRippleOpen(true);
+        } else {
+            setActiveContent(null);
+            setQuizMode(false);
+        }
     };
 
     const handleBack = () => {
@@ -99,22 +124,43 @@ const StudentDashboard: React.FC = () => {
         setQuizMode(false);
     };
 
+    // Generate human-readable causal explanation
+    const generateWhyThis = (rec: Recommendation): string => {
+        const masteryPct = (rec.current_mastery * 100).toFixed(0);
+        if (rec.current_mastery < 0.3) {
+            return `You're at ${masteryPct}% on ${rec.concept_name} — this is a critical gap. Filling it now unlocks harder topics ahead.`;
+        } else if (rec.current_mastery < 0.6) {
+            return `You've started ${rec.concept_name} (${masteryPct}% mastery) but haven't locked it in yet. One focused session should get you there.`;
+        } else {
+            return `You're close to mastering ${rec.concept_name} at ${masteryPct}%. This session pushes you over the finish line.`;
+        }
+    };
+
     if (isLoading) {
         return (
-            <Box sx={{ p: 4 }}>
-                <Skeleton variant="text" sx={{ fontSize: '3rem', width: '40%', mb: 4, bgcolor: 'rgba(255,255,255,0.05)' }} />
-                <Grid container spacing={3} sx={{ mb: 4 }}>
+            <Box sx={{ p: 4, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh' }}>
+                <Box sx={{ textAlign: 'center', mb: 5 }}>
+                    <Box sx={{ display: 'inline-flex', p: 2, borderRadius: '50%', bgcolor: 'rgba(45, 90, 61, 0.06)', mb: 3 }}>
+                        <AutoAwesomeIcon sx={{ fontSize: 36, color: '#2D5A3D', animation: 'pulse 2s ease-in-out infinite' }} />
+                    </Box>
+                    <Typography variant="h6" sx={{ color: '#1A1A1A', fontWeight: 600, fontFamily: '"Playfair Display", serif', mb: 0.5 }}>
+                        Analyzing your learning profile…
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: '#8C8C8C' }}>
+                        PEARL is generating personalized recommendations
+                    </Typography>
+                </Box>
+                <Grid container spacing={3} sx={{ maxWidth: 900, width: '100%' }}>
                     {[1, 2, 3, 4].map((i) => (
                         <Grid size={{ xs: 6, md: 3 }} key={i}>
-                            <Skeleton variant="rectangular" height={120} sx={{ borderRadius: 3, bgcolor: 'rgba(255,255,255,0.03)' }} />
+                            <Skeleton variant="rectangular" height={110} sx={{ borderRadius: 3, bgcolor: 'rgba(45, 90, 61, 0.04)', animation: 'pulse 1.5s ease-in-out infinite' }} />
                         </Grid>
                     ))}
                 </Grid>
-                <Skeleton variant="text" sx={{ fontSize: '2rem', width: '20%', mt: 4, mb: 2, bgcolor: 'rgba(255,255,255,0.05)' }} />
-                <Grid container spacing={3}>
+                <Grid container spacing={3} sx={{ maxWidth: 900, width: '100%', mt: 3 }}>
                     {[1, 2, 3].map((i) => (
                         <Grid size={{ xs: 12, md: 4 }} key={i}>
-                            <Skeleton variant="rectangular" height={260} sx={{ borderRadius: 3, bgcolor: 'rgba(255,255,255,0.03)' }} />
+                            <Skeleton variant="rectangular" height={260} sx={{ borderRadius: 3, bgcolor: 'rgba(45, 90, 61, 0.03)', animation: 'pulse 1.5s ease-in-out infinite' }} />
                         </Grid>
                     ))}
                 </Grid>
@@ -132,12 +178,12 @@ const StudentDashboard: React.FC = () => {
                     <IconButton
                         onClick={handleBack}
                         sx={{
-                            bgcolor: 'rgba(59, 130, 246, 0.1)',
-                            border: '1px solid rgba(59, 130, 246, 0.2)',
-                            '&:hover': { bgcolor: 'rgba(59, 130, 246, 0.2)' }
+                            bgcolor: 'rgba(45, 90, 61, 0.08)',
+                            border: '1px solid rgba(45, 90, 61, 0.15)',
+                            '&:hover': { bgcolor: 'rgba(45, 90, 61, 0.15)' }
                         }}
                     >
-                        <ArrowBackIcon sx={{ color: 'primary.light' }} />
+                        <ArrowBackIcon sx={{ color: '#2D5A3D' }} />
                     </IconButton>
                     <Box>
                         <Typography variant="caption" sx={{ color: 'text.muted', letterSpacing: 1, textTransform: 'uppercase' }}>
@@ -181,22 +227,21 @@ const StudentDashboard: React.FC = () => {
     const avgMastery = student.knowledgeState.reduce((a, b) => a + b, 0) / student.knowledgeState.length;
     const masteredCount = student.knowledgeState.filter(k => k > 0.7).length;
 
+    // Compute top 3 skills from KG data
+    const topSkills = kgData
+        ? [...kgData.nodes]
+            .sort((a, b) => b.mastery - a.mastery)
+            .slice(0, 3)
+        : [];
+
     const statCards = [
         {
             label: 'Overall Mastery',
             value: `${(avgMastery * 100).toFixed(0)}%`,
-            subtitle: '',
+            subtitle: 'across all topics',
             icon: <TrendingUpIcon />,
             color: '#2D5A3D',
             glow: 'rgba(45, 90, 61, 0.1)',
-        },
-        {
-            label: 'Concepts Mastered',
-            value: `${masteredCount}`,
-            subtitle: `of ${student.knowledgeState.length} concepts`,
-            icon: <AutoAwesomeIcon />,
-            color: '#2563EB',
-            glow: 'rgba(37, 99, 235, 0.1)',
         },
         {
             label: 'Day Streak',
@@ -209,7 +254,7 @@ const StudentDashboard: React.FC = () => {
         {
             label: 'Total XP',
             value: '1,250',
-            subtitle: 'points earned',
+            subtitle: `last: +40 XP (Counting 72%→84%)`,
             icon: <EmojiEventsIcon />,
             color: '#B45309',
             glow: 'rgba(180, 83, 9, 0.1)',
@@ -310,6 +355,66 @@ const StudentDashboard: React.FC = () => {
                         </Card>
                     </Grid>
                 ))}
+
+                {/* Top Skills card (replaces Concepts Mastered) */}
+                <Grid size={{ xs: 6, md: 3 }}>
+                    <Card
+                        className="animate-in animate-in-delay-4"
+                        sx={{
+                            p: 0, position: 'relative', overflow: 'hidden',
+                            bgcolor: '#FFFFFF',
+                            border: '1px solid rgba(0,0,0,0.08)',
+                            '&:hover': {
+                                transform: 'translateY(-4px)',
+                                boxShadow: '0 8px 24px rgba(45, 90, 61, 0.1)',
+                            }
+                        }}
+                    >
+                        <CardContent sx={{ p: 2.5 }}>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1.5 }}>
+                                <Typography variant="caption" sx={{ color: '#8C8C8C', fontWeight: 600, letterSpacing: 0.5, textTransform: 'uppercase', fontSize: '0.65rem' }}>
+                                    Top Skills
+                                </Typography>
+                                <Box sx={{
+                                    width: 44, height: 44, borderRadius: 2.5,
+                                    bgcolor: 'rgba(45, 90, 61, 0.06)',
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    color: '#2D5A3D',
+                                }}>
+                                    <AutoAwesomeIcon />
+                                </Box>
+                            </Box>
+                            {topSkills.length > 0 ? topSkills.map((skill, i) => (
+                                <Box key={i} sx={{ mb: i < 2 ? 1.2 : 0 }}>
+                                    <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.3 }}>
+                                        <Typography sx={{ fontSize: '0.72rem', fontWeight: 600, color: '#1A1A1A', maxWidth: '70%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                            {skill.label}
+                                        </Typography>
+                                        <Typography sx={{ fontSize: '0.65rem', fontWeight: 700, color: '#2D5A3D' }}>
+                                            {(skill.mastery * 100).toFixed(0)}%
+                                        </Typography>
+                                    </Box>
+                                    <LinearProgress
+                                        variant="determinate"
+                                        value={skill.mastery * 100}
+                                        sx={{
+                                            height: 4, borderRadius: 2,
+                                            bgcolor: 'rgba(0,0,0,0.04)',
+                                            '& .MuiLinearProgress-bar': {
+                                                borderRadius: 2,
+                                                background: 'linear-gradient(90deg, #2D5A3D, #4A8C62)',
+                                            }
+                                        }}
+                                    />
+                                </Box>
+                            )) : (
+                                <Typography sx={{ fontSize: '0.75rem', color: '#8C8C8C' }}>
+                                    {masteredCount} of {student.knowledgeState.length} concepts
+                                </Typography>
+                            )}
+                        </CardContent>
+                    </Card>
+                </Grid>
             </Grid>
 
             {/* ── Today's Focus - Recommendations ── */}
@@ -395,10 +500,13 @@ const StudentDashboard: React.FC = () => {
 
                                     <Divider sx={{ borderColor: 'rgba(0,0,0,0.06)', mb: 2 }} />
 
-                                    {/* Difficulty bar */}
+                                    {/* Stretch Level bar */}
                                     <Box sx={{ mb: 2 }}>
-                                        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
-                                            <Typography variant="caption" sx={{ color: '#8C8C8C', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 0.5, fontSize: '0.62rem' }}>Difficulty</Typography>
+                                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 0.5 }}>
+                                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                                                <BoltIcon sx={{ fontSize: 13, color: '#8C8C8C' }} />
+                                                <Typography variant="caption" sx={{ color: '#8C8C8C', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 0.5, fontSize: '0.62rem' }}>Stretch Level</Typography>
+                                            </Box>
                                             <Typography variant="caption" sx={{ color: '#1A1A1A', fontWeight: 700 }}>{(rec.difficulty * 10).toFixed(1)} / 10</Typography>
                                         </Box>
                                         <Box sx={{ width: '100%', height: 4, bgcolor: 'rgba(0,0,0,0.06)', borderRadius: 2, overflow: 'hidden' }}>
@@ -406,23 +514,20 @@ const StudentDashboard: React.FC = () => {
                                                 width: `${rec.difficulty * 100}%`,
                                                 height: '100%',
                                                 borderRadius: 2,
-                                                background: rec.difficulty > 0.7
-                                                    ? 'linear-gradient(90deg, #F59E0B, #EF4444)'
-                                                    : rec.difficulty > 0.4
-                                                        ? 'linear-gradient(90deg, #F59E0B, #D97706)'
-                                                        : 'linear-gradient(90deg, #2D5A3D, #4A8C62)',
+                                                background: 'linear-gradient(90deg, #2D5A3D, #4A8C62)',
                                                 transition: 'width 800ms cubic-bezier(0.16, 1, 0.3, 1)',
                                             }} />
                                         </Box>
+                                        <Typography variant="caption" sx={{ color: '#8C8C8C', fontSize: '0.55rem', mt: 0.3, display: 'block' }}>CQL-validated · safe for you</Typography>
                                     </Box>
 
                                     {/* Metadata row */}
                                     <Box sx={{ display: 'flex', gap: 2, mb: 2.5 }}>
-                                        <Typography variant="caption" sx={{ color: 'text.muted' }}>⏱ ~15 min</Typography>
-                                        <Typography variant="caption" sx={{ color: 'text.muted', textTransform: 'capitalize' }}>📺 {rec.content_type}</Typography>
+                                        <Typography variant="caption" sx={{ color: '#8C8C8C' }}>⏱ ~15 min</Typography>
+                                        <Typography variant="caption" sx={{ color: '#8C8C8C', textTransform: 'capitalize' }}>📺 {rec.content_type}</Typography>
                                     </Box>
 
-                                    {/* AI Explanation */}
+                                    {/* AI Explanation — human-readable */}
                                     <Box sx={{
                                         p: 2,
                                         bgcolor: 'rgba(45, 90, 61, 0.04)',
@@ -433,14 +538,24 @@ const StudentDashboard: React.FC = () => {
                                             WHY THIS? →
                                         </Typography>
                                         <Typography variant="body2" sx={{ color: '#5C5C5C', fontSize: '0.8rem', lineHeight: 1.5 }}>
-                                            {rec.explanation}
+                                            {generateWhyThis(rec)}
                                         </Typography>
+                                    </Box>
+
+                                    {/* Feedback */}
+                                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1.5, gap: 0.5 }}>
+                                        <IconButton size="small" onClick={(e) => { e.stopPropagation(); setFeedbackSnack(true); }} sx={{ color: '#8C8C8C', '&:hover': { color: '#2D5A3D', bgcolor: 'rgba(45,90,61,0.06)' } }}>
+                                            <ThumbUpAltOutlinedIcon sx={{ fontSize: 16 }} />
+                                        </IconButton>
+                                        <IconButton size="small" onClick={(e) => { e.stopPropagation(); setFeedbackSnack(true); }} sx={{ color: '#8C8C8C', '&:hover': { color: '#DC2626', bgcolor: 'rgba(220,38,38,0.06)' } }}>
+                                            <ThumbDownAltOutlinedIcon sx={{ fontSize: 16 }} />
+                                        </IconButton>
                                     </Box>
                                 </CardContent>
 
                                 <CardActions sx={{ p: 2.5, pt: 0 }}>
                                     <Button
-                                        variant={index === 0 ? "contained" : "outlined"}
+                                        variant="contained"
                                         color="primary"
                                         fullWidth
                                         onClick={() => handleStartContent(rec)}
@@ -448,20 +563,25 @@ const StudentDashboard: React.FC = () => {
                                         sx={{
                                             fontWeight: 700,
                                             py: 1.2,
-                                            ...(index === 0 && {
+                                            fontSize: '0.875rem',
+                                            borderRadius: 2,
+                                            ...(index === 0 ? {
                                                 background: '#2D5A3D',
+                                                color: '#FFFFFF',
+                                                border: '1px solid transparent',
                                                 boxShadow: '0 4px 12px rgba(45, 90, 61, 0.2)',
                                                 '&:hover': {
                                                     background: '#1B4332',
                                                     boxShadow: '0 6px 18px rgba(45, 90, 61, 0.3)',
                                                 }
-                                            }),
-                                            ...(index !== 0 && {
-                                                borderColor: 'rgba(45, 90, 61, 0.3)',
+                                            } : {
+                                                background: 'rgba(45, 90, 61, 0.06)',
                                                 color: '#2D5A3D',
+                                                boxShadow: 'none',
+                                                border: '1px solid rgba(45, 90, 61, 0.2)',
                                                 '&:hover': {
-                                                    borderColor: '#2D5A3D',
-                                                    bgcolor: 'rgba(45, 90, 61, 0.04)',
+                                                    background: 'rgba(45, 90, 61, 0.1)',
+                                                    boxShadow: 'none',
                                                 }
                                             }),
                                         }}
@@ -474,6 +594,28 @@ const StudentDashboard: React.FC = () => {
                     ))}
                 </Grid>
             </Box>
+
+            {/* ── Learning Path ── */}
+            {kgData && (
+                <Box sx={{ mb: 5 }} className="animate-in animate-in-delay-4">
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                        <Box>
+                            <Typography variant="caption" sx={{ color: '#2D5A3D', fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', fontSize: '0.65rem' }}>
+                                AI-GENERATED
+                            </Typography>
+                            <Typography variant="h6" sx={{ mt: 0.5, fontWeight: 700, color: '#1A1A1A', fontFamily: '"Playfair Display", serif' }}>
+                                Your Learning Journey
+                            </Typography>
+                        </Box>
+                        <Button variant="text" size="small" endIcon={<ArrowForwardIcon sx={{ fontSize: 16 }} />} sx={{ color: '#2D5A3D', fontWeight: 600 }}>
+                            Full path
+                        </Button>
+                    </Box>
+                    <Card elevation={0} sx={{ bgcolor: '#FFFFFF', border: '1px solid rgba(0,0,0,0.08)', p: 3 }}>
+                        <LearningPath kgData={kgData} />
+                    </Card>
+                </Box>
+            )}
 
             {/* ── Middle Section: Map & Achievements ── */}
             <Grid container spacing={4} className="animate-in animate-in-delay-4">
@@ -532,6 +674,33 @@ const StudentDashboard: React.FC = () => {
                     </Box>
                 </Grid>
             </Grid>
+
+            {/* Feedback Snackbar */}
+            <Snackbar
+                open={feedbackSnack}
+                autoHideDuration={2000}
+                onClose={() => setFeedbackSnack(false)}
+                message="Thanks! This helps PEARL learn your preferences."
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+                ContentProps={{ sx: { bgcolor: '#2D5A3D', borderRadius: 2, fontWeight: 600 } }}
+            />
+
+            {/* Mastery Ripple Overlay */}
+            {kgData && rippleData && (
+                <MasteryRipple
+                    open={rippleOpen}
+                    onClose={() => {
+                        setRippleOpen(false);
+                        setRippleData(null);
+                        setActiveContent(null);
+                        setQuizMode(false);
+                    }}
+                    completedConceptId={rippleData.conceptId}
+                    completedConceptName={rippleData.conceptName}
+                    score={rippleData.score}
+                    kgData={kgData}
+                />
+            )}
         </Box>
     );
 };

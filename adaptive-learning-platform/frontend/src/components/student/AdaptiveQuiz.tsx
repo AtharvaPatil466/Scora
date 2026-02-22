@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Button, Paper, LinearProgress, Chip, Collapse, IconButton, CircularProgress } from '@mui/material';
+import { Box, Typography, Button, Paper, LinearProgress, Chip, Collapse, IconButton, CircularProgress, Snackbar } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
@@ -41,6 +41,7 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
     // UI States
     const [feedbackState, setFeedbackState] = useState<'idle' | 'correct' | 'incorrect'>('idle');
     const [timeElapsed, setTimeElapsed] = useState(0);
+    const [diffAdjusted, setDiffAdjusted] = useState<'up' | 'down' | null>(null);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -100,6 +101,8 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
             setConsecutiveCorrect(prev => prev + 1);
             setConsecutiveWrong(0);
             setCurrentDifficulty(prev => Math.min(1.0, prev + 0.1));
+            setDiffAdjusted('up');
+            setTimeout(() => setDiffAdjusted(null), 2500);
 
             setResults(prev => [...prev, {
                 question_id: currentQuestion.id,
@@ -117,6 +120,8 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
             setConsecutiveWrong(prev => prev + 1);
             setConsecutiveCorrect(0);
             setCurrentDifficulty(prev => Math.max(0.1, prev - 0.15));
+            setDiffAdjusted('down');
+            setTimeout(() => setDiffAdjusted(null), 2500);
             setAttempts(newAttempts);
         }
     };
@@ -175,6 +180,20 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
                             fontSize: '0.7rem',
                         }}
                     />
+                    {diffAdjusted && (
+                        <Chip
+                            label={diffAdjusted === 'up' ? 'AI adjusted ↑' : 'AI adjusted ↓'}
+                            size="small"
+                            sx={{
+                                bgcolor: diffAdjusted === 'up' ? 'rgba(45, 90, 61, 0.08)' : 'rgba(217, 119, 6, 0.08)',
+                                color: diffAdjusted === 'up' ? '#2D5A3D' : '#D97706',
+                                fontWeight: 600,
+                                fontSize: '0.6rem',
+                                height: 22,
+                                animation: 'fadeInUp 400ms ease both',
+                            }}
+                        />
+                    )}
                 </Box>
             </Box>
 
