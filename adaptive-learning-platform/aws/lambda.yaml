@@ -1,0 +1,121 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Adaptive Learning Platform - Lambda Functions Stack
+
+Parameters:
+  Environment:
+    Type: String
+    Default: prod
+    AllowedValues: [dev, staging, prod]
+  StudentStatesTable:
+    Type: String
+  InteractionLogsTable:
+    Type: String
+  GNNEndpoint:
+    Type: String
+  CQLPolicyEndpoint:
+    Type: String
+  PEARLEndpoint:
+    Type: String
+
+Resources:
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: AdaptiveLearningAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - dynamodb:GetItem
+                  - dynamodb:PutItem
+                  - dynamodb:UpdateItem
+                  - dynamodb:Query
+                Resource:
+                  - !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${StudentStatesTable}"
+                  - !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${InteractionLogsTable}"
+              - Effect: Allow
+                Action:
+                  - sagemaker:InvokeEndpoint
+                Resource:
+                  - !Sub "arn:aws:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint/${GNNEndpoint}"
+                  - !Sub "arn:aws:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint/${CQLPolicyEndpoint}"
+                  - !Sub "arn:aws:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint/${PEARLEndpoint}"
+              - Effect: Allow
+                Action:
+                  - bedrock:InvokeModel
+                Resource:
+                  - "arn:aws:bedrock:*::foundation-model/anthropic.claude-*"
+  
+  RecommendationFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub "recommendation-handler-${Environment}"
+      Handler: api.recommendation_handler.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Runtime: python3.11
+      Timeout: 30
+      MemorySize: 512
+      Code:
+        S3Bucket: !Sub "adaptive-learning-artifacts-${AWS::AccountId}-${Environment}"
+        S3Key: "lambda/recommendation_handler.zip"
+      Environment:
+        Variables:
+          STUDENT_STATES_TABLE: !Ref StudentStatesTable
+          GNN_ENDPOINT: !Ref GNNEndpoint
+          CQL_ENDPOINT: !Ref CQLPolicyEndpoint
+          PEARL_ENDPOINT: !Ref PEARLEndpoint
+
+  StateUpdateFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub "state-update-handler-${Environment}"
+      Handler: api.state_update_handler.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Runtime: python3.11
+      Timeout: 15
+      MemorySize: 256
+      Code:
+        S3Bucket: !Sub "adaptive-learning-artifacts-${AWS::AccountId}-${Environment}"
+        S3Key: "lambda/state_update_handler.zip"
+      Environment:
+        Variables:
+          STUDENT_STATES_TABLE: !Ref StudentStatesTable
+          INTERACTION_LOGS_TABLE: !Ref InteractionLogsTable
+
+  ContentGenerationFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub "content-generation-handler-${Environment}"
+      Handler: api.content_generation_handler.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Runtime: python3.11
+      Timeout: 60
+      MemorySize: 256
+      Code:
+        S3Bucket: !Sub "adaptive-learning-artifacts-${AWS::AccountId}-${Environment}"
+        S3Key: "lambda/content_generation_handler.zip"
+
+Outputs:
+  RecommendationFunction:
+    Value: !GetAtt RecommendationFunction.Arn
+    Export:
+      Name: !Sub "${AWS::StackName}-RecommendationFunction"
+  StateUpdateFunction:
+    Value: !GetAtt StateUpdateFunction.Arn
+    Export:
+      Name: !Sub "${AWS::StackName}-StateUpdateFunction"
+  ContentGenerationFunction:
+    Value: !GetAtt ContentGenerationFunction.Arn
+    Export:
+      Name: !Sub "${AWS::StackName}-ContentGenerationFunction"

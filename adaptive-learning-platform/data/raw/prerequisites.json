@@ -1,0 +1,402 @@
+[
+  {
+    "from": 0,
+    "to": 1,
+    "difficulty_level": 2
+  },
+  {
+    "from": 1,
+    "to": 2,
+    "difficulty_level": 1
+  },
+  {
+    "from": 2,
+    "to": 3,
+    "difficulty_level": 3
+  },
+  {
+    "from": 3,
+    "to": 4,
+    "difficulty_level": 4
+  },
+  {
+    "from": 4,
+    "to": 5,
+    "difficulty_level": 3
+  },
+  {
+    "from": 5,
+    "to": 6,
+    "difficulty_level": 5
+  },
+  {
+    "from": 6,
+    "to": 7,
+    "difficulty_level": 5
+  },
+  {
+    "from": 7,
+    "to": 8,
+    "difficulty_level": 2
+  },
+  {
+    "from": 8,
+    "to": 9,
+    "difficulty_level": 3
+  },
+  {
+    "from": 9,
+    "to": 10,
+    "difficulty_level": 1
+  },
+  {
+    "from": 10,
+    "to": 11,
+    "difficulty_level": 2
+  },
+  {
+    "from": 11,
+    "to": 12,
+    "difficulty_level": 4
+  },
+  {
+    "from": 12,
+    "to": 13,
+    "difficulty_level": 1
+  },
+  {
+    "from": 13,
+    "to": 14,
+    "difficulty_level": 1
+  },
+  {
+    "from": 14,
+    "to": 15,
+    "difficulty_level": 4
+  },
+  {
+    "from": 15,
+    "to": 16,
+    "difficulty_level": 1
+  },
+  {
+    "from": 16,
+    "to": 17,
+    "difficulty_level": 1
+  },
+  {
+    "from": 17,
+    "to": 18,
+    "difficulty_level": 4
+  },
+  {
+    "from": 18,
+    "to": 19,
+    "difficulty_level": 5
+  },
+  {
+    "from": 19,
+    "to": 20,
+    "difficulty_level": 4
+  },
+  {
+    "from": 20,
+    "to": 21,
+    "difficulty_level": 1
+  },
+  {
+    "from": 21,
+    "to": 22,
+    "difficulty_level": 3
+  },
+  {
+    "from": 22,
+    "to": 23,
+    "difficulty_level": 3
+  },
+  {
+    "from": 23,
+    "to": 24,
+    "difficulty_level": 3
+  },
+  {
+    "from": 24,
+    "to": 25,
+    "difficulty_level": 1
+  },
+  {
+    "from": 25,
+    "to": 26,
+    "difficulty_level": 1
+  },
+  {
+    "from": 26,
+    "to": 27,
+    "difficulty_level": 2
+  },
+  {
+    "from": 27,
+    "to": 28,
+    "difficulty_level": 4
+  },
+  {
+    "from": 28,
+    "to": 29,
+    "difficulty_level": 4
+  },
+  {
+    "from": 29,
+    "to": 30,
+    "difficulty_level": 3
+  },
+  {
+    "from": 30,
+    "to": 31,
+    "difficulty_level": 2
+  },
+  {
+    "from": 31,
+    "to": 32,
+    "difficulty_level": 1
+  },
+  {
+    "from": 32,
+    "to": 33,
+    "difficulty_level": 2
+  },
+  {
+    "from": 33,
+    "to": 34,
+    "difficulty_level": 2
+  },
+  {
+    "from": 34,
+    "to": 35,
+    "difficulty_level": 2
+  },
+  {
+    "from": 35,
+    "to": 36,
+    "difficulty_level": 3
+  },
+  {
+    "from": 36,
+    "to": 37,
+    "difficulty_level": 1
+  },
+  {
+    "from": 37,
+    "to": 38,
+    "difficulty_level": 1
+  },
+  {
+    "from": 38,
+    "to": 39,
+    "difficulty_level": 4
+  },
+  {
+    "from": 39,
+    "to": 40,
+    "difficulty_level": 5
+  },
+  {
+    "from": 40,
+    "to": 41,
+    "difficulty_level": 5
+  },
+  {
+    "from": 41,
+    "to": 42,
+    "difficulty_level": 2
+  },
+  {
+    "from": 42,
+    "to": 43,
+    "difficulty_level": 4
+  },
+  {
+    "from": 43,
+    "to": 44,
+    "difficulty_level": 3
+  },
+  {
+    "from": 44,
+    "to": 45,
+    "difficulty_level": 5
+  },
+  {
+    "from": 45,
+    "to": 46,
+    "difficulty_level": 4
+  },
+  {
+    "from": 46,
+    "to": 47,
+    "difficulty_level": 4
+  },
+  {
+    "from": 47,
+    "to": 48,
+    "difficulty_level": 1
+  },
+  {
+    "from": 48,
+    "to": 49,
+    "difficulty_level": 5
+  },
+  {
+    "from": 8,
+    "to": 13,
+    "difficulty_level": 5
+  },
+  {
+    "from": 40,
+    "to": 42,
+    "difficulty_level": 4
+  },
+  {
+    "from": 2,
+    "to": 4,
+    "difficulty_level": 1
+  },
+  {
+    "from": 46,
+    "to": 49,
+    "difficulty_level": 1
+  },
+  {
+    "from": 27,
+    "to": 30,
+    "difficulty_level": 5
+  },
+  {
+    "from": 15,
+    "to": 17,
+    "difficulty_level": 4
+  },
+  {
+    "from": 26,
+    "to": 31,
+    "difficulty_level": 4
+  },
+  {
+    "from": 16,
+    "to": 21,
+    "difficulty_level": 2
+  },
+  {
+    "from": 40,
+    "to": 43,
+    "difficulty_level": 1
+  },
+  {
+    "from": 41,
+    "to": 44,
+    "difficulty_level": 4
+  },
+  {
+    "from": 22,
+    "to": 25,
+    "difficulty_level": 1
+  },
+  {
+    "from": 9,
+    "to": 14,
+    "difficulty_level": 4
+  },
+  {
+    "from": 14,
+    "to": 16,
+    "difficulty_level": 1
+  },
+  {
+    "from": 8,
+    "to": 10,
+    "difficulty_level": 4
+  },
+  {
+    "from": 21,
+    "to": 24,
+    "difficulty_level": 2
+  },
+  {
+    "from": 4,
+    "to": 9,
+    "difficulty_level": 4
+  },
+  {
+    "from": 14,
+    "to": 18,
+    "difficulty_level": 5
+  },
+  {
+    "from": 18,
+    "to": 23,
+    "difficulty_level": 4
+  },
+  {
+    "from": 11,
+    "to": 14,
+    "difficulty_level": 2
+  },
+  {
+    "from": 29,
+    "to": 32,
+    "difficulty_level": 2
+  },
+  {
+    "from": 17,
+    "to": 22,
+    "difficulty_level": 3
+  },
+  {
+    "from": 5,
+    "to": 7,
+    "difficulty_level": 2
+  },
+  {
+    "from": 23,
+    "to": 27,
+    "difficulty_level": 1
+  },
+  {
+    "from": 39,
+    "to": 44,
+    "difficulty_level": 2
+  },
+  {
+    "from": 10,
+    "to": 12,
+    "difficulty_level": 3
+  },
+  {
+    "from": 34,
+    "to": 39,
+    "difficulty_level": 1
+  },
+  {
+    "from": 9,
+    "to": 13,
+    "difficulty_level": 3
+  },
+  {
+    "from": 38,
+    "to": 42,
+    "difficulty_level": 4
+  },
+  {
+    "from": 22,
+    "to": 27,
+    "difficulty_level": 3
+  },
+  {
+    "from": 27,
+    "to": 31,
+    "difficulty_level": 5
+  },
+  {
+    "from": 32,
+    "to": 36,
+    "difficulty_level": 5
+  }
+]

@@ -1,0 +1,781 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "name": "Topic 0",
+      "difficulty": 0.7629520490836877,
+      "id": "concept_0"
+    },
+    {
+      "name": "Topic 1",
+      "difficulty": 0.396478042282954,
+      "id": "concept_1"
+    },
+    {
+      "name": "Topic 2",
+      "difficulty": 0.3310047797193537,
+      "id": "concept_2"
+    },
+    {
+      "name": "Topic 3",
+      "difficulty": 0.6022050785566517,
+      "id": "concept_3"
+    },
+    {
+      "name": "Topic 4",
+      "difficulty": 0.7741465433626781,
+      "id": "concept_4"
+    },
+    {
+      "name": "Topic 5",
+      "difficulty": 0.24686574888398063,
+      "id": "concept_5"
+    },
+    {
+      "name": "Topic 6",
+      "difficulty": 0.8191796531079341,
+      "id": "concept_6"
+    },
+    {
+      "name": "Topic 7",
+      "difficulty": 0.8648095609992809,
+      "id": "concept_7"
+    },
+    {
+      "name": "Topic 8",
+      "difficulty": 0.45385783154491677,
+      "id": "concept_8"
+    },
+    {
+      "name": "Topic 9",
+      "difficulty": 0.49674473484482884,
+      "id": "concept_9"
+    },
+    {
+      "name": "Topic 10",
+      "difficulty": 0.24890763641494057,
+      "id": "concept_10"
+    },
+    {
+      "name": "Topic 11",
+      "difficulty": 0.7699188383272509,
+      "id": "concept_11"
+    },
+    {
+      "name": "Topic 12",
+      "difficulty": 0.34247123179390365,
+      "id": "concept_12"
+    },
+    {
+      "name": "Topic 13",
+      "difficulty": 0.4835458988648105,
+      "id": "concept_13"
+    },
+    {
+      "name": "Topic 14",
+      "difficulty": 0.3942209766707879,
+      "id": "concept_14"
+    },
+    {
+      "name": "Topic 15",
+      "difficulty": 0.5343392154544155,
+      "id": "concept_15"
+    },
+    {
+      "name": "Topic 16",
+      "difficulty": 0.5531411774943505,
+      "id": "concept_16"
+    },
+    {
+      "name": "Topic 17",
+      "difficulty": 0.7164739600602338,
+      "id": "concept_17"
+    },
+    {
+      "name": "Topic 18",
+      "difficulty": 0.7313236225159304,
+      "id": "concept_18"
+    },
+    {
+      "name": "Topic 19",
+      "difficulty": 0.40629073154967643,
+      "id": "concept_19"
+    },
+    {
+      "name": "Topic 20",
+      "difficulty": 0.4462937712123397,
+      "id": "concept_20"
+    },
+    {
+      "name": "Topic 21",
+      "difficulty": 0.5855487094822707,
+      "id": "concept_21"
+    },
+    {
+      "name": "Topic 22",
+      "difficulty": 0.4229024055528051,
+      "id": "concept_22"
+    },
+    {
+      "name": "Topic 23",
+      "difficulty": 0.341028749749823,
+      "id": "concept_23"
+    },
+    {
+      "name": "Topic 24",
+      "difficulty": 0.8968037666108789,
+      "id": "concept_24"
+    },
+    {
+      "name": "Topic 25",
+      "difficulty": 0.41397867032085556,
+      "id": "concept_25"
+    },
+    {
+      "name": "Topic 26",
+      "difficulty": 0.5231356473667551,
+      "id": "concept_26"
+    },
+    {
+      "name": "Topic 27",
+      "difficulty": 0.8674320119183634,
+      "id": "concept_27"
+    },
+    {
+      "name": "Topic 28",
+      "difficulty": 0.7832638841033523,
+      "id": "concept_28"
+    },
+    {
+      "name": "Topic 29",
+      "difficulty": 0.38542939400649767,
+      "id": "concept_29"
+    },
+    {
+      "name": "Topic 30",
+      "difficulty": 0.21958211550877077,
+      "id": "concept_30"
+    },
+    {
+      "name": "Topic 31",
+      "difficulty": 0.6643583003930847,
+      "id": "concept_31"
+    },
+    {
+      "name": "Topic 32",
+      "difficulty": 0.774936655495678,
+      "id": "concept_32"
+    },
+    {
+      "name": "Topic 33",
+      "difficulty": 0.5123645677418844,
+      "id": "concept_33"
+    },
+    {
+      "name": "Topic 34",
+      "difficulty": 0.6275582868889862,
+      "id": "concept_34"
+    },
+    {
+      "name": "Topic 35",
+      "difficulty": 0.5183169693312175,
+      "id": "concept_35"
+    },
+    {
+      "name": "Topic 36",
+      "difficulty": 0.21136501439199532,
+      "id": "concept_36"
+    },
+    {
+      "name": "Topic 37",
+      "difficulty": 0.29260544903938535,
+      "id": "concept_37"
+    },
+    {
+      "name": "Topic 38",
+      "difficulty": 0.8596029091451948,
+      "id": "concept_38"
+    },
+    {
+      "name": "Topic 39",
+      "difficulty": 0.18100765493697848,
+      "id": "concept_39"
+    },
+    {
+      "name": "Topic 40",
+      "difficulty": 0.7086427467938461,
+      "id": "concept_40"
+    },
+    {
+      "name": "Topic 41",
+      "difficulty": 0.2387145052161418,
+      "id": "concept_41"
+    },
+    {
+      "name": "Topic 42",
+      "difficulty": 0.4929671584767239,
+      "id": "concept_42"
+    },
+    {
+      "name": "Topic 43",
+      "difficulty": 0.5624940893869574,
+      "id": "concept_43"
+    },
+    {
+      "name": "Topic 44",
+      "difficulty": 0.3496978502220294,
+      "id": "concept_44"
+    },
+    {
+      "name": "Topic 45",
+      "difficulty": 0.37402307169811755,
+      "id": "concept_45"
+    },
+    {
+      "name": "Topic 46",
+      "difficulty": 0.3494903932671021,
+      "id": "concept_46"
+    },
+    {
+      "name": "Topic 47",
+      "difficulty": 0.22839671544093143,
+      "id": "concept_47"
+    },
+    {
+      "name": "Topic 48",
+      "difficulty": 0.7643324247462834,
+      "id": "concept_48"
+    },
+    {
+      "name": "Topic 49",
+      "difficulty": 0.43402706419095793,
+      "id": "concept_49"
+    }
+  ],
+  "edges": [
+    {
+      "type": "prerequisite",
+      "strength": 0.6428566558952999,
+      "source": "concept_0",
+      "target": "concept_1"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.726016281420766,
+      "source": "concept_0",
+      "target": "concept_2"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6393318059876358,
+      "source": "concept_0",
+      "target": "concept_3"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.599062531409306,
+      "source": "concept_0",
+      "target": "concept_4"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5810081057681892,
+      "source": "concept_0",
+      "target": "concept_6"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6319780410988203,
+      "source": "concept_0",
+      "target": "concept_14"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5175405394474539,
+      "source": "concept_0",
+      "target": "concept_16"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5945420006894411,
+      "source": "concept_0",
+      "target": "concept_32"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.8058116674449289,
+      "source": "concept_0",
+      "target": "concept_38"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6021347757878778,
+      "source": "concept_0",
+      "target": "concept_45"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5248762334193814,
+      "source": "concept_0",
+      "target": "concept_46"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6324592021878113,
+      "source": "concept_1",
+      "target": "concept_3"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.8753926992181251,
+      "source": "concept_1",
+      "target": "concept_19"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6377141409764855,
+      "source": "concept_1",
+      "target": "concept_28"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5318263745635992,
+      "source": "concept_2",
+      "target": "concept_3"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.7298244098225724,
+      "source": "concept_2",
+      "target": "concept_10"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.748472346441506,
+      "source": "concept_2",
+      "target": "concept_15"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5865752622083569,
+      "source": "concept_2",
+      "target": "concept_29"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.8009873094691387,
+      "source": "concept_2",
+      "target": "concept_34"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.8948556302886463,
+      "source": "concept_3",
+      "target": "concept_5"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.560874297430352,
+      "source": "concept_3",
+      "target": "concept_21"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5478336893551203,
+      "source": "concept_3",
+      "target": "concept_23"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.7955441918864373,
+      "source": "concept_3",
+      "target": "concept_41"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.7220476970493199,
+      "source": "concept_3",
+      "target": "concept_48"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.8483118318763109,
+      "source": "concept_4",
+      "target": "concept_7"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.9607013994282755,
+      "source": "concept_4",
+      "target": "concept_8"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.7485671587692664,
+      "source": "concept_4",
+      "target": "concept_33"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.7274895682317817,
+      "source": "concept_5",
+      "target": "concept_11"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.8953106826188247,
+      "source": "concept_5",
+      "target": "concept_12"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6517895817569872,
+      "source": "concept_5",
+      "target": "concept_27"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5433698754120357,
+      "source": "concept_5",
+      "target": "concept_33"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.8819563326729332,
+      "source": "concept_6",
+      "target": "concept_7"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6743664021485508,
+      "source": "concept_6",
+      "target": "concept_13"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.827322528220249,
+      "source": "concept_6",
+      "target": "concept_18"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6518677182270503,
+      "source": "concept_7",
+      "target": "concept_10"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6932310648762339,
+      "source": "concept_7",
+      "target": "concept_42"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5225153379524485,
+      "source": "concept_7",
+      "target": "concept_44"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.634119749572027,
+      "source": "concept_7",
+      "target": "concept_45"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.9573220596822634,
+      "source": "concept_8",
+      "target": "concept_9"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6392661282031618,
+      "source": "concept_8",
+      "target": "concept_17"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6318346771489772,
+      "source": "concept_8",
+      "target": "concept_49"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.8921562681985127,
+      "source": "concept_9",
+      "target": "concept_17"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6061009340474661,
+      "source": "concept_9",
+      "target": "concept_23"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6518408177521968,
+      "source": "concept_10",
+      "target": "concept_14"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.7428787680333435,
+      "source": "concept_10",
+      "target": "concept_41"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.8907750691463368,
+      "source": "concept_11",
+      "target": "concept_18"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.7412603073948506,
+      "source": "concept_11",
+      "target": "concept_27"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5851915330708551,
+      "source": "concept_11",
+      "target": "concept_39"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.598398972079186,
+      "source": "concept_12",
+      "target": "concept_17"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.9021987342095845,
+      "source": "concept_12",
+      "target": "concept_22"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5853723036281335,
+      "source": "concept_12",
+      "target": "concept_25"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.662249597782719,
+      "source": "concept_12",
+      "target": "concept_29"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5293926100314394,
+      "source": "concept_12",
+      "target": "concept_46"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5656600868385003,
+      "source": "concept_13",
+      "target": "concept_24"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.9468855532754354,
+      "source": "concept_13",
+      "target": "concept_31"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6126469562622003,
+      "source": "concept_13",
+      "target": "concept_35"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5359186440348296,
+      "source": "concept_14",
+      "target": "concept_20"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.571007672789994,
+      "source": "concept_14",
+      "target": "concept_21"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.707774885635219,
+      "source": "concept_16",
+      "target": "concept_23"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5633016002933406,
+      "source": "concept_16",
+      "target": "concept_29"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.771393186989335,
+      "source": "concept_16",
+      "target": "concept_32"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6521185608656463,
+      "source": "concept_16",
+      "target": "concept_34"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6348287610303596,
+      "source": "concept_17",
+      "target": "concept_30"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.7962795226874426,
+      "source": "concept_18",
+      "target": "concept_19"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6366453248190524,
+      "source": "concept_18",
+      "target": "concept_25"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5496879288972445,
+      "source": "concept_18",
+      "target": "concept_47"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.722910092511664,
+      "source": "concept_19",
+      "target": "concept_30"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6706138331426333,
+      "source": "concept_19",
+      "target": "concept_40"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.8353732775340224,
+      "source": "concept_20",
+      "target": "concept_38"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6597735530270541,
+      "source": "concept_21",
+      "target": "concept_25"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5887610077427322,
+      "source": "concept_23",
+      "target": "concept_47"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.9572143782718472,
+      "source": "concept_24",
+      "target": "concept_26"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5744870744599165,
+      "source": "concept_24",
+      "target": "concept_43"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.9781604745479506,
+      "source": "concept_25",
+      "target": "concept_49"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.7697335024003442,
+      "source": "concept_26",
+      "target": "concept_47"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.706707005608219,
+      "source": "concept_28",
+      "target": "concept_32"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.8746298535287254,
+      "source": "concept_28",
+      "target": "concept_36"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5121601298519876,
+      "source": "concept_29",
+      "target": "concept_37"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.8486136084281042,
+      "source": "concept_32",
+      "target": "concept_37"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6994254228092252,
+      "source": "concept_32",
+      "target": "concept_42"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.9931962663069434,
+      "source": "concept_32",
+      "target": "concept_48"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.50069769016688,
+      "source": "concept_35",
+      "target": "concept_40"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.8644431137962405,
+      "source": "concept_36",
+      "target": "concept_48"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.7802722533696438,
+      "source": "concept_37",
+      "target": "concept_44"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.5987822036908875,
+      "source": "concept_39",
+      "target": "concept_40"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6407433785922599,
+      "source": "concept_41",
+      "target": "concept_42"
+    },
+    {
+      "type": "prerequisite",
+      "strength": 0.6441987687764583,
+      "source": "concept_42",
+      "target": "concept_44"
+    }
+  ]
+}

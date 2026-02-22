@@ -1,0 +1,366 @@
+import React, { useState, useEffect } from 'react';
+import { Box, Typography, Button, Paper, LinearProgress, IconButton, Divider, Chip } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import PersonIcon from '@mui/icons-material/Person';
+import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
+import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
+import FullscreenIcon from '@mui/icons-material/Fullscreen';
+import SettingsIcon from '@mui/icons-material/Settings';
+import ClosedCaptionIcon from '@mui/icons-material/ClosedCaption';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
+import SyncIcon from '@mui/icons-material/Sync';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import { ContentViewerProps } from '../../types/content';
+
+export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, studentId, contentType, title, contentUrl, onComplete, onProgress }) => {
+    const safeTitle = title || 'Lesson';
+    const [progress, setProgress] = useState(0);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [activeTab, setActiveTab] = useState('notes');
+
+    useEffect(() => {
+        let timer: NodeJS.Timeout;
+        if (isPlaying) {
+            timer = setInterval(() => {
+                setProgress(p => {
+                    const newP = p + 2;
+                    onProgress(newP);
+                    if (newP >= 100) {
+                        clearInterval(timer);
+                        setIsPlaying(false);
+                        return 100;
+                    }
+                    return newP;
+                });
+            }, 1000);
+        }
+        return () => clearInterval(timer);
+    }, [isPlaying, onProgress]);
+
+    const handleComplete = () => {
+        onComplete({
+            timeSpent: 120,
+            completed: true,
+            progress: 100
+        });
+    };
+
+    const tabs = [
+        { key: 'transcript', label: 'Transcript' },
+        { key: 'notes', label: 'Notes' },
+        { key: 'tutor', label: 'Ask Tutor' },
+    ];
+
+    return (
+        <Box sx={{ maxWidth: 1000, mx: 'auto', p: { xs: 1, md: 3 }, mt: 2 }} className="animate-in">
+            {/* Top Toolbar */}
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
+                <Typography variant="h6" fontWeight="bold" sx={{ color: 'text.primary', display: 'flex', alignItems: 'center', gap: 1 }}>
+                    {title || 'Concepts Overview'}
+                </Typography>
+                <Box sx={{ display: 'flex', gap: 0.5 }}>
+                    {[SearchIcon, PersonIcon, MenuIcon].map((Icon, i) => (
+                        <IconButton
+                            key={i}
+                            size="small"
+                            sx={{
+                                color: 'text.muted',
+                                bgcolor: 'rgba(255,255,255,0.03)',
+                                border: '1px solid rgba(255,255,255,0.06)',
+                                '&:hover': { bgcolor: 'rgba(255,255,255,0.08)', color: 'text.primary' },
+                            }}
+                        >
+                            <Icon fontSize="small" />
+                        </IconButton>
+                    ))}
+                </Box>
+            </Box>
+
+            {/* Video Player Area */}
+            <Paper
+                elevation={0}
+                sx={{
+                    position: 'relative',
+                    bgcolor: '#000',
+                    height: 420,
+                    borderRadius: 4,
+                    overflow: 'hidden',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    mb: 4,
+                    border: '1px solid rgba(255,255,255,0.06)',
+                }}
+            >
+                {/* Animated background */}
+                <Box sx={{
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    background: `
+                        radial-gradient(ellipse at 30% 50%, rgba(99,102,241,0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(16,185,129,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at center, rgba(99,102,241,0.08) 0%, black 70%)
+                    `,
+                    zIndex: 0,
+                }} />
+
+                {/* Play/Pause Button */}
+                <IconButton
+                    onClick={() => setIsPlaying(!isPlaying)}
+                    sx={{
+                        zIndex: 1,
+                        color: 'white',
+                        transition: 'all 300ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+                        '&:hover': { transform: 'scale(1.15)' },
+                        ...(isPlaying ? {} : {
+                            animation: 'pulseGlow 3s ease-in-out infinite',
+                            borderRadius: '50%',
+                        })
+                    }}
+                >
+                    {isPlaying
+                        ? <PauseCircleFilledIcon sx={{ fontSize: 88, opacity: 0.9 }} />
+                        : <PlayCircleFilledIcon sx={{ fontSize: 88 }} />
+                    }
+                </IconButton>
+                <Typography variant="body2" sx={{
+                    color: 'rgba(255,255,255,0.6)',
+                    zIndex: 1, mt: 1,
+                    opacity: isPlaying ? 0 : 1,
+                    transition: 'opacity 0.4s ease',
+                    fontWeight: 500,
+                }}>
+                    Click to {isPlaying ? 'pause' : 'play'}
+                </Typography>
+
+                {/* Player Controls */}
+                <Box sx={{
+                    position: 'absolute', bottom: 0, width: '100%', p: 2.5,
+                    background: 'linear-gradient(transparent, rgba(0,0,0,0.85))',
+                    zIndex: 1,
+                }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1.5 }}>
+                        <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.7)', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>01:23</Typography>
+                        <LinearProgress
+                            variant="determinate"
+                            value={progress}
+                            sx={{
+                                flexGrow: 1, height: 4, borderRadius: 2,
+                                bgcolor: 'rgba(255,255,255,0.15)',
+                                '& .MuiLinearProgress-bar': {
+                                    bgcolor: 'primary.main',
+                                    borderRadius: 2,
+                                    background: 'linear-gradient(90deg, #3B82F6, #60A5FA)',
+                                }
+                            }}
+                        />
+                        <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.7)', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>15:00</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <Button size="small" sx={{ color: 'rgba(255,255,255,0.8)', minWidth: 'auto', fontWeight: 600, fontSize: '0.75rem' }}>1x</Button>
+                        <Box>
+                            {[ClosedCaptionIcon, SettingsIcon, FullscreenIcon].map((Icon, i) => (
+                                <IconButton key={i} size="small" sx={{ color: 'rgba(255,255,255,0.7)', '&:hover': { color: 'white' } }}>
+                                    <Icon fontSize="small" />
+                                </IconButton>
+                            ))}
+                        </Box>
+                    </Box>
+                </Box>
+            </Paper>
+
+            {/* AI Generated Insight */}
+            <Paper
+                elevation={0}
+                sx={{
+                    p: 3, mb: 4, borderRadius: 3,
+                    border: '1px solid rgba(59, 130, 246, 0.15)',
+                    bgcolor: 'rgba(59, 130, 246, 0.04)',
+                    position: 'relative', overflow: 'hidden',
+                }}
+                className="animate-in animate-in-delay-1"
+            >
+                <Box sx={{ position: 'absolute', top: 0, left: 0, width: 4, height: '100%', background: 'linear-gradient(180deg, #3B82F6, #38BDF8)' }} />
+                <Box sx={{ display: 'flex', gap: 2, pl: 1 }}>
+                    <AutoAwesomeIcon sx={{ color: 'primary.light', mt: 0.3 }} />
+                    <Box sx={{ flexGrow: 1 }}>
+                        <Typography variant="caption" fontWeight="bold" sx={{ color: 'primary.light', display: 'block', letterSpacing: 1, fontSize: '0.65rem', mb: 1 }}>
+                            AI-GENERATED FOR YOU
+                        </Typography>
+                        <Typography variant="body1" sx={{ color: 'text.primary', fontStyle: 'italic', mb: 2, lineHeight: 1.7 }}>
+                            {safeTitle.toLowerCase().includes('fraction')
+                                ? '"Think of fractions like pizza slices. When adding fractions, you need everyone to have the same size slices (common denominator) before you can combine them!"'
+                                : safeTitle.toLowerCase().includes('geometry')
+                                    ? '"Picture geometry as the language of shapes. Every angle, line, and curve tells a story — and learning their relationships helps you decode the visual world!"'
+                                    : safeTitle.toLowerCase().includes('equation')
+                                        ? '"Think of equations like a balanced scale. Whatever you do to one side, you must do to the other — that\'s the golden rule!"'
+                                        : `"Let's explore ${safeTitle} step by step. This AI-generated insight is tailored to help you connect new concepts to what you already know!"`}
+                        </Typography>
+                        <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
+                            <Button size="small" startIcon={<SyncIcon sx={{ fontSize: 14 }} />} sx={{ color: 'text.muted', fontSize: '0.75rem' }}>Regenerate</Button>
+                            <Button size="small" startIcon={<StarBorderIcon sx={{ fontSize: 14 }} />} sx={{ color: 'text.muted', fontSize: '0.75rem' }}>Save</Button>
+                        </Box>
+                    </Box>
+                </Box>
+            </Paper>
+
+            {/* Layout Split: Chapters & Interactions */}
+            <Box sx={{ display: 'flex', gap: 4, flexDirection: { xs: 'column', md: 'row' } }} className="animate-in animate-in-delay-2">
+                {/* Chapters */}
+                <Box sx={{ flex: 1 }}>
+                    <Typography variant="caption" sx={{ color: 'text.muted', fontWeight: 700, letterSpacing: 2, fontSize: '0.65rem', display: 'block', mb: 2 }}>
+                        CHAPTERS
+                    </Typography>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                        {(safeTitle.toLowerCase().includes('fraction')
+                            ? [
+                                { label: '1. What Are Fractions?', done: true, current: false },
+                                { label: '2. Finding Common Denominators', done: false, current: true },
+                                { label: '3. Adding & Subtracting', done: false, current: false },
+                            ]
+                            : safeTitle.toLowerCase().includes('geometry')
+                                ? [
+                                    { label: '1. Points, Lines & Angles', done: true, current: false },
+                                    { label: '2. Shapes & Their Properties', done: false, current: true },
+                                    { label: '3. Area & Perimeter', done: false, current: false },
+                                ]
+                                : [
+                                    { label: `1. Introduction to ${safeTitle}`, done: true, current: false },
+                                    { label: '2. Core Concepts Explained', done: false, current: true },
+                                    { label: '3. Practice Quiz', done: false, current: false },
+                                ]
+                        ).map((ch, i) => (
+                            <Box
+                                key={i}
+                                sx={{
+                                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                                    p: 1.5, borderRadius: 2,
+                                    bgcolor: ch.current ? 'rgba(59, 130, 246, 0.08)' : 'transparent',
+                                    border: ch.current ? '1px solid rgba(59, 130, 246, 0.2)' : '1px solid transparent',
+                                    transition: 'all 200ms ease',
+                                    '&:hover': { bgcolor: 'rgba(255,255,255,0.03)' },
+                                }}
+                            >
+                                <Typography
+                                    variant="body2"
+                                    sx={{
+                                        display: 'flex', gap: 1, alignItems: 'center',
+                                        color: ch.done ? 'secondary.main' : ch.current ? 'primary.light' : 'text.muted',
+                                        fontWeight: ch.current ? 600 : 400,
+                                    }}
+                                >
+                                    {ch.done
+                                        ? <CheckCircleIcon sx={{ fontSize: 18, color: 'secondary.main' }} />
+                                        : ch.current
+                                            ? <PlayCircleFilledIcon sx={{ fontSize: 18 }} />
+                                            : <RadioButtonUncheckedIcon sx={{ fontSize: 18, opacity: 0.4 }} />
+                                    }
+                                    {ch.label}
+                                </Typography>
+                                {ch.current && (
+                                    <Chip label="Current" size="small" sx={{
+                                        bgcolor: 'rgba(59, 130, 246, 0.15)',
+                                        color: 'primary.light',
+                                        fontWeight: 600,
+                                        fontSize: '0.6rem',
+                                        height: 22,
+                                    }} />
+                                )}
+                            </Box>
+                        ))}
+                    </Box>
+                </Box>
+
+                {/* Interaction Tabs */}
+                <Box sx={{ flex: 1 }}>
+                    <Box sx={{ display: 'flex', gap: 0, mb: 2, borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative' }}>
+                        {tabs.map((tab) => (
+                            <Button
+                                key={tab.key}
+                                variant="text"
+                                onClick={() => setActiveTab(tab.key)}
+                                sx={{
+                                    color: activeTab === tab.key ? 'primary.light' : 'text.muted',
+                                    fontWeight: activeTab === tab.key ? 700 : 400,
+                                    fontSize: '0.85rem',
+                                    pb: 1.5,
+                                    px: 2,
+                                    borderRadius: 0,
+                                    borderBottom: activeTab === tab.key ? '2px solid' : '2px solid transparent',
+                                    borderColor: activeTab === tab.key ? 'primary.main' : 'transparent',
+                                    transition: 'all 200ms ease',
+                                    '&:hover': {
+                                        bgcolor: 'transparent',
+                                        color: 'text.primary',
+                                    },
+                                }}
+                            >
+                                {tab.label}
+                            </Button>
+                        ))}
+                    </Box>
+
+                    {activeTab === 'notes' && (
+                        <Paper elevation={0} sx={{
+                            p: 2.5, borderRadius: 2, minHeight: 150,
+                            bgcolor: 'rgba(10, 10, 15, 0.5)',
+                            border: '1px solid rgba(255,255,255,0.06)',
+                        }}>
+                            <Typography variant="caption" sx={{ color: 'text.muted', display: 'block', mb: 1, fontWeight: 600, letterSpacing: 0.5, fontSize: '0.6rem' }}>
+                                YOUR NOTES (auto-saved)
+                            </Typography>
+                            <Typography variant="body2" sx={{ color: 'text.primary', lineHeight: 1.7 }}>
+                                "Remember: check discriminant first!"
+                            </Typography>
+                            <Typography variant="caption" sx={{ color: 'text.muted', display: 'block', mt: 4, textAlign: 'right' }}>
+                                Last edited: 2 min ago
+                            </Typography>
+                        </Paper>
+                    )}
+                </Box>
+            </Box>
+
+            {/* Bottom Actions */}
+            <Box sx={{ mt: 5, display: 'flex', justifyContent: 'flex-end', gap: 2 }}>
+                <Button
+                    variant="outlined"
+                    onClick={() => setProgress(100)}
+                    sx={{
+                        borderColor: 'rgba(255,255,255,0.12)',
+                        color: 'text.secondary',
+                        '&:hover': { borderColor: 'rgba(255,255,255,0.25)' },
+                    }}
+                >
+                    Mark Complete
+                </Button>
+                <Button
+                    variant="contained"
+                    onClick={handleComplete}
+                    disabled={progress < 100}
+                    sx={{
+                        background: 'linear-gradient(135deg, #38BDF8, #0EA5E9)',
+                        '&:hover': {
+                            background: 'linear-gradient(135deg, #7DD3FC, #38BDF8)',
+                            boxShadow: '0 8px 24px rgba(56, 189, 248, 0.3)',
+                        },
+                        '&.Mui-disabled': {
+                            background: 'rgba(255,255,255,0.08)',
+                            color: 'rgba(255,255,255,0.3)',
+                        }
+                    }}
+                >
+                    Take Quiz 🎯
+                </Button>
+            </Box>
+        </Box>
+    );
+};
+
+export default ContentViewer;

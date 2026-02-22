@@ -1,0 +1,151 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Adaptive Learning Platform - API Gateway Stack
+
+Parameters:
+  Environment:
+    Type: String
+    Default: prod
+    AllowedValues: [dev, staging, prod]
+  RecommendationFunction:
+    Type: String
+  StateUpdateFunction:
+    Type: String
+  ContentGenerationFunction:
+    Type: String
+
+Resources:
+  AdaptiveLearningApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: !Sub "AdaptiveLearningAPI-${Environment}"
+      Description: API for Adaptive Learning Platform
+
+  # Students Resource (/students)
+  StudentsResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref AdaptiveLearningApi
+      ParentId: !GetAtt AdaptiveLearningApi.RootResourceId
+      PathPart: "students"
+
+  StudentIdResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref AdaptiveLearningApi
+      ParentId: !Ref StudentsResource
+      PathPart: "{id}"
+
+  # Recommend Resource (/students/{id}/recommend)
+  RecommendResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref AdaptiveLearningApi
+      ParentId: !Ref StudentIdResource
+      PathPart: "recommend"
+
+  RecommendPostMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref AdaptiveLearningApi
+      ResourceId: !Ref RecommendResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${RecommendationFunction}/invocations"
+
+  # Interact Resource (/students/{id}/interact)
+  InteractResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref AdaptiveLearningApi
+      ParentId: !Ref StudentIdResource
+      PathPart: "interact"
+
+  InteractPostMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref AdaptiveLearningApi
+      ResourceId: !Ref InteractResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${StateUpdateFunction}/invocations"
+
+  # Content Resource (/content)
+  ContentResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref AdaptiveLearningApi
+      ParentId: !GetAtt AdaptiveLearningApi.RootResourceId
+      PathPart: "content"
+
+  ContentGenerateResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref AdaptiveLearningApi
+      ParentId: !Ref ContentResource
+      PathPart: "generate"
+      
+  ContentGeneratePostMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref AdaptiveLearningApi
+      ResourceId: !Ref ContentGenerateResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${ContentGenerationFunction}/invocations"
+
+  # Permissions for API Gateway to invoke Lambda
+  RecommendFunctionPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref RecommendationFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${AdaptiveLearningApi}/*/POST/students/*/recommend"
+
+  InteractFunctionPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref StateUpdateFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${AdaptiveLearningApi}/*/POST/students/*/interact"
+
+  ContentGenerateFunctionPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref ContentGenerationFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${AdaptiveLearningApi}/*/POST/content/generate"
+
+  # API Deployment
+  ApiDeployment:
+    Type: AWS::ApiGateway::Deployment
+    DependsOn:
+      - RecommendPostMethod
+      - InteractPostMethod
+      - ContentGeneratePostMethod
+    Properties:
+      RestApiId: !Ref AdaptiveLearningApi
+
+  ApiStage:
+    Type: AWS::ApiGateway::Stage
+    Properties:
+      StageName: !Ref Environment
+      RestApiId: !Ref AdaptiveLearningApi
+      DeploymentId: !Ref ApiDeployment
+
+Outputs:
+  ApiUrl:
+    Value: !Sub "https://${AdaptiveLearningApi}.execute-api.${AWS::Region}.amazonaws.com/${Environment}/"
+    Export:
+      Name: !Sub "${AWS::StackName}-ApiUrl"

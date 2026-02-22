@@ -1,0 +1,65 @@
+{
+  "causal_dag": {
+    "num_nodes": 7,
+    "num_edges": 8,
+    "is_dag": true,
+    "edges": [
+      [
+        "prior_knowledge",
+        "success"
+      ],
+      [
+        "prior_knowledge",
+        "learning_gain"
+      ],
+      [
+        "avg_knowledge",
+        "prior_knowledge"
+      ],
+      [
+        "difficulty",
+        "success"
+      ],
+      [
+        "difficulty",
+        "learning_gain"
+      ],
+      [
+        "high_difficulty",
+        "success"
+      ],
+      [
+        "high_difficulty",
+        "learning_gain"
+      ],
+      [
+        "success",
+        "learning_gain"
+      ]
+    ]
+  },
+  "treatment_effects": {
+    "ate": 0.3129578422331111,
+    "ate_ci_lower": 0.0,
+    "ate_ci_upper": 0.0,
+    "ate_pvalue": 0.01,
+    "significant": false,
+    "pct_benefit_high_difficulty": 0.402,
+    "pct_benefit_low_difficulty": 0.4155,
+    "ite_mean": 0.3129578422331117,
+    "ite_std": 0.9024351590579497
+  },
+  "training_time_seconds": 0.9469394683837891,
+  "dataset_size": 10000,
+  "feature_cols": [
+    "prior_knowledge",
+    "avg_knowledge",
+    "knowledge_std",
+    "skill_level",
+    "learning_rate",
+    "time_spent",
+    "content_type",
+    "difficulty",
+    "timestep"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+    "Comment": "Offline Training Pipeline",
+    "StartAt": "DataValidation",
+    "States": {
+        "DataValidation": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:validate-data",
+            "Next": "ParallelTraining"
+        },
+        "ParallelTraining": {
+            "Type": "Parallel",
+            "Branches": [
+                {
+                    "StartAt": "TrainGNN",
+                    "States": {
+                        "TrainGNN": {
+                            "Type": "Task",
+                            "Resource": "arn:aws:states:::sagemaker:createTrainingJob.sync",
+                            "Parameters": {
+                                "TrainingJobName.$": "States.Format('GNN-Training-{}', $$.Execution.Name)",
+                                "AlgorithmSpecification": {
+                                    "TrainingImage": "torch-image-uri",
+                                    "TrainingInputMode": "File"
+                                },
+                                "RoleArn": "arn:aws:iam::ACCOUNT_ID:role/SageMakerRole",
+                                "InputDataConfig": [
+                                    {
+                                        "ChannelName": "train",
+                                        "DataSource": {
+                                            "S3DataSource": {
+                                                "S3DataType": "S3Prefix",
+                                                "S3Uri": "s3://adaptive-learning-hackathon-as/training-data/",
+                                                "S3DataDistributionType": "FullyReplicated"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "OutputDataConfig": {
+                                    "S3OutputPath": "s3://adaptive-learning-hackathon-as/model-artifacts/"
+                                },
+                                "ResourceConfig": {
+                                    "InstanceCount": 1,
+                                    "InstanceType": "ml.p3.2xlarge",
+                                    "VolumeSizeInGB": 30
+                                },
+                                "StoppingCondition": {
+                                    "MaxRuntimeInSeconds": 7200
+                                }
+                            },
+                            "End": true
+                        }
+                    }
+                },
+                {
+                    "StartAt": "CausalDiscovery",
+                    "States": {
+                        "CausalDiscovery": {
+                            "Type": "Task",
+                            "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:causal-discovery",
+                            "End": true
+                        }
+                    }
+                }
+            ],
+            "Next": "TrainCQL"
+        },
+        "TrainCQL": {
+            "Type": "Task",
+            "Resource": "arn:aws:states:::sagemaker:createTrainingJob.sync",
+            "Parameters": {
+                "TrainingJobName.$": "States.Format('CQL-Training-{}', $$.Execution.Name)",
+                "AlgorithmSpecification": {
+                    "TrainingImage": "torch-image-uri"
+                },
+                "RoleArn": "arn:aws:iam::ACCOUNT_ID:role/SageMakerRole",
+                "ResourceConfig": {
+                    "InstanceCount": 1,
+                    "InstanceType": "ml.p3.2xlarge",
+                    "VolumeSizeInGB": 30
+                },
+                "StoppingCondition": {
+                    "MaxRuntimeInSeconds": 10800
+                }
+            },
+            "Next": "TrainPEARL"
+        },
+        "TrainPEARL": {
+            "Type": "Task",
+            "Resource": "arn:aws:states:::sagemaker:createTrainingJob.sync",
+            "Parameters": {
+                "TrainingJobName.$": "States.Format('PEARL-Training-{}', $$.Execution.Name)",
+                "AlgorithmSpecification": {
+                    "TrainingImage": "torch-image-uri"
+                },
+                "RoleArn": "arn:aws:iam::ACCOUNT_ID:role/SageMakerRole",
+                "ResourceConfig": {
+                    "InstanceCount": 1,
+                    "InstanceType": "ml.p3.2xlarge",
+                    "VolumeSizeInGB": 30
+                },
+                "StoppingCondition": {
+                    "MaxRuntimeInSeconds": 10800
+                }
+            },
+            "Next": "RegisterModels"
+        },
+        "RegisterModels": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:register-models",
+            "End": true
+        }
+    }
+}

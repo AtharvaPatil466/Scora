@@ -1,0 +1,141 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Adaptive Learning Platform - SageMaker ML Endpoints Stack
+
+Parameters:
+  Environment:
+    Type: String
+    Default: prod
+    AllowedValues: [dev, staging, prod]
+  ModelBucket:
+    Type: String
+    Description: S3 bucket name containing the model artifacts.
+  GNNDockerImage:
+    Type: String
+    Default: 763104351884.dkr.ecr.us-east-1.amazonaws.com/pytorch-inference:2.0.0-cpu-py310-ubuntu20.04-sagemaker
+  CQLDockerImage:
+    Type: String
+    Default: 763104351884.dkr.ecr.us-east-1.amazonaws.com/pytorch-inference:2.0.0-cpu-py310-ubuntu20.04-sagemaker
+  PEARLDockerImage:
+    Type: String
+    Default: 763104351884.dkr.ecr.us-east-1.amazonaws.com/pytorch-inference:2.0.0-cpu-py310-ubuntu20.04-sagemaker
+
+Resources:
+  SageMakerExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: sagemaker.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
+      Policies:
+        - PolicyName: S3Access
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:ListBucket
+                Resource:
+                  - !Sub "arn:aws:s3:::${ModelBucket}"
+                  - !Sub "arn:aws:s3:::${ModelBucket}/*"
+
+  # ==== GNN Endpoint ====
+  GNNModel:
+    Type: AWS::SageMaker::Model
+    Properties:
+      ModelName: !Sub "gnn-model-${Environment}"
+      ExecutionRoleArn: !GetAtt SageMakerExecutionRole.Arn
+      PrimaryContainer:
+        Image: !Ref GNNDockerImage
+        ModelDataUrl: !Sub "s3://${ModelBucket}/models/gnn/model.tar.gz"
+
+  GNNEndpointConfig:
+    Type: AWS::SageMaker::EndpointConfig
+    Properties:
+      EndpointConfigName: !Sub "gnn-endpoint-config-${Environment}"
+      ProductionVariants:
+        - VariantName: AllTraffic
+          ModelName: !GetAtt GNNModel.ModelName
+          InitialInstanceCount: 1
+          InstanceType: ml.m5.xlarge
+          InitialVariantWeight: 1.0
+
+  GNNEndpoint:
+    Type: AWS::SageMaker::Endpoint
+    Properties:
+      EndpointName: "gnn-inference-prod"
+      EndpointConfigName: !GetAtt GNNEndpointConfig.EndpointConfigName
+
+  # ==== CQL Endpoint ====
+  CQLModel:
+    Type: AWS::SageMaker::Model
+    Properties:
+      ModelName: !Sub "cql-model-${Environment}"
+      ExecutionRoleArn: !GetAtt SageMakerExecutionRole.Arn
+      PrimaryContainer:
+        Image: !Ref CQLDockerImage
+        ModelDataUrl: !Sub "s3://${ModelBucket}/models/cql/model.tar.gz"
+
+  CQLEndpointConfig:
+    Type: AWS::SageMaker::EndpointConfig
+    Properties:
+      EndpointConfigName: !Sub "cql-endpoint-config-${Environment}"
+      ProductionVariants:
+        - VariantName: AllTraffic
+          ModelName: !GetAtt CQLModel.ModelName
+          InitialInstanceCount: 1
+          InstanceType: ml.m5.large
+          InitialVariantWeight: 1.0
+
+  CQLEndpoint:
+    Type: AWS::SageMaker::Endpoint
+    Properties:
+      EndpointName: "cql-policy-prod"
+      EndpointConfigName: !GetAtt CQLEndpointConfig.EndpointConfigName
+
+  # ==== PEARL Endpoint ====
+  PEARLModel:
+    Type: AWS::SageMaker::Model
+    Properties:
+      ModelName: !Sub "pearl-model-${Environment}"
+      ExecutionRoleArn: !GetAtt SageMakerExecutionRole.Arn
+      PrimaryContainer:
+        Image: !Ref PEARLDockerImage
+        ModelDataUrl: !Sub "s3://${ModelBucket}/models/pearl/model.tar.gz"
+
+  PEARLEndpointConfig:
+    Type: AWS::SageMaker::EndpointConfig
+    Properties:
+      EndpointConfigName: !Sub "pearl-endpoint-config-${Environment}"
+      ProductionVariants:
+        - VariantName: AllTraffic
+          ModelName: !GetAtt PEARLModel.ModelName
+          InitialInstanceCount: 1
+          InstanceType: ml.c5.2xlarge
+          InitialVariantWeight: 1.0
+
+  PEARLEndpoint:
+    Type: AWS::SageMaker::Endpoint
+    Properties:
+      EndpointName: "pearl-inference-prod"
+      EndpointConfigName: !GetAtt PEARLEndpointConfig.EndpointConfigName
+
+Outputs:
+  GNNEndpoint:
+    Value: !GetAtt GNNEndpoint.EndpointName
+    Export:
+      Name: !Sub "${AWS::StackName}-GNNEndpoint"
+  CQLPolicyEndpoint:
+    Value: !GetAtt CQLEndpoint.EndpointName
+    Export:
+      Name: !Sub "${AWS::StackName}-CQLPolicyEndpoint"
+  PEARLEndpoint:
+    Value: !GetAtt PEARLEndpoint.EndpointName
+    Export:
+      Name: !Sub "${AWS::StackName}-PEARLEndpoint"

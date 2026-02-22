@@ -1,0 +1,352 @@
+[
+  {
+    "id": 0,
+    "name": "Counting",
+    "domain": "Mathematics",
+    "difficulty": 0.1,
+    "type": "Theory"
+  },
+  {
+    "id": 1,
+    "name": "Numbers",
+    "domain": "Mathematics",
+    "difficulty": 0.12,
+    "type": "Practice"
+  },
+  {
+    "id": 2,
+    "name": "Addition",
+    "domain": "Mathematics",
+    "difficulty": 0.13,
+    "type": "Theory"
+  },
+  {
+    "id": 3,
+    "name": "Subtraction",
+    "domain": "Mathematics",
+    "difficulty": 0.15,
+    "type": "Practice"
+  },
+  {
+    "id": 4,
+    "name": "Multiplication",
+    "domain": "Mathematics",
+    "difficulty": 0.16,
+    "type": "Theory"
+  },
+  {
+    "id": 5,
+    "name": "Division",
+    "domain": "Mathematics",
+    "difficulty": 0.18,
+    "type": "Practice"
+  },
+  {
+    "id": 6,
+    "name": "Fractions",
+    "domain": "Mathematics",
+    "difficulty": 0.2,
+    "type": "Theory"
+  },
+  {
+    "id": 7,
+    "name": "Decimals",
+    "domain": "Mathematics",
+    "difficulty": 0.21,
+    "type": "Practice"
+  },
+  {
+    "id": 8,
+    "name": "Percentages",
+    "domain": "Mathematics",
+    "difficulty": 0.23,
+    "type": "Theory"
+  },
+  {
+    "id": 9,
+    "name": "Ratios",
+    "domain": "Mathematics",
+    "difficulty": 0.24,
+    "type": "Practice"
+  },
+  {
+    "id": 10,
+    "name": "Proportions",
+    "domain": "Mathematics",
+    "difficulty": 0.26,
+    "type": "Theory"
+  },
+  {
+    "id": 11,
+    "name": "Basic Geometry",
+    "domain": "Mathematics",
+    "difficulty": 0.28,
+    "type": "Practice"
+  },
+  {
+    "id": 12,
+    "name": "Area",
+    "domain": "Mathematics",
+    "difficulty": 0.29,
+    "type": "Theory"
+  },
+  {
+    "id": 13,
+    "name": "Perimeter",
+    "domain": "Mathematics",
+    "difficulty": 0.31,
+    "type": "Practice"
+  },
+  {
+    "id": 14,
+    "name": "Volume",
+    "domain": "Mathematics",
+    "difficulty": 0.32,
+    "type": "Theory"
+  },
+  {
+    "id": 15,
+    "name": "Angles",
+    "domain": "Mathematics",
+    "difficulty": 0.34,
+    "type": "Practice"
+  },
+  {
+    "id": 16,
+    "name": "Triangles",
+    "domain": "Mathematics",
+    "difficulty": 0.36,
+    "type": "Theory"
+  },
+  {
+    "id": 17,
+    "name": "Quadrilaterals",
+    "domain": "Mathematics",
+    "difficulty": 0.37,
+    "type": "Practice"
+  },
+  {
+    "id": 18,
+    "name": "Circles",
+    "domain": "Mathematics",
+    "difficulty": 0.39,
+    "type": "Theory"
+  },
+  {
+    "id": 19,
+    "name": "Pre-Algebra",
+    "domain": "Mathematics",
+    "difficulty": 0.4,
+    "type": "Practice"
+  },
+  {
+    "id": 20,
+    "name": "Variables",
+    "domain": "Mathematics",
+    "difficulty": 0.42,
+    "type": "Theory"
+  },
+  {
+    "id": 21,
+    "name": "Equations",
+    "domain": "Mathematics",
+    "difficulty": 0.44,
+    "type": "Practice"
+  },
+  {
+    "id": 22,
+    "name": "Inequalities",
+    "domain": "Mathematics",
+    "difficulty": 0.45,
+    "type": "Theory"
+  },
+  {
+    "id": 23,
+    "name": "Functions",
+    "domain": "Mathematics",
+    "difficulty": 0.47,
+    "type": "Practice"
+  },
+  {
+    "id": 24,
+    "name": "Linear Equations",
+    "domain": "Mathematics",
+    "difficulty": 0.48,
+    "type": "Theory"
+  },
+  {
+    "id": 25,
+    "name": "Systems of Equations",
+    "domain": "Mathematics",
+    "difficulty": 0.5,
+    "type": "Practice"
+  },
+  {
+    "id": 26,
+    "name": "Polynomials",
+    "domain": "Mathematics",
+    "difficulty": 0.52,
+    "type": "Theory"
+  },
+  {
+    "id": 27,
+    "name": "Factoring",
+    "domain": "Mathematics",
+    "difficulty": 0.53,
+    "type": "Practice"
+  },
+  {
+    "id": 28,
+    "name": "Quadratic Equations",
+    "domain": "Mathematics",
+    "difficulty": 0.55,
+    "type": "Theory"
+  },
+  {
+    "id": 29,
+    "name": "Exponents",
+    "domain": "Mathematics",
+    "difficulty": 0.56,
+    "type": "Practice"
+  },
+  {
+    "id": 30,
+    "name": "Radicals",
+    "domain": "Mathematics",
+    "difficulty": 0.58,
+    "type": "Theory"
+  },
+  {
+    "id": 31,
+    "name": "Logarithms",
+    "domain": "Mathematics",
+    "difficulty": 0.6,
+    "type": "Practice"
+  },
+  {
+    "id": 32,
+    "name": "Trigonometry",
+    "domain": "Mathematics",
+    "difficulty": 0.61,
+    "type": "Theory"
+  },
+  {
+    "id": 33,
+    "name": "Sine",
+    "domain": "Mathematics",
+    "difficulty": 0.63,
+    "type": "Practice"
+  },
+  {
+    "id": 34,
+    "name": "Cosine",
+    "domain": "Mathematics",
+    "difficulty": 0.64,
+    "type": "Theory"
+  },
+  {
+    "id": 35,
+    "name": "Tangent",
+    "domain": "Mathematics",
+    "difficulty": 0.66,
+    "type": "Practice"
+  },
+  {
+    "id": 36,
+    "name": "Unit Circle",
+    "domain": "Mathematics",
+    "difficulty": 0.68,
+    "type": "Theory"
+  },
+  {
+    "id": 37,
+    "name": "Analytic Geometry",
+    "domain": "Mathematics",
+    "difficulty": 0.69,
+    "type": "Practice"
+  },
+  {
+    "id": 38,
+    "name": "Complex Numbers",
+    "domain": "Mathematics",
+    "difficulty": 0.71,
+    "type": "Theory"
+  },
+  {
+    "id": 39,
+    "name": "Pre-Calculus",
+    "domain": "Mathematics",
+    "difficulty": 0.72,
+    "type": "Practice"
+  },
+  {
+    "id": 40,
+    "name": "Limits",
+    "domain": "Mathematics",
+    "difficulty": 0.74,
+    "type": "Theory"
+  },
+  {
+    "id": 41,
+    "name": "Derivatives",
+    "domain": "Mathematics",
+    "difficulty": 0.76,
+    "type": "Practice"
+  },
+  {
+    "id": 42,
+    "name": "Differentiation Rules",
+    "domain": "Mathematics",
+    "difficulty": 0.77,
+    "type": "Theory"
+  },
+  {
+    "id": 43,
+    "name": "Applications of Derivatives",
+    "domain": "Mathematics",
+    "difficulty": 0.79,
+    "type": "Practice"
+  },
+  {
+    "id": 44,
+    "name": "Integrals",
+    "domain": "Mathematics",
+    "difficulty": 0.8,
+    "type": "Theory"
+  },
+  {
+    "id": 45,
+    "name": "Integration Rules",
+    "domain": "Mathematics",
+    "difficulty": 0.82,
+    "type": "Practice"
+  },
+  {
+    "id": 46,
+    "name": "Fundamental Theorem of Calculus",
+    "domain": "Mathematics",
+    "difficulty": 0.84,
+    "type": "Theory"
+  },
+  {
+    "id": 47,
+    "name": "Sequence and Series",
+    "domain": "Mathematics",
+    "difficulty": 0.85,
+    "type": "Practice"
+  },
+  {
+    "id": 48,
+    "name": "Vector Algebra",
+    "domain": "Mathematics",
+    "difficulty": 0.87,
+    "type": "Theory"
+  },
+  {
+    "id": 49,
+    "name": "Differential Equations",
+    "domain": "Mathematics",
+    "difficulty": 0.88,
+    "type": "Practice"
+  }
+]

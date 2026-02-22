@@ -1,0 +1,31 @@
+gnn:
+  num_layers: 3
+  hidden_dim: 128
+  embedding_dim: 32
+  attention_heads: 4
+  epochs: 50
+  learning_rate: 0.001
+
+causal:
+  algorithm: "PC"
+  significance_level: 0.05
+
+cql:
+  buffer_size: 10000
+  batch_size: 256
+  gamma: 0.99
+  cql_alpha: 1.0
+  epochs: 100
+
+pearl:
+  n_tasks_train: 80
+  n_tasks_test: 20
+  context_latent_dim: 16
+  support_size: 5
+  meta_iterations: 5000
+
+aws:
+  s3_bucket: "adaptive-learning-hackathon-as" # Replace [initials] with your initials if different
+  region: "us-east-1"
+  sagemaker_instance_type: "ml.p3.2xlarge"
+  causal_instance_type: "ml.c5.2xlarge"

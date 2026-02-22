@@ -1,0 +1,57 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Adaptive Learning Platform - Master Stack
+
+Parameters:
+  Environment:
+    Type: String
+    Default: prod
+    AllowedValues: [dev, staging, prod]
+    Description: Deployment scope
+  TemplateBucket:
+    Type: String
+    Description: S3 bucket containing all the nested CloudFormation templates.
+    Default: adaptive-learning-cf-templates
+
+Resources:
+  # Nested Stacks
+  DatabaseStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Sub 'https://s3.amazonaws.com/${TemplateBucket}/databases.yaml'
+      Parameters:
+        Environment: !Ref Environment
+
+  SageMakerStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Sub 'https://s3.amazonaws.com/${TemplateBucket}/sagemaker.yaml'
+      Parameters:
+        Environment: !Ref Environment
+        ModelBucket: !GetAtt DatabaseStack.Outputs.ModelBucket
+
+  LambdaStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Sub 'https://s3.amazonaws.com/${TemplateBucket}/lambda.yaml'
+      Parameters:
+        Environment: !Ref Environment
+        StudentStatesTable: !GetAtt DatabaseStack.Outputs.StudentStatesTable
+        InteractionLogsTable: !GetAtt DatabaseStack.Outputs.InteractionLogsTable
+        GNNEndpoint: !GetAtt SageMakerStack.Outputs.GNNEndpoint
+        CQLPolicyEndpoint: !GetAtt SageMakerStack.Outputs.CQLPolicyEndpoint
+        PEARLEndpoint: !GetAtt SageMakerStack.Outputs.PEARLEndpoint
+
+  APIStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Sub 'https://s3.amazonaws.com/${TemplateBucket}/api-gateway.yaml'
+      Parameters:
+        Environment: !Ref Environment
+        RecommendationFunction: !GetAtt LambdaStack.Outputs.RecommendationFunction
+        StateUpdateFunction: !GetAtt LambdaStack.Outputs.StateUpdateFunction
+        ContentGenerationFunction: !GetAtt LambdaStack.Outputs.ContentGenerationFunction
+
+Outputs:
+  ApiEndpoint:
+    Description: The base URL of the API Gateway
+    Value: !GetAtt APIStack.Outputs.ApiUrl

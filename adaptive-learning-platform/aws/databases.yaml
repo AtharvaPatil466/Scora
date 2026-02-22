@@ -1,0 +1,129 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Adaptive Learning Platform - Databases Stack
+
+Parameters:
+  Environment:
+    Type: String
+    Default: prod
+    AllowedValues: [dev, staging, prod]
+
+Resources:
+  # DynamoDB Tables
+  StudentStatesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub 'StudentStates-${Environment}'
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: student_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: student_id
+          KeyType: HASH
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+
+  InteractionLogsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub 'InteractionLogs-${Environment}'
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: student_id
+          AttributeType: S
+        - AttributeName: timestamp
+          AttributeType: N
+        - AttributeName: content_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: student_id
+          KeyType: HASH
+        - AttributeName: timestamp
+          KeyType: RANGE
+      GlobalSecondaryIndexes:
+        - IndexName: content_id-index
+          KeySchema:
+            - AttributeName: content_id
+              KeyType: HASH
+            - AttributeName: timestamp
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+
+  ContentLibraryTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub 'ContentLibrary-${Environment}'
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: content_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: content_id
+          KeyType: HASH
+
+  # S3 Buckets
+  DataBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub 'adaptive-learning-data-${AWS::AccountId}-${Environment}'
+      VersioningConfiguration:
+        Status: Enabled
+      LifecycleConfiguration:
+        Rules:
+          - Id: MoveToGlacierAfter90Days
+            Status: Enabled
+            Transitions:
+              - TransitionInDays: 90
+                StorageClass: GLACIER
+
+  ModelBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub 'adaptive-learning-models-${AWS::AccountId}-${Environment}'
+      VersioningConfiguration:
+        Status: Enabled
+
+  # Neptune Cluster
+  NeptuneCluster:
+    Type: AWS::Neptune::DBCluster
+    Properties:
+      DBClusterIdentifier: !Sub 'knowledge-graph-${Environment}'
+      EngineVersion: '1.2.1.0'
+      StorageEncrypted: true
+      BackupRetentionPeriod: 7
+
+  NeptuneInstance:
+    Type: AWS::Neptune::DBInstance
+    Properties:
+      DBClusterIdentifier: !Ref NeptuneCluster
+      DBInstanceClass: db.r5.large
+
+Outputs:
+  StudentStatesTable:
+    Value: !Ref StudentStatesTable
+    Export:
+      Name: !Sub '${AWS::StackName}-StudentStatesTable'
+  
+  InteractionLogsTable:
+    Value: !Ref InteractionLogsTable
+    Export:
+      Name: !Sub '${AWS::StackName}-InteractionLogsTable'
+
+  ContentLibraryTable:
+    Value: !Ref ContentLibraryTable
+    Export:
+      Name: !Sub '${AWS::StackName}-ContentLibraryTable'
+
+  ModelBucket:
+    Value: !Ref ModelBucket
+    Export:
+      Name: !Sub '${AWS::StackName}-ModelBucket'
+
+  DataBucket:
+    Value: !Ref DataBucket
+    Export:
+      Name: !Sub '${AWS::StackName}-DataBucket'

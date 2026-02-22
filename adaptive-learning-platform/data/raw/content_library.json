@@ -1,0 +1,4502 @@
+[
+  {
+    "content_id": "content_5e949651-dd15-4cda-ab41-7978d5862af0",
+    "title": "Content Unit 0",
+    "content_type": "quiz",
+    "difficulty": 0.5364354598857292,
+    "concept_id": "concept_49",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.11179164299169299
+  },
+  {
+    "content_id": "content_4a298059-ecd6-4f90-a685-519d20cd2dcf",
+    "title": "Content Unit 1",
+    "content_type": "video",
+    "difficulty": 0.16275381009206474,
+    "concept_id": "concept_2",
+    "estimated_time_minutes": 28,
+    "effectiveness_score": 0.1800805396965074
+  },
+  {
+    "content_id": "content_5c66bb79-3ebd-41bf-813e-3639981741e5",
+    "title": "Content Unit 2",
+    "content_type": "quiz",
+    "difficulty": 0.7137332328934507,
+    "concept_id": "concept_39",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.21593307659988778
+  },
+  {
+    "content_id": "content_a27b724e-270b-48b6-9c27-150febfafbc0",
+    "title": "Content Unit 3",
+    "content_type": "video",
+    "difficulty": 0.6061668142847519,
+    "concept_id": "concept_43",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.12405970150582091
+  },
+  {
+    "content_id": "content_d598e12f-9bd3-49c8-b3c1-108a5d9ed3c7",
+    "title": "Content Unit 4",
+    "content_type": "video",
+    "difficulty": 0.8550199242179402,
+    "concept_id": "concept_10",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.1450881401017191
+  },
+  {
+    "content_id": "content_1517ab41-0a1c-428f-a65a-dc416cfd8c24",
+    "title": "Content Unit 5",
+    "content_type": "quiz",
+    "difficulty": 0.44162414807650663,
+    "concept_id": "concept_7",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.15861591603640643
+  },
+  {
+    "content_id": "content_30e5d603-2fb6-44e3-97e9-409e0e55f8bc",
+    "title": "Content Unit 6",
+    "content_type": "reading",
+    "difficulty": 0.25497605039772864,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.23634664503473082
+  },
+  {
+    "content_id": "content_9adca5a5-5957-42d6-a8cd-7cdccd87ff13",
+    "title": "Content Unit 7",
+    "content_type": "interactive",
+    "difficulty": 0.28664629276981335,
+    "concept_id": "concept_45",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.1789850014251363
+  },
+  {
+    "content_id": "content_9d1ca029-e104-4f83-a529-04365d00e1f5",
+    "title": "Content Unit 8",
+    "content_type": "quiz",
+    "difficulty": 0.3019317506859299,
+    "concept_id": "concept_5",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.22361857956051
+  },
+  {
+    "content_id": "content_6b72960c-c2eb-498b-a52f-9c43e7c0bf03",
+    "title": "Content Unit 9",
+    "content_type": "video",
+    "difficulty": 0.8995073259592167,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.14135435222074028
+  },
+  {
+    "content_id": "content_5435f81e-2350-4044-95c9-b1811a12d074",
+    "title": "Content Unit 10",
+    "content_type": "reading",
+    "difficulty": 0.4946213747756921,
+    "concept_id": "concept_31",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.18045130716258045
+  },
+  {
+    "content_id": "content_859d78d2-453b-458e-94cf-d52374753c17",
+    "title": "Content Unit 11",
+    "content_type": "reading",
+    "difficulty": 0.18820157391282263,
+    "concept_id": "concept_32",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.19555265851044937
+  },
+  {
+    "content_id": "content_53747864-7fe7-48c5-a00e-83bf1113d7a2",
+    "title": "Content Unit 12",
+    "content_type": "reading",
+    "difficulty": 0.2194447260325208,
+    "concept_id": "concept_6",
+    "estimated_time_minutes": 17,
+    "effectiveness_score": 0.23005311610299062
+  },
+  {
+    "content_id": "content_2576e83c-b1f7-497a-8fc7-6b54e932a506",
+    "title": "Content Unit 13",
+    "content_type": "interactive",
+    "difficulty": 0.3031101255400036,
+    "concept_id": "concept_25",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.17102096255450583
+  },
+  {
+    "content_id": "content_23300053-7e8a-4ade-bdc8-d91fecdb3df4",
+    "title": "Content Unit 14",
+    "content_type": "interactive",
+    "difficulty": 0.8357401440388701,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.12384550255273209
+  },
+  {
+    "content_id": "content_7a5eefa0-43df-48f7-9e75-1cb7b65bc441",
+    "title": "Content Unit 15",
+    "content_type": "interactive",
+    "difficulty": 0.819393395542118,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.21025953431248667
+  },
+  {
+    "content_id": "content_c81e1941-c066-4d92-93a0-4d1b9fdbec53",
+    "title": "Content Unit 16",
+    "content_type": "reading",
+    "difficulty": 0.6761963906711366,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.1479169177824825
+  },
+  {
+    "content_id": "content_1a37528c-17a5-4c2e-aaa7-7cb3192014b7",
+    "title": "Content Unit 17",
+    "content_type": "interactive",
+    "difficulty": 0.27462344073026124,
+    "concept_id": "concept_17",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.11006899059409994
+  },
+  {
+    "content_id": "content_6424275c-94fc-4f66-811e-889b226cbead",
+    "title": "Content Unit 18",
+    "content_type": "interactive",
+    "difficulty": 0.8670497394115974,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.1957387724140929
+  },
+  {
+    "content_id": "content_5e6325b4-90c7-4098-8fb6-66f61ed67a56",
+    "title": "Content Unit 19",
+    "content_type": "video",
+    "difficulty": 0.5350382777565795,
+    "concept_id": "concept_15",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.22495810995434765
+  },
+  {
+    "content_id": "content_ef8b94d7-8a67-4d09-b38b-f84645eeabcb",
+    "title": "Content Unit 20",
+    "content_type": "quiz",
+    "difficulty": 0.8009087753799918,
+    "concept_id": "concept_6",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.2414645734204719
+  },
+  {
+    "content_id": "content_ec5057bb-ddad-40d6-b948-d514b553a27f",
+    "title": "Content Unit 21",
+    "content_type": "quiz",
+    "difficulty": 0.807412366679493,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.1581264225483044
+  },
+  {
+    "content_id": "content_02ae9e3a-977d-4789-a2d0-a189e5c5d8b6",
+    "title": "Content Unit 22",
+    "content_type": "quiz",
+    "difficulty": 0.4325322641940028,
+    "concept_id": "concept_23",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.11466449516361249
+  },
+  {
+    "content_id": "content_a0ec3c20-d5d5-46a7-ae85-ee3451bc5494",
+    "title": "Content Unit 23",
+    "content_type": "reading",
+    "difficulty": 0.29594769636345963,
+    "concept_id": "concept_40",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.1262264350790292
+  },
+  {
+    "content_id": "content_2316f7f6-62c3-4ad9-a9ce-a297f8730bd4",
+    "title": "Content Unit 24",
+    "content_type": "reading",
+    "difficulty": 0.6074392659696741,
+    "concept_id": "concept_26",
+    "estimated_time_minutes": 13,
+    "effectiveness_score": 0.21393088075952316
+  },
+  {
+    "content_id": "content_cdbe32d3-babe-4e14-81e8-e098827fafd3",
+    "title": "Content Unit 25",
+    "content_type": "video",
+    "difficulty": 0.3676490599016622,
+    "concept_id": "concept_9",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.11504314781965694
+  },
+  {
+    "content_id": "content_ed5ab7aa-3d1d-49e7-850f-87d45038f1b9",
+    "title": "Content Unit 26",
+    "content_type": "interactive",
+    "difficulty": 0.24531815884578415,
+    "concept_id": "concept_4",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.18250526028971759
+  },
+  {
+    "content_id": "content_6ab2ad39-f713-4d39-8a71-12c834025501",
+    "title": "Content Unit 27",
+    "content_type": "video",
+    "difficulty": 0.7957572105309347,
+    "concept_id": "concept_16",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.15473549822918234
+  },
+  {
+    "content_id": "content_f41952a5-23f2-4b63-80f6-0eb7ca702680",
+    "title": "Content Unit 28",
+    "content_type": "interactive",
+    "difficulty": 0.26253210458801046,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.2196457374854235
+  },
+  {
+    "content_id": "content_d0f492a5-d320-4f3f-b98a-97213fc4a7a6",
+    "title": "Content Unit 29",
+    "content_type": "interactive",
+    "difficulty": 0.4920602471276847,
+    "concept_id": "concept_43",
+    "estimated_time_minutes": 28,
+    "effectiveness_score": 0.20536411644242564
+  },
+  {
+    "content_id": "content_d7ce5f96-8cc2-4c84-8721-3fea85f9dc6f",
+    "title": "Content Unit 30",
+    "content_type": "quiz",
+    "difficulty": 0.6298302394703881,
+    "concept_id": "concept_16",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.19922738804896784
+  },
+  {
+    "content_id": "content_3f965aa3-7351-42f7-853b-71e3d316b0c1",
+    "title": "Content Unit 31",
+    "content_type": "interactive",
+    "difficulty": 0.4139077380212425,
+    "concept_id": "concept_29",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.13459817772293783
+  },
+  {
+    "content_id": "content_130107d8-e639-425b-ba46-8e09975b193c",
+    "title": "Content Unit 32",
+    "content_type": "video",
+    "difficulty": 0.1088941522825274,
+    "concept_id": "concept_44",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.18157326388219064
+  },
+  {
+    "content_id": "content_f95be782-c36c-4699-9683-01b07425f519",
+    "title": "Content Unit 33",
+    "content_type": "reading",
+    "difficulty": 0.838065444449314,
+    "concept_id": "concept_24",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.14049907857482122
+  },
+  {
+    "content_id": "content_8664df88-5fae-4d8f-95dc-70a8177b84c3",
+    "title": "Content Unit 34",
+    "content_type": "quiz",
+    "difficulty": 0.10763255709860281,
+    "concept_id": "concept_39",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.18969532098998018
+  },
+  {
+    "content_id": "content_a8cf64c0-b50d-4287-8f20-3fc56e89f3e6",
+    "title": "Content Unit 35",
+    "content_type": "video",
+    "difficulty": 0.3631787860956299,
+    "concept_id": "concept_4",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.11884917853872908
+  },
+  {
+    "content_id": "content_aa9393ef-de62-4dc1-b21e-5c1044c06244",
+    "title": "Content Unit 36",
+    "content_type": "video",
+    "difficulty": 0.18030899132715136,
+    "concept_id": "concept_14",
+    "estimated_time_minutes": 17,
+    "effectiveness_score": 0.22821828007433495
+  },
+  {
+    "content_id": "content_59e67331-7cde-4153-9270-ec024dc91190",
+    "title": "Content Unit 37",
+    "content_type": "interactive",
+    "difficulty": 0.42360130508198546,
+    "concept_id": "concept_9",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.21551938233991869
+  },
+  {
+    "content_id": "content_87e3497a-13b4-4cd8-b21b-8f9c89081a33",
+    "title": "Content Unit 38",
+    "content_type": "interactive",
+    "difficulty": 0.4819439041850371,
+    "concept_id": "concept_34",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.1258631606646424
+  },
+  {
+    "content_id": "content_9fa3186e-d648-40c5-a1e5-1ed6bc306cfb",
+    "title": "Content Unit 39",
+    "content_type": "interactive",
+    "difficulty": 0.17183609458532445,
+    "concept_id": "concept_39",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.16425240552999815
+  },
+  {
+    "content_id": "content_82cdd1e5-79a0-4d21-b87b-8340aba40d31",
+    "title": "Content Unit 40",
+    "content_type": "quiz",
+    "difficulty": 0.798504927947775,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.20407001856848267
+  },
+  {
+    "content_id": "content_734e293e-6944-4dda-a62d-4610214a5ce6",
+    "title": "Content Unit 41",
+    "content_type": "reading",
+    "difficulty": 0.5664108067817939,
+    "concept_id": "concept_27",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.21639580889596816
+  },
+  {
+    "content_id": "content_646e9fae-0ac8-47cd-844a-200c5109edae",
+    "title": "Content Unit 42",
+    "content_type": "quiz",
+    "difficulty": 0.5033893960360865,
+    "concept_id": "concept_27",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.24433571678978674
+  },
+  {
+    "content_id": "content_763d87e2-5e7c-4084-9019-7e228d77a1ad",
+    "title": "Content Unit 43",
+    "content_type": "interactive",
+    "difficulty": 0.3821942289151895,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.11503341383646315
+  },
+  {
+    "content_id": "content_93ff55cf-6b53-44b5-9aa0-f3a90fc4ca16",
+    "title": "Content Unit 44",
+    "content_type": "video",
+    "difficulty": 0.8583739558626994,
+    "concept_id": "concept_39",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.226973893579648
+  },
+  {
+    "content_id": "content_0aea3aee-d48d-4b0a-9eec-f972b8d3a06b",
+    "title": "Content Unit 45",
+    "content_type": "video",
+    "difficulty": 0.366729801563917,
+    "concept_id": "concept_28",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.21902521831748512
+  },
+  {
+    "content_id": "content_cd8d4e59-fe81-4712-920e-1c3f9c7c4968",
+    "title": "Content Unit 46",
+    "content_type": "video",
+    "difficulty": 0.20211771347912144,
+    "concept_id": "concept_21",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.10423003719519398
+  },
+  {
+    "content_id": "content_2e43c162-f616-49a5-9009-a39a470d71b2",
+    "title": "Content Unit 47",
+    "content_type": "video",
+    "difficulty": 0.3484861576458192,
+    "concept_id": "concept_28",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.17015436885828994
+  },
+  {
+    "content_id": "content_27f50fba-b627-45f5-b777-07a283841f59",
+    "title": "Content Unit 48",
+    "content_type": "quiz",
+    "difficulty": 0.8232637525295919,
+    "concept_id": "concept_44",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.12368704507099357
+  },
+  {
+    "content_id": "content_1ee58512-9d5b-44ff-9197-c6529029a7da",
+    "title": "Content Unit 49",
+    "content_type": "video",
+    "difficulty": 0.5842868050184193,
+    "concept_id": "concept_49",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.13303440207240833
+  },
+  {
+    "content_id": "content_333072f2-e1ce-4be3-97cf-8372efda2263",
+    "title": "Content Unit 50",
+    "content_type": "quiz",
+    "difficulty": 0.14463164042916807,
+    "concept_id": "concept_46",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.2331341564888687
+  },
+  {
+    "content_id": "content_4e60b90a-e03c-45d3-8128-cd8d79c370b3",
+    "title": "Content Unit 51",
+    "content_type": "reading",
+    "difficulty": 0.12856979465188012,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.13593105132103173
+  },
+  {
+    "content_id": "content_0b05317a-ec19-4036-a83f-e3ea4aa3c97e",
+    "title": "Content Unit 52",
+    "content_type": "quiz",
+    "difficulty": 0.6861633870886702,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 17,
+    "effectiveness_score": 0.1097626524073581
+  },
+  {
+    "content_id": "content_59b5ce80-b2dd-43b7-9979-eda58b39325c",
+    "title": "Content Unit 53",
+    "content_type": "quiz",
+    "difficulty": 0.4346357916085254,
+    "concept_id": "concept_9",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.2263393158329395
+  },
+  {
+    "content_id": "content_2115965f-b46b-4442-baeb-3df60e587f9f",
+    "title": "Content Unit 54",
+    "content_type": "reading",
+    "difficulty": 0.5072990924878541,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 28,
+    "effectiveness_score": 0.16780154190807528
+  },
+  {
+    "content_id": "content_375f0dda-1eb5-4d35-aa2b-060aa9ea2970",
+    "title": "Content Unit 55",
+    "content_type": "video",
+    "difficulty": 0.26585184066046513,
+    "concept_id": "concept_45",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.1946033765788185
+  },
+  {
+    "content_id": "content_600d71fc-1872-4128-9e4d-777ec3b18d0e",
+    "title": "Content Unit 56",
+    "content_type": "reading",
+    "difficulty": 0.6865010583195138,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.10245280256887694
+  },
+  {
+    "content_id": "content_4e02dcc4-6d1c-4041-8131-9e40a8bc4e3f",
+    "title": "Content Unit 57",
+    "content_type": "quiz",
+    "difficulty": 0.8852509452453384,
+    "concept_id": "concept_30",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.2435862396186553
+  },
+  {
+    "content_id": "content_9eca2159-bb80-4c9e-8e11-80bfc8fdab28",
+    "title": "Content Unit 58",
+    "content_type": "quiz",
+    "difficulty": 0.7804281093905432,
+    "concept_id": "concept_42",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.14004790198649888
+  },
+  {
+    "content_id": "content_473a12f7-a3d9-4616-8b7a-50ef1bedf7bc",
+    "title": "Content Unit 59",
+    "content_type": "quiz",
+    "difficulty": 0.11190620996228234,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.18588670554963482
+  },
+  {
+    "content_id": "content_f5b27445-6e0f-4858-9db0-399295c74260",
+    "title": "Content Unit 60",
+    "content_type": "reading",
+    "difficulty": 0.45606305053160356,
+    "concept_id": "concept_40",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.24092385069094446
+  },
+  {
+    "content_id": "content_4aec1e56-ef4c-4fda-9431-0ee4497c3307",
+    "title": "Content Unit 61",
+    "content_type": "interactive",
+    "difficulty": 0.5852125045056681,
+    "concept_id": "concept_19",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.11147075054191458
+  },
+  {
+    "content_id": "content_de136d45-6d18-4ac7-8b97-f6d9ed671d7c",
+    "title": "Content Unit 62",
+    "content_type": "reading",
+    "difficulty": 0.6467632596068793,
+    "concept_id": "concept_49",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.15244681166674556
+  },
+  {
+    "content_id": "content_a746b331-3280-49c6-87a5-12c11a18e358",
+    "title": "Content Unit 63",
+    "content_type": "interactive",
+    "difficulty": 0.8192984112167309,
+    "concept_id": "concept_34",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.22134153195864004
+  },
+  {
+    "content_id": "content_2effa713-c344-4819-9240-d3147140132b",
+    "title": "Content Unit 64",
+    "content_type": "video",
+    "difficulty": 0.8024591717726209,
+    "concept_id": "concept_15",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.1281889797386947
+  },
+  {
+    "content_id": "content_b70c9cce-87ed-4903-9288-1b8a2008c6b1",
+    "title": "Content Unit 65",
+    "content_type": "quiz",
+    "difficulty": 0.2832464890014116,
+    "concept_id": "concept_47",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.1862520338455645
+  },
+  {
+    "content_id": "content_3ca9251b-fcea-4fd9-9ed0-49e807ec198c",
+    "title": "Content Unit 66",
+    "content_type": "reading",
+    "difficulty": 0.45559624193047055,
+    "concept_id": "concept_36",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.16225510883843308
+  },
+  {
+    "content_id": "content_0da8c869-acdf-43b7-a22e-c09273367542",
+    "title": "Content Unit 67",
+    "content_type": "quiz",
+    "difficulty": 0.43133724291148934,
+    "concept_id": "concept_48",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.12094252054948126
+  },
+  {
+    "content_id": "content_c4714dbf-5f05-4380-bebe-da0f6e95832e",
+    "title": "Content Unit 68",
+    "content_type": "reading",
+    "difficulty": 0.41881925813430454,
+    "concept_id": "concept_34",
+    "estimated_time_minutes": 17,
+    "effectiveness_score": 0.1371979711146885
+  },
+  {
+    "content_id": "content_5630933b-ca72-4faa-b2f6-f8814a0c573a",
+    "title": "Content Unit 69",
+    "content_type": "reading",
+    "difficulty": 0.8947600834790022,
+    "concept_id": "concept_18",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.15408591850980088
+  },
+  {
+    "content_id": "content_63eca6aa-2d08-4697-bb58-3ca622becd9e",
+    "title": "Content Unit 70",
+    "content_type": "quiz",
+    "difficulty": 0.3087762385389351,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.22719357086387199
+  },
+  {
+    "content_id": "content_c30cd113-2dfc-4a9f-b99d-39737fcaf021",
+    "title": "Content Unit 71",
+    "content_type": "video",
+    "difficulty": 0.30930423005074187,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.24621234287479696
+  },
+  {
+    "content_id": "content_46729eba-e401-46f9-b0a0-0400784e963a",
+    "title": "Content Unit 72",
+    "content_type": "reading",
+    "difficulty": 0.8853048938342436,
+    "concept_id": "concept_43",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.18635886695472026
+  },
+  {
+    "content_id": "content_9b1cfcaf-b0d8-402e-bb5b-909bc96fee04",
+    "title": "Content Unit 73",
+    "content_type": "interactive",
+    "difficulty": 0.5674755348507101,
+    "concept_id": "concept_36",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.18077627516275024
+  },
+  {
+    "content_id": "content_029cda1d-abf7-4b4e-a7f1-e4e0183492d0",
+    "title": "Content Unit 74",
+    "content_type": "reading",
+    "difficulty": 0.7569505211527665,
+    "concept_id": "concept_11",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.11017853774423106
+  },
+  {
+    "content_id": "content_ec9e2209-690e-4d1b-a8b5-0e769e930797",
+    "title": "Content Unit 75",
+    "content_type": "reading",
+    "difficulty": 0.7109819822179541,
+    "concept_id": "concept_36",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.11357526102618737
+  },
+  {
+    "content_id": "content_3ef1bad4-7c5b-44fa-8c89-40225fa7255b",
+    "title": "Content Unit 76",
+    "content_type": "reading",
+    "difficulty": 0.20704048183899842,
+    "concept_id": "concept_47",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.13828077421025742
+  },
+  {
+    "content_id": "content_36e64115-cffb-4f41-8d5e-e1c61665af1b",
+    "title": "Content Unit 77",
+    "content_type": "interactive",
+    "difficulty": 0.38227303447659133,
+    "concept_id": "concept_1",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.1793354804660318
+  },
+  {
+    "content_id": "content_ee43882d-4e00-4870-a158-b5820cb56900",
+    "title": "Content Unit 78",
+    "content_type": "interactive",
+    "difficulty": 0.45565670486993126,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.22966304118232866
+  },
+  {
+    "content_id": "content_cb4c546e-8144-4976-9508-2f98efeebaeb",
+    "title": "Content Unit 79",
+    "content_type": "video",
+    "difficulty": 0.8308440230304109,
+    "concept_id": "concept_13",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.12440150011322615
+  },
+  {
+    "content_id": "content_b2646e9f-22f4-48f5-83b5-b260875297b5",
+    "title": "Content Unit 80",
+    "content_type": "interactive",
+    "difficulty": 0.4014025195505294,
+    "concept_id": "concept_2",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.1619502081389169
+  },
+  {
+    "content_id": "content_048b9db0-41ac-4be6-8b71-469c2eb7741c",
+    "title": "Content Unit 81",
+    "content_type": "interactive",
+    "difficulty": 0.28724274974368336,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.17922382764217953
+  },
+  {
+    "content_id": "content_7cde4cd7-3bfc-41a0-b479-0b1610a4ccb0",
+    "title": "Content Unit 82",
+    "content_type": "reading",
+    "difficulty": 0.6507881612553932,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.16628354433042855
+  },
+  {
+    "content_id": "content_e5a67422-f6e9-4064-ab6e-cba2f4f3e03c",
+    "title": "Content Unit 83",
+    "content_type": "video",
+    "difficulty": 0.39199031612817126,
+    "concept_id": "concept_6",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.19270614080866055
+  },
+  {
+    "content_id": "content_ef4c49f8-64d6-4906-a2a7-550f845b08e0",
+    "title": "Content Unit 84",
+    "content_type": "quiz",
+    "difficulty": 0.39865247156636874,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.202486671361604
+  },
+  {
+    "content_id": "content_e4559fca-9b79-49f2-9255-9c89796d8ed0",
+    "title": "Content Unit 85",
+    "content_type": "interactive",
+    "difficulty": 0.3224924233360834,
+    "concept_id": "concept_46",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.24644847970082384
+  },
+  {
+    "content_id": "content_7ce69026-b51a-419d-9646-a5b5b9372ab0",
+    "title": "Content Unit 86",
+    "content_type": "quiz",
+    "difficulty": 0.24543241953547304,
+    "concept_id": "concept_21",
+    "estimated_time_minutes": 13,
+    "effectiveness_score": 0.19652597824264012
+  },
+  {
+    "content_id": "content_c2ce591f-8897-4b5a-a9db-ae5ae1090875",
+    "title": "Content Unit 87",
+    "content_type": "video",
+    "difficulty": 0.22547942265334645,
+    "concept_id": "concept_1",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.1910586160885361
+  },
+  {
+    "content_id": "content_7c01a594-463b-428f-850d-8efc61120888",
+    "title": "Content Unit 88",
+    "content_type": "quiz",
+    "difficulty": 0.7469535547475029,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.10534191765606005
+  },
+  {
+    "content_id": "content_ca4c4c36-913e-4ab5-9e51-a7ba1f5b0165",
+    "title": "Content Unit 89",
+    "content_type": "quiz",
+    "difficulty": 0.7977994844851028,
+    "concept_id": "concept_47",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.2434889462894572
+  },
+  {
+    "content_id": "content_f1c66c09-3f60-46d3-baa4-070d07ca6d2a",
+    "title": "Content Unit 90",
+    "content_type": "quiz",
+    "difficulty": 0.8589980630327682,
+    "concept_id": "concept_1",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.18209336083493924
+  },
+  {
+    "content_id": "content_7a47f326-a8e2-4e04-a826-c74366ccfa86",
+    "title": "Content Unit 91",
+    "content_type": "interactive",
+    "difficulty": 0.5111218584103545,
+    "concept_id": "concept_46",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.1272354546708908
+  },
+  {
+    "content_id": "content_14fd428d-e60e-4ec5-b9fb-3535de8555c2",
+    "title": "Content Unit 92",
+    "content_type": "reading",
+    "difficulty": 0.7353949741961349,
+    "concept_id": "concept_43",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.1919432829625352
+  },
+  {
+    "content_id": "content_d7a7f683-ca6a-4f38-9bc5-9761981eb1a2",
+    "title": "Content Unit 93",
+    "content_type": "reading",
+    "difficulty": 0.2815908468179498,
+    "concept_id": "concept_23",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.12673771799971364
+  },
+  {
+    "content_id": "content_7216b0c6-1804-4ef8-ae3a-6bc4b086cc57",
+    "title": "Content Unit 94",
+    "content_type": "quiz",
+    "difficulty": 0.5254528106472254,
+    "concept_id": "concept_32",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.2433314923432338
+  },
+  {
+    "content_id": "content_e31ee6b6-b013-4350-8bac-1e4df6c84d8f",
+    "title": "Content Unit 95",
+    "content_type": "video",
+    "difficulty": 0.7462803767520719,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.14235484669476112
+  },
+  {
+    "content_id": "content_2647dbc2-bb88-4c1f-9b36-328392d0284d",
+    "title": "Content Unit 96",
+    "content_type": "video",
+    "difficulty": 0.1677590737176874,
+    "concept_id": "concept_7",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.1244799380556322
+  },
+  {
+    "content_id": "content_29fb6af9-6e26-4a87-afcc-4dea38de61dd",
+    "title": "Content Unit 97",
+    "content_type": "video",
+    "difficulty": 0.35479854526626153,
+    "concept_id": "concept_27",
+    "estimated_time_minutes": 28,
+    "effectiveness_score": 0.1760066491981851
+  },
+  {
+    "content_id": "content_4969abbf-ba80-4fcb-a1e7-7fe7a6cd881a",
+    "title": "Content Unit 98",
+    "content_type": "video",
+    "difficulty": 0.8537257501181383,
+    "concept_id": "concept_43",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.1333878670025684
+  },
+  {
+    "content_id": "content_2c66d0c5-aed2-4783-949e-660efd00f355",
+    "title": "Content Unit 99",
+    "content_type": "reading",
+    "difficulty": 0.3347986806093768,
+    "concept_id": "concept_27",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.14461474555558457
+  },
+  {
+    "content_id": "content_cb63900e-c2fd-4637-b832-aa72ed440665",
+    "title": "Content Unit 100",
+    "content_type": "reading",
+    "difficulty": 0.7086813448954806,
+    "concept_id": "concept_24",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.17631346357760408
+  },
+  {
+    "content_id": "content_709335f8-2051-4726-a150-7e40d35b2d08",
+    "title": "Content Unit 101",
+    "content_type": "video",
+    "difficulty": 0.8645869410967802,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.2492974553048477
+  },
+  {
+    "content_id": "content_459f724e-58e8-44c4-bab8-2e306d238ed2",
+    "title": "Content Unit 102",
+    "content_type": "quiz",
+    "difficulty": 0.12216139817354438,
+    "concept_id": "concept_40",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.16249742118603666
+  },
+  {
+    "content_id": "content_c89dfb5d-195a-42c1-a863-c44614634527",
+    "title": "Content Unit 103",
+    "content_type": "quiz",
+    "difficulty": 0.5944870721525235,
+    "concept_id": "concept_30",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.11704035781434237
+  },
+  {
+    "content_id": "content_e7ad7ff4-fbea-493b-a99c-1bf3ac9dd9c1",
+    "title": "Content Unit 104",
+    "content_type": "reading",
+    "difficulty": 0.3217273545685682,
+    "concept_id": "concept_39",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.12784456856994386
+  },
+  {
+    "content_id": "content_4f3da642-185d-4b12-942d-4f696615d39b",
+    "title": "Content Unit 105",
+    "content_type": "reading",
+    "difficulty": 0.11847613457669803,
+    "concept_id": "concept_24",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.13454994684449176
+  },
+  {
+    "content_id": "content_f287d59e-e206-4363-a15b-e3705afa7f46",
+    "title": "Content Unit 106",
+    "content_type": "reading",
+    "difficulty": 0.4619264066638422,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.10835748294569364
+  },
+  {
+    "content_id": "content_33604205-3fb8-4f84-8431-d92b2fc44e72",
+    "title": "Content Unit 107",
+    "content_type": "reading",
+    "difficulty": 0.8402983161114695,
+    "concept_id": "concept_22",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.24523476035324937
+  },
+  {
+    "content_id": "content_c7dd46a9-0638-4680-9b61-c626f0a70050",
+    "title": "Content Unit 108",
+    "content_type": "reading",
+    "difficulty": 0.32368485671460095,
+    "concept_id": "concept_6",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.18426969444657526
+  },
+  {
+    "content_id": "content_9ac6705e-f2b7-44f1-9e83-483146fa9e07",
+    "title": "Content Unit 109",
+    "content_type": "video",
+    "difficulty": 0.38037987805976936,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 17,
+    "effectiveness_score": 0.16622763950784247
+  },
+  {
+    "content_id": "content_63c870b1-81f5-4208-8f37-e5886c5f4350",
+    "title": "Content Unit 110",
+    "content_type": "reading",
+    "difficulty": 0.5903809736330261,
+    "concept_id": "concept_47",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.20283919996642347
+  },
+  {
+    "content_id": "content_4db2a67a-5134-4119-a1e6-e3cf957c3d6b",
+    "title": "Content Unit 111",
+    "content_type": "quiz",
+    "difficulty": 0.2578995295307758,
+    "concept_id": "concept_37",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.13165900753750737
+  },
+  {
+    "content_id": "content_5d748139-81b2-4b8f-a7fa-a65e2496daa9",
+    "title": "Content Unit 112",
+    "content_type": "video",
+    "difficulty": 0.45676313414057423,
+    "concept_id": "concept_25",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.2186110038265779
+  },
+  {
+    "content_id": "content_b5922d45-ffd9-4194-acc5-aefcdd472247",
+    "title": "Content Unit 113",
+    "content_type": "interactive",
+    "difficulty": 0.843354845259193,
+    "concept_id": "concept_37",
+    "estimated_time_minutes": 13,
+    "effectiveness_score": 0.21222785159649127
+  },
+  {
+    "content_id": "content_4deaa6c6-a22e-4a21-87de-e6bc0e5b4bb1",
+    "title": "Content Unit 114",
+    "content_type": "quiz",
+    "difficulty": 0.23542537142823133,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.2047903559602664
+  },
+  {
+    "content_id": "content_3b55f045-66f5-4c98-a053-5308b3c5996b",
+    "title": "Content Unit 115",
+    "content_type": "reading",
+    "difficulty": 0.2340447977498301,
+    "concept_id": "concept_25",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.12680629716166905
+  },
+  {
+    "content_id": "content_88f0c60d-6eac-46aa-b634-1119b015d766",
+    "title": "Content Unit 116",
+    "content_type": "video",
+    "difficulty": 0.7176126910592614,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.23123664368918986
+  },
+  {
+    "content_id": "content_a7c87630-2cfb-409c-bdbd-1d7c54a5c480",
+    "title": "Content Unit 117",
+    "content_type": "video",
+    "difficulty": 0.8837975585986094,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.16567888911064946
+  },
+  {
+    "content_id": "content_977e1d73-95e9-4d97-bc47-52c5ba3381bb",
+    "title": "Content Unit 118",
+    "content_type": "quiz",
+    "difficulty": 0.7608425585468761,
+    "concept_id": "concept_1",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.10148953226907204
+  },
+  {
+    "content_id": "content_c38f8f2e-1e5b-4486-ab29-c5634f81f1ea",
+    "title": "Content Unit 119",
+    "content_type": "video",
+    "difficulty": 0.6935165850088347,
+    "concept_id": "concept_32",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.16376315415363468
+  },
+  {
+    "content_id": "content_a9e63c07-1fd2-46aa-b9bb-c7824833fd5c",
+    "title": "Content Unit 120",
+    "content_type": "reading",
+    "difficulty": 0.5814446145206884,
+    "concept_id": "concept_4",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.12901229981002083
+  },
+  {
+    "content_id": "content_0dec46ca-2023-4468-b8ee-5a3b84949331",
+    "title": "Content Unit 121",
+    "content_type": "quiz",
+    "difficulty": 0.1425869371838272,
+    "concept_id": "concept_41",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.17680764652623057
+  },
+  {
+    "content_id": "content_26e72acb-15d1-428c-8ef4-0f148349bbab",
+    "title": "Content Unit 122",
+    "content_type": "video",
+    "difficulty": 0.45937744390000523,
+    "concept_id": "concept_21",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.1206630717193422
+  },
+  {
+    "content_id": "content_9a90d931-3eb8-4eca-9551-d91b88dedee1",
+    "title": "Content Unit 123",
+    "content_type": "quiz",
+    "difficulty": 0.6337256013332785,
+    "concept_id": "concept_26",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.14911451984069607
+  },
+  {
+    "content_id": "content_cf6d52fb-2a1d-4de1-9ae3-f314b1db9a90",
+    "title": "Content Unit 124",
+    "content_type": "interactive",
+    "difficulty": 0.8035546907882175,
+    "concept_id": "concept_13",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.23125983283396925
+  },
+  {
+    "content_id": "content_167e8adb-37ee-4c0b-8dfa-b3fa9c086161",
+    "title": "Content Unit 125",
+    "content_type": "reading",
+    "difficulty": 0.18845681964798866,
+    "concept_id": "concept_37",
+    "estimated_time_minutes": 13,
+    "effectiveness_score": 0.15811438227213057
+  },
+  {
+    "content_id": "content_974923ea-2c64-47e7-af4a-ab8af7897504",
+    "title": "Content Unit 126",
+    "content_type": "reading",
+    "difficulty": 0.6109860212876729,
+    "concept_id": "concept_39",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.186577456541902
+  },
+  {
+    "content_id": "content_318bbe21-c33a-432b-979f-a4a44f2b11a7",
+    "title": "Content Unit 127",
+    "content_type": "quiz",
+    "difficulty": 0.16050735403088803,
+    "concept_id": "concept_26",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.22466069734456667
+  },
+  {
+    "content_id": "content_a9c86078-1d66-4200-96aa-c5aed4e3cb6b",
+    "title": "Content Unit 128",
+    "content_type": "quiz",
+    "difficulty": 0.6676650591563099,
+    "concept_id": "concept_17",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.16053530672557664
+  },
+  {
+    "content_id": "content_b2a54d7c-14c1-42e8-8522-293fd8a2b8c3",
+    "title": "Content Unit 129",
+    "content_type": "interactive",
+    "difficulty": 0.5661597833510873,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.14915830324608156
+  },
+  {
+    "content_id": "content_829efb9e-a982-4574-9254-f1e82f0e904f",
+    "title": "Content Unit 130",
+    "content_type": "reading",
+    "difficulty": 0.19371754321302248,
+    "concept_id": "concept_41",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.1599049938788932
+  },
+  {
+    "content_id": "content_05445461-04d8-4744-89fc-a5d2a2eeb98d",
+    "title": "Content Unit 131",
+    "content_type": "video",
+    "difficulty": 0.46075210372007935,
+    "concept_id": "concept_34",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.20977270016542338
+  },
+  {
+    "content_id": "content_9835511d-e0ab-4f79-88fa-9c3d6aa58fee",
+    "title": "Content Unit 132",
+    "content_type": "reading",
+    "difficulty": 0.6294003071305561,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.10393955179509884
+  },
+  {
+    "content_id": "content_21381d9e-644b-4cbb-b4fe-4c5b9fe4e229",
+    "title": "Content Unit 133",
+    "content_type": "reading",
+    "difficulty": 0.14812640256918297,
+    "concept_id": "concept_15",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.15623642911366803
+  },
+  {
+    "content_id": "content_a216d940-8fe3-46c8-b6f0-1304ece772b2",
+    "title": "Content Unit 134",
+    "content_type": "video",
+    "difficulty": 0.5464787695812573,
+    "concept_id": "concept_16",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.2404926430797781
+  },
+  {
+    "content_id": "content_a24fcb84-4630-4171-a073-370c21aab220",
+    "title": "Content Unit 135",
+    "content_type": "reading",
+    "difficulty": 0.30028380109023634,
+    "concept_id": "concept_38",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.16474232030684138
+  },
+  {
+    "content_id": "content_1bbdeaeb-1e33-4d27-a48f-211de3e6da4a",
+    "title": "Content Unit 136",
+    "content_type": "interactive",
+    "difficulty": 0.8902943684130008,
+    "concept_id": "concept_13",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.20334291676338953
+  },
+  {
+    "content_id": "content_cc9cdffa-e1ba-4e8a-8787-bf0105f39ba7",
+    "title": "Content Unit 137",
+    "content_type": "reading",
+    "difficulty": 0.22599725888567532,
+    "concept_id": "concept_22",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.20105574114374536
+  },
+  {
+    "content_id": "content_b0cbd776-7adb-4740-a86c-df2c82436b32",
+    "title": "Content Unit 138",
+    "content_type": "reading",
+    "difficulty": 0.3923677891456564,
+    "concept_id": "concept_36",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.24437803647598935
+  },
+  {
+    "content_id": "content_e2a8bb48-a065-4e6b-8070-b74ea26d66f7",
+    "title": "Content Unit 139",
+    "content_type": "video",
+    "difficulty": 0.7585088870550124,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.14148579014124166
+  },
+  {
+    "content_id": "content_5b6364ba-df92-4764-b5c5-898e0e3c977f",
+    "title": "Content Unit 140",
+    "content_type": "quiz",
+    "difficulty": 0.4403196418009109,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 28,
+    "effectiveness_score": 0.12083531160503277
+  },
+  {
+    "content_id": "content_b4c456ad-6154-49d5-861c-7c5e5386fcfc",
+    "title": "Content Unit 141",
+    "content_type": "quiz",
+    "difficulty": 0.7681177317117681,
+    "concept_id": "concept_22",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.15343213245623238
+  },
+  {
+    "content_id": "content_8c1846b9-fd54-4956-bd99-6abd5cddad54",
+    "title": "Content Unit 142",
+    "content_type": "quiz",
+    "difficulty": 0.2710327780419678,
+    "concept_id": "concept_27",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.23272706084277714
+  },
+  {
+    "content_id": "content_23a716ee-fd76-4b17-83d6-55baaca41c55",
+    "title": "Content Unit 143",
+    "content_type": "interactive",
+    "difficulty": 0.11456934608610414,
+    "concept_id": "concept_17",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.22910338180670933
+  },
+  {
+    "content_id": "content_3381e70a-a97c-4d12-857f-c11d5d42b603",
+    "title": "Content Unit 144",
+    "content_type": "quiz",
+    "difficulty": 0.6412660464717171,
+    "concept_id": "concept_22",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.14670483488872782
+  },
+  {
+    "content_id": "content_91fc4412-fb08-4dc4-98e2-73661b0d26d7",
+    "title": "Content Unit 145",
+    "content_type": "quiz",
+    "difficulty": 0.3003721064524243,
+    "concept_id": "concept_14",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.15207297241359236
+  },
+  {
+    "content_id": "content_bbeb389c-bed4-487a-a10e-f7773c9d0133",
+    "title": "Content Unit 146",
+    "content_type": "quiz",
+    "difficulty": 0.1526616869475367,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.1812042506287685
+  },
+  {
+    "content_id": "content_018a2713-8d91-4460-a89e-1538b0a90b19",
+    "title": "Content Unit 147",
+    "content_type": "interactive",
+    "difficulty": 0.26736226195283763,
+    "concept_id": "concept_37",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.15696775482443964
+  },
+  {
+    "content_id": "content_7d20594d-367f-488b-904c-fe53e1f4cb7d",
+    "title": "Content Unit 148",
+    "content_type": "reading",
+    "difficulty": 0.21439234849672922,
+    "concept_id": "concept_37",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.1574357316749009
+  },
+  {
+    "content_id": "content_d46424b4-febc-4f36-99ba-cdc23c645df2",
+    "title": "Content Unit 149",
+    "content_type": "interactive",
+    "difficulty": 0.12296230960773952,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.1920414098249852
+  },
+  {
+    "content_id": "content_b606c084-db86-4020-ac5a-4f4548ef62d2",
+    "title": "Content Unit 150",
+    "content_type": "video",
+    "difficulty": 0.16596515170220308,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.1141866430686295
+  },
+  {
+    "content_id": "content_54e374a2-80fc-4bb1-8ec0-863bbfebfc5c",
+    "title": "Content Unit 151",
+    "content_type": "interactive",
+    "difficulty": 0.6819228302270618,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.14133944986014735
+  },
+  {
+    "content_id": "content_a42c6154-9826-4f18-8f32-da5dc2b12f1a",
+    "title": "Content Unit 152",
+    "content_type": "interactive",
+    "difficulty": 0.18225245135806623,
+    "concept_id": "concept_24",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.13498889682836065
+  },
+  {
+    "content_id": "content_7656061f-645a-4941-9b86-288abc63a794",
+    "title": "Content Unit 153",
+    "content_type": "interactive",
+    "difficulty": 0.781798739467645,
+    "concept_id": "concept_5",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.20706467577022486
+  },
+  {
+    "content_id": "content_0ce6188c-4a7d-4eec-98f7-95cb17e813b0",
+    "title": "Content Unit 154",
+    "content_type": "video",
+    "difficulty": 0.6836610888656518,
+    "concept_id": "concept_31",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.21015806356581296
+  },
+  {
+    "content_id": "content_17024357-f413-4d52-8c74-64a8bc113d38",
+    "title": "Content Unit 155",
+    "content_type": "interactive",
+    "difficulty": 0.6625590639597212,
+    "concept_id": "concept_32",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.24473159228436656
+  },
+  {
+    "content_id": "content_725e5cb6-bb5e-4fc7-92a0-abce6fe763f2",
+    "title": "Content Unit 156",
+    "content_type": "quiz",
+    "difficulty": 0.652889043187171,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 17,
+    "effectiveness_score": 0.18256159284770695
+  },
+  {
+    "content_id": "content_3e30265b-955a-48d1-8fa4-1c6f980d15ad",
+    "title": "Content Unit 157",
+    "content_type": "video",
+    "difficulty": 0.7740428479145071,
+    "concept_id": "concept_15",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.17680589309311556
+  },
+  {
+    "content_id": "content_22a1d524-a3dd-486b-9498-5b141e8fb59a",
+    "title": "Content Unit 158",
+    "content_type": "interactive",
+    "difficulty": 0.4103386068361553,
+    "concept_id": "concept_29",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.1379255278913465
+  },
+  {
+    "content_id": "content_4f791881-5e2c-4197-b0ae-579c092fd9ef",
+    "title": "Content Unit 159",
+    "content_type": "reading",
+    "difficulty": 0.5442115671112527,
+    "concept_id": "concept_26",
+    "estimated_time_minutes": 28,
+    "effectiveness_score": 0.19989930244857584
+  },
+  {
+    "content_id": "content_136cce97-49d0-42a3-8851-8f05cf1a4067",
+    "title": "Content Unit 160",
+    "content_type": "video",
+    "difficulty": 0.82867019178475,
+    "concept_id": "concept_26",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.22610721197355402
+  },
+  {
+    "content_id": "content_7cab5fa6-53f1-4e6e-b509-d270154725d3",
+    "title": "Content Unit 161",
+    "content_type": "reading",
+    "difficulty": 0.8192513566285283,
+    "concept_id": "concept_47",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.23421084418762908
+  },
+  {
+    "content_id": "content_5a174074-ed1b-4e84-a09a-f6778223be2e",
+    "title": "Content Unit 162",
+    "content_type": "video",
+    "difficulty": 0.7353840156192814,
+    "concept_id": "concept_32",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.23354141176135387
+  },
+  {
+    "content_id": "content_5f3f9c1a-62d7-4968-be97-73e067c32549",
+    "title": "Content Unit 163",
+    "content_type": "video",
+    "difficulty": 0.2487488122485666,
+    "concept_id": "concept_47",
+    "estimated_time_minutes": 13,
+    "effectiveness_score": 0.16151089111404507
+  },
+  {
+    "content_id": "content_39d14729-b8b9-42ed-8533-3abeeb174a25",
+    "title": "Content Unit 164",
+    "content_type": "reading",
+    "difficulty": 0.27012454041994555,
+    "concept_id": "concept_49",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.1220475494946851
+  },
+  {
+    "content_id": "content_3fef6900-d7b8-43ad-b620-0977d4ea609e",
+    "title": "Content Unit 165",
+    "content_type": "video",
+    "difficulty": 0.327179328515817,
+    "concept_id": "concept_42",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.18670466440056316
+  },
+  {
+    "content_id": "content_fd9412e6-0bde-4243-8fad-d9c2f5e849c1",
+    "title": "Content Unit 166",
+    "content_type": "quiz",
+    "difficulty": 0.611313202720311,
+    "concept_id": "concept_24",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.1290215893057204
+  },
+  {
+    "content_id": "content_48895565-5f40-4119-b360-8b1efd6c6e12",
+    "title": "Content Unit 167",
+    "content_type": "quiz",
+    "difficulty": 0.7925109591533173,
+    "concept_id": "concept_49",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.10223640399573636
+  },
+  {
+    "content_id": "content_f5344853-8fa1-4d89-8229-8b65edb852dc",
+    "title": "Content Unit 168",
+    "content_type": "video",
+    "difficulty": 0.6823719388942653,
+    "concept_id": "concept_40",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.10445493520414037
+  },
+  {
+    "content_id": "content_669d2950-ccdd-4584-8315-5e53d7322496",
+    "title": "Content Unit 169",
+    "content_type": "reading",
+    "difficulty": 0.7103570608735086,
+    "concept_id": "concept_38",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.17761567587314608
+  },
+  {
+    "content_id": "content_622dfd79-f80c-43f3-8dee-9092d21dda8e",
+    "title": "Content Unit 170",
+    "content_type": "interactive",
+    "difficulty": 0.37527607017827025,
+    "concept_id": "concept_5",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.2182606948473288
+  },
+  {
+    "content_id": "content_98b1a0b5-cb0f-4351-91c8-746a23056a71",
+    "title": "Content Unit 171",
+    "content_type": "interactive",
+    "difficulty": 0.8724754707377914,
+    "concept_id": "concept_26",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.21063509021050514
+  },
+  {
+    "content_id": "content_041fbe30-ebda-4911-a908-bfeb12bf2f1f",
+    "title": "Content Unit 172",
+    "content_type": "video",
+    "difficulty": 0.3399135995643091,
+    "concept_id": "concept_25",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.18670454569095535
+  },
+  {
+    "content_id": "content_b3567762-5297-49e2-a988-ba34d69a5bb9",
+    "title": "Content Unit 173",
+    "content_type": "reading",
+    "difficulty": 0.802519576713014,
+    "concept_id": "concept_37",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.1391674629169808
+  },
+  {
+    "content_id": "content_492f9dc9-265f-4e89-b8ba-efa9bdbe4aba",
+    "title": "Content Unit 174",
+    "content_type": "reading",
+    "difficulty": 0.8655823513293448,
+    "concept_id": "concept_18",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.13601891512732864
+  },
+  {
+    "content_id": "content_d737410d-e8f0-4074-b613-6f983c41ffaa",
+    "title": "Content Unit 175",
+    "content_type": "video",
+    "difficulty": 0.30650643812967315,
+    "concept_id": "concept_24",
+    "estimated_time_minutes": 28,
+    "effectiveness_score": 0.16689260433301184
+  },
+  {
+    "content_id": "content_546613c9-7a29-4454-a424-15d7b5736121",
+    "title": "Content Unit 176",
+    "content_type": "quiz",
+    "difficulty": 0.5468910844673215,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 17,
+    "effectiveness_score": 0.18342854866886288
+  },
+  {
+    "content_id": "content_ab7cbb6f-0acd-4ddd-ba03-7d6e7b743483",
+    "title": "Content Unit 177",
+    "content_type": "interactive",
+    "difficulty": 0.303376734056821,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.2299399558859219
+  },
+  {
+    "content_id": "content_d4c74a17-a154-42ad-aa52-8a6d715e6f4b",
+    "title": "Content Unit 178",
+    "content_type": "quiz",
+    "difficulty": 0.11289053447247276,
+    "concept_id": "concept_28",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.1651192373089132
+  },
+  {
+    "content_id": "content_db1acac1-793a-4956-a853-10e6a84ba523",
+    "title": "Content Unit 179",
+    "content_type": "video",
+    "difficulty": 0.15217236699361864,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.13215737600434813
+  },
+  {
+    "content_id": "content_6edc3a97-fa15-4990-8568-00a848887b85",
+    "title": "Content Unit 180",
+    "content_type": "reading",
+    "difficulty": 0.7761051504130941,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.17105939865101794
+  },
+  {
+    "content_id": "content_464cc97a-aea9-482c-bc38-c153f0036d59",
+    "title": "Content Unit 181",
+    "content_type": "quiz",
+    "difficulty": 0.2591927712752381,
+    "concept_id": "concept_48",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.1845284660139241
+  },
+  {
+    "content_id": "content_bf7af642-bb2b-4a88-a32a-0f816e84e987",
+    "title": "Content Unit 182",
+    "content_type": "reading",
+    "difficulty": 0.4684650293890218,
+    "concept_id": "concept_5",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.17456067951293125
+  },
+  {
+    "content_id": "content_48de46eb-abb0-40ee-b775-86374d009bdf",
+    "title": "Content Unit 183",
+    "content_type": "interactive",
+    "difficulty": 0.3872285091373945,
+    "concept_id": "concept_19",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.21950943715068957
+  },
+  {
+    "content_id": "content_707e87f2-65d8-4c30-9bc9-cc1329570c2c",
+    "title": "Content Unit 184",
+    "content_type": "quiz",
+    "difficulty": 0.416541578933466,
+    "concept_id": "concept_24",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.14373974670560993
+  },
+  {
+    "content_id": "content_c5fda0cc-48ee-416b-9b6b-60cf1f7eb53e",
+    "title": "Content Unit 185",
+    "content_type": "quiz",
+    "difficulty": 0.622208261391466,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.2142465279448285
+  },
+  {
+    "content_id": "content_cafe5c84-d9dc-4e8a-99b8-8991c991bbbb",
+    "title": "Content Unit 186",
+    "content_type": "quiz",
+    "difficulty": 0.490256934541505,
+    "concept_id": "concept_34",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.13375737646638705
+  },
+  {
+    "content_id": "content_b248b82d-c2f7-498d-8933-272c702edfab",
+    "title": "Content Unit 187",
+    "content_type": "reading",
+    "difficulty": 0.5590072912420333,
+    "concept_id": "concept_5",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.21970696035464374
+  },
+  {
+    "content_id": "content_a86d607c-e724-4c3c-a65c-662196602ae3",
+    "title": "Content Unit 188",
+    "content_type": "interactive",
+    "difficulty": 0.44670600638705027,
+    "concept_id": "concept_37",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.12903548219606858
+  },
+  {
+    "content_id": "content_d6e78494-e141-4056-8452-6f79a2349085",
+    "title": "Content Unit 189",
+    "content_type": "reading",
+    "difficulty": 0.3857003185384248,
+    "concept_id": "concept_28",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.10358322853269927
+  },
+  {
+    "content_id": "content_924f32fb-7c51-4eea-a822-7a6682fdf9a5",
+    "title": "Content Unit 190",
+    "content_type": "video",
+    "difficulty": 0.3463903384576373,
+    "concept_id": "concept_5",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.18984891458824732
+  },
+  {
+    "content_id": "content_fccb44b1-402c-40fe-95f9-c0d36535c5ce",
+    "title": "Content Unit 191",
+    "content_type": "video",
+    "difficulty": 0.44345196731382275,
+    "concept_id": "concept_32",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.21536002809024918
+  },
+  {
+    "content_id": "content_31c31ccc-052b-45e4-9737-b9031df409d7",
+    "title": "Content Unit 192",
+    "content_type": "reading",
+    "difficulty": 0.6321711162458096,
+    "concept_id": "concept_5",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.1367740296142176
+  },
+  {
+    "content_id": "content_0035d037-a07b-45ef-9f75-f49817c1961c",
+    "title": "Content Unit 193",
+    "content_type": "quiz",
+    "difficulty": 0.35764030003983993,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.17648465610351863
+  },
+  {
+    "content_id": "content_ed173e21-f860-4426-b4c0-661d4bfcbe6e",
+    "title": "Content Unit 194",
+    "content_type": "reading",
+    "difficulty": 0.5558838126321013,
+    "concept_id": "concept_23",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.1331355043963653
+  },
+  {
+    "content_id": "content_420f1407-0372-4a93-b3d3-933d168bc690",
+    "title": "Content Unit 195",
+    "content_type": "video",
+    "difficulty": 0.114270014265243,
+    "concept_id": "concept_7",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.14328807996419402
+  },
+  {
+    "content_id": "content_2b515fae-8221-4b4a-8599-7d5c60f16a96",
+    "title": "Content Unit 196",
+    "content_type": "interactive",
+    "difficulty": 0.6202240755286665,
+    "concept_id": "concept_26",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.13126102825012553
+  },
+  {
+    "content_id": "content_7bc57db0-2e8f-4720-aff4-12ae9fcb6e85",
+    "title": "Content Unit 197",
+    "content_type": "interactive",
+    "difficulty": 0.8961768614092928,
+    "concept_id": "concept_39",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.21191303739066517
+  },
+  {
+    "content_id": "content_202cb31a-43b5-488b-b995-3e773170b58e",
+    "title": "Content Unit 198",
+    "content_type": "reading",
+    "difficulty": 0.4897385221525935,
+    "concept_id": "concept_26",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.23099542436177176
+  },
+  {
+    "content_id": "content_0a6897a3-31e2-43d0-ba0d-7f31126465b9",
+    "title": "Content Unit 199",
+    "content_type": "reading",
+    "difficulty": 0.46793124394338015,
+    "concept_id": "concept_22",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.15253239526170806
+  },
+  {
+    "content_id": "content_4402fbed-052c-4bfd-9d01-b40f24a4e8ce",
+    "title": "Content Unit 200",
+    "content_type": "reading",
+    "difficulty": 0.6849849503410932,
+    "concept_id": "concept_32",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.1355175389443743
+  },
+  {
+    "content_id": "content_1780f90d-ae32-43a3-b1ad-d0551d78677e",
+    "title": "Content Unit 201",
+    "content_type": "reading",
+    "difficulty": 0.6243498471145645,
+    "concept_id": "concept_25",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.14902427508294147
+  },
+  {
+    "content_id": "content_a2c59cff-868a-4790-ae55-06c6eb69a6a4",
+    "title": "Content Unit 202",
+    "content_type": "interactive",
+    "difficulty": 0.34491201080595446,
+    "concept_id": "concept_19",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.21958756519825495
+  },
+  {
+    "content_id": "content_5927f3ca-eba5-4063-b496-a556d5803269",
+    "title": "Content Unit 203",
+    "content_type": "interactive",
+    "difficulty": 0.670869773721072,
+    "concept_id": "concept_34",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.17637138606679514
+  },
+  {
+    "content_id": "content_c5b4fb0e-d129-4bf3-8c02-0d50e9751a51",
+    "title": "Content Unit 204",
+    "content_type": "video",
+    "difficulty": 0.2981356053780802,
+    "concept_id": "concept_46",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.10989845411587647
+  },
+  {
+    "content_id": "content_c1e513ec-03a4-4d8c-8379-3c058565e204",
+    "title": "Content Unit 205",
+    "content_type": "quiz",
+    "difficulty": 0.12959733158770437,
+    "concept_id": "concept_41",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.2333931211478477
+  },
+  {
+    "content_id": "content_fee36c37-688b-46df-8a1e-cb1e056099a3",
+    "title": "Content Unit 206",
+    "content_type": "quiz",
+    "difficulty": 0.13443813323757114,
+    "concept_id": "concept_4",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.22521545081796765
+  },
+  {
+    "content_id": "content_e8ca56ab-757b-4ebb-99ca-acf7efb453e7",
+    "title": "Content Unit 207",
+    "content_type": "interactive",
+    "difficulty": 0.6342114394241272,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.19691013492046416
+  },
+  {
+    "content_id": "content_14983103-6c5d-4498-a26c-03007585ee85",
+    "title": "Content Unit 208",
+    "content_type": "reading",
+    "difficulty": 0.5795233851738555,
+    "concept_id": "concept_37",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.10677957500342271
+  },
+  {
+    "content_id": "content_df7042e3-62be-4369-bd83-d4bc6b7af1f8",
+    "title": "Content Unit 209",
+    "content_type": "reading",
+    "difficulty": 0.4314815388372233,
+    "concept_id": "concept_48",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.19599630294096537
+  },
+  {
+    "content_id": "content_5ea84ddc-5a64-424f-a946-15d7dc872ea0",
+    "title": "Content Unit 210",
+    "content_type": "interactive",
+    "difficulty": 0.6841365340091846,
+    "concept_id": "concept_2",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.13684178924287033
+  },
+  {
+    "content_id": "content_0050f186-7761-4f88-8c99-ba92d79c4eed",
+    "title": "Content Unit 211",
+    "content_type": "interactive",
+    "difficulty": 0.6205420673049187,
+    "concept_id": "concept_1",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.13536075062426975
+  },
+  {
+    "content_id": "content_46cc57ba-bce6-4cca-9b3c-f4e125c8debb",
+    "title": "Content Unit 212",
+    "content_type": "video",
+    "difficulty": 0.4544273567327156,
+    "concept_id": "concept_1",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.2178451448160713
+  },
+  {
+    "content_id": "content_5e835d49-b48c-4730-8864-5cdefa716a12",
+    "title": "Content Unit 213",
+    "content_type": "interactive",
+    "difficulty": 0.2947424205822622,
+    "concept_id": "concept_7",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.2222885462543963
+  },
+  {
+    "content_id": "content_4f2c043f-d09f-4587-84a1-5b39976867cb",
+    "title": "Content Unit 214",
+    "content_type": "quiz",
+    "difficulty": 0.4335615923009837,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.2123704659538629
+  },
+  {
+    "content_id": "content_ae7fc59e-c54f-46ba-bfba-707c8428600a",
+    "title": "Content Unit 215",
+    "content_type": "video",
+    "difficulty": 0.2606563957494641,
+    "concept_id": "concept_10",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.1955213084817765
+  },
+  {
+    "content_id": "content_28aca7b3-bdc1-44bd-9748-1ad950745489",
+    "title": "Content Unit 216",
+    "content_type": "interactive",
+    "difficulty": 0.8802779725362967,
+    "concept_id": "concept_6",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.24997479234028824
+  },
+  {
+    "content_id": "content_6bf07351-ac43-4310-813a-a1c7e20d675d",
+    "title": "Content Unit 217",
+    "content_type": "video",
+    "difficulty": 0.2662508346933117,
+    "concept_id": "concept_19",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.24196357406189747
+  },
+  {
+    "content_id": "content_c79bbbf5-20c2-4d0e-9e8a-bd021b9c716f",
+    "title": "Content Unit 218",
+    "content_type": "reading",
+    "difficulty": 0.4817441216472619,
+    "concept_id": "concept_18",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.11348875008580131
+  },
+  {
+    "content_id": "content_61d43525-b967-4f09-85dd-52b7fb01763d",
+    "title": "Content Unit 219",
+    "content_type": "reading",
+    "difficulty": 0.5171948354271095,
+    "concept_id": "concept_22",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.22139341496305642
+  },
+  {
+    "content_id": "content_8c4293b9-cd34-41e8-8dd5-a2675dcf2d86",
+    "title": "Content Unit 220",
+    "content_type": "quiz",
+    "difficulty": 0.4136794153519715,
+    "concept_id": "concept_9",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.15864441505436813
+  },
+  {
+    "content_id": "content_f895a106-af21-456e-84fe-fca932d3d30b",
+    "title": "Content Unit 221",
+    "content_type": "interactive",
+    "difficulty": 0.35723062878258527,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.17109327983899708
+  },
+  {
+    "content_id": "content_3cdfe320-02e6-4aa9-9935-4602be91f99e",
+    "title": "Content Unit 222",
+    "content_type": "video",
+    "difficulty": 0.4773762813852742,
+    "concept_id": "concept_33",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.23665328044327388
+  },
+  {
+    "content_id": "content_d7c9e8c6-43cc-45f6-b375-270108402b96",
+    "title": "Content Unit 223",
+    "content_type": "quiz",
+    "difficulty": 0.2524460203731368,
+    "concept_id": "concept_7",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.19547191230677613
+  },
+  {
+    "content_id": "content_d8f0212c-5b26-46fe-a15f-ba863e6865f4",
+    "title": "Content Unit 224",
+    "content_type": "quiz",
+    "difficulty": 0.7833077889702982,
+    "concept_id": "concept_38",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.10863909680413662
+  },
+  {
+    "content_id": "content_9d9e35aa-35ae-4423-9371-6ad5f8bdbc0a",
+    "title": "Content Unit 225",
+    "content_type": "video",
+    "difficulty": 0.24838183164551408,
+    "concept_id": "concept_41",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.22246873980223197
+  },
+  {
+    "content_id": "content_8a99e102-aaf2-4a67-8e09-429d2883720a",
+    "title": "Content Unit 226",
+    "content_type": "interactive",
+    "difficulty": 0.6535070475540767,
+    "concept_id": "concept_27",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.16211290835529377
+  },
+  {
+    "content_id": "content_33a07eca-3e84-4802-b53b-33586d0078e6",
+    "title": "Content Unit 227",
+    "content_type": "video",
+    "difficulty": 0.6119840948125067,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.1890149014628205
+  },
+  {
+    "content_id": "content_92e1b7ba-970f-46b5-bf19-ca8b28eb27da",
+    "title": "Content Unit 228",
+    "content_type": "quiz",
+    "difficulty": 0.5693464142404878,
+    "concept_id": "concept_28",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.14140450014291697
+  },
+  {
+    "content_id": "content_7600a7e5-ef2e-4347-9bf2-2c6fb31d0742",
+    "title": "Content Unit 229",
+    "content_type": "video",
+    "difficulty": 0.16665127465351992,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.1047629804601375
+  },
+  {
+    "content_id": "content_453e2651-69e2-4b17-989e-9db846cda2d1",
+    "title": "Content Unit 230",
+    "content_type": "quiz",
+    "difficulty": 0.884214449511944,
+    "concept_id": "concept_30",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.22606762802765829
+  },
+  {
+    "content_id": "content_aef22c03-d85e-4757-836a-b98f0b29a846",
+    "title": "Content Unit 231",
+    "content_type": "reading",
+    "difficulty": 0.5939321926090936,
+    "concept_id": "concept_23",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.10232791300660192
+  },
+  {
+    "content_id": "content_35e36e5c-0979-47d3-8e7a-d0a4b763433f",
+    "title": "Content Unit 232",
+    "content_type": "video",
+    "difficulty": 0.148750978431055,
+    "concept_id": "concept_26",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.17235075010062118
+  },
+  {
+    "content_id": "content_fdc7a7a1-c498-434b-959f-51c02205333f",
+    "title": "Content Unit 233",
+    "content_type": "video",
+    "difficulty": 0.7586562735501534,
+    "concept_id": "concept_16",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.22350680203831275
+  },
+  {
+    "content_id": "content_c370a461-5de4-4708-a2ed-1c823081593b",
+    "title": "Content Unit 234",
+    "content_type": "video",
+    "difficulty": 0.6016901876921577,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 17,
+    "effectiveness_score": 0.13549902134871664
+  },
+  {
+    "content_id": "content_d0100834-de08-49d6-b159-8d0b053bfee0",
+    "title": "Content Unit 235",
+    "content_type": "quiz",
+    "difficulty": 0.32236698801067465,
+    "concept_id": "concept_42",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.16099850019673276
+  },
+  {
+    "content_id": "content_8deaf0a0-0c32-43f8-8fe4-4c71110b2ae0",
+    "title": "Content Unit 236",
+    "content_type": "video",
+    "difficulty": 0.6785263579851235,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.22276632751018685
+  },
+  {
+    "content_id": "content_80552d5e-0f17-4427-8094-4cb47b1c0013",
+    "title": "Content Unit 237",
+    "content_type": "reading",
+    "difficulty": 0.3329164444936412,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.11562422341353082
+  },
+  {
+    "content_id": "content_7f0ce80f-7461-4555-85db-3b4a7cf63e07",
+    "title": "Content Unit 238",
+    "content_type": "interactive",
+    "difficulty": 0.5967943665281618,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.1920202077135731
+  },
+  {
+    "content_id": "content_17199618-5b24-4a2c-a394-facaeed993b3",
+    "title": "Content Unit 239",
+    "content_type": "quiz",
+    "difficulty": 0.32321199502032477,
+    "concept_id": "concept_27",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.11903946900072901
+  },
+  {
+    "content_id": "content_f3b5a7bb-e590-46a4-9de4-ebb17a604840",
+    "title": "Content Unit 240",
+    "content_type": "interactive",
+    "difficulty": 0.861812603496452,
+    "concept_id": "concept_27",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.20336262209691086
+  },
+  {
+    "content_id": "content_f9e29d72-6e42-47eb-8da6-0900f595560c",
+    "title": "Content Unit 241",
+    "content_type": "reading",
+    "difficulty": 0.23842198411567248,
+    "concept_id": "concept_28",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.20183367109304134
+  },
+  {
+    "content_id": "content_630d9fc1-9da7-4499-832c-c4bf4d7cb960",
+    "title": "Content Unit 242",
+    "content_type": "quiz",
+    "difficulty": 0.5891478827295492,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.24484710928664932
+  },
+  {
+    "content_id": "content_83c66703-f5da-40b0-829a-6a8c50281890",
+    "title": "Content Unit 243",
+    "content_type": "quiz",
+    "difficulty": 0.859792619514738,
+    "concept_id": "concept_44",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.23914505729641733
+  },
+  {
+    "content_id": "content_096797b6-4202-4a12-90dd-43b58cd2e880",
+    "title": "Content Unit 244",
+    "content_type": "reading",
+    "difficulty": 0.5411506134725429,
+    "concept_id": "concept_22",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.22722355380141995
+  },
+  {
+    "content_id": "content_6e3051a1-85e4-46b1-884e-663db8732b4f",
+    "title": "Content Unit 245",
+    "content_type": "interactive",
+    "difficulty": 0.41115966843030727,
+    "concept_id": "concept_10",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.21765770768098913
+  },
+  {
+    "content_id": "content_513acc94-519c-4359-add3-f0a6403cb617",
+    "title": "Content Unit 246",
+    "content_type": "quiz",
+    "difficulty": 0.6082367089600587,
+    "concept_id": "concept_38",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.19018083034783334
+  },
+  {
+    "content_id": "content_17cf95a5-c34d-4b96-81a6-8c32c66f8eed",
+    "title": "Content Unit 247",
+    "content_type": "video",
+    "difficulty": 0.21095281801719246,
+    "concept_id": "concept_4",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.24008658323873536
+  },
+  {
+    "content_id": "content_3feca314-d34f-459e-862f-a621ecf4e459",
+    "title": "Content Unit 248",
+    "content_type": "interactive",
+    "difficulty": 0.21540086138476938,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.11966399250763854
+  },
+  {
+    "content_id": "content_20378d1f-d9f7-4005-ac13-fb9caed00756",
+    "title": "Content Unit 249",
+    "content_type": "interactive",
+    "difficulty": 0.2981721740060488,
+    "concept_id": "concept_10",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.13413586814173534
+  },
+  {
+    "content_id": "content_2eb7903c-e0e6-4a0f-840f-5ab16efe2e50",
+    "title": "Content Unit 250",
+    "content_type": "reading",
+    "difficulty": 0.6998220439548419,
+    "concept_id": "concept_18",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.17248161139604418
+  },
+  {
+    "content_id": "content_79f2c4c4-b2a5-4ecf-80a1-892fca9870b0",
+    "title": "Content Unit 251",
+    "content_type": "reading",
+    "difficulty": 0.4119958725302223,
+    "concept_id": "concept_49",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.19598367040802078
+  },
+  {
+    "content_id": "content_f3260135-e3b2-4fc4-bb12-7e1b5e45eebb",
+    "title": "Content Unit 252",
+    "content_type": "quiz",
+    "difficulty": 0.1881949849419816,
+    "concept_id": "concept_9",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.21053698886343974
+  },
+  {
+    "content_id": "content_741df9c7-97a0-4fbf-9d5d-4c1279949a91",
+    "title": "Content Unit 253",
+    "content_type": "video",
+    "difficulty": 0.11528847528181983,
+    "concept_id": "concept_24",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.1807648678337453
+  },
+  {
+    "content_id": "content_c56403e2-bcbd-4aea-ba0b-76e8aca70df8",
+    "title": "Content Unit 254",
+    "content_type": "quiz",
+    "difficulty": 0.6099391095668141,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.12655807310724757
+  },
+  {
+    "content_id": "content_17eea131-4dd8-4755-bf24-898a430bcc75",
+    "title": "Content Unit 255",
+    "content_type": "reading",
+    "difficulty": 0.25066835262631537,
+    "concept_id": "concept_48",
+    "estimated_time_minutes": 28,
+    "effectiveness_score": 0.18935035324694094
+  },
+  {
+    "content_id": "content_0e2a043f-8a81-49b8-bac1-d7ae14b57406",
+    "title": "Content Unit 256",
+    "content_type": "quiz",
+    "difficulty": 0.41975471389649177,
+    "concept_id": "concept_22",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.10208202632799947
+  },
+  {
+    "content_id": "content_654b7b66-44d6-4fa6-a0e6-b981dc429220",
+    "title": "Content Unit 257",
+    "content_type": "video",
+    "difficulty": 0.34933361765378645,
+    "concept_id": "concept_27",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.13307261345871474
+  },
+  {
+    "content_id": "content_d34722eb-39a8-442b-9fb2-0e25d2c2e9ff",
+    "title": "Content Unit 258",
+    "content_type": "quiz",
+    "difficulty": 0.5575803963129444,
+    "concept_id": "concept_1",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.2408018092553395
+  },
+  {
+    "content_id": "content_568b0447-78f0-4113-82de-b6748ef71454",
+    "title": "Content Unit 259",
+    "content_type": "video",
+    "difficulty": 0.7975555017142597,
+    "concept_id": "concept_1",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.24036898264413173
+  },
+  {
+    "content_id": "content_0e16a59f-5e07-46d3-8a2c-be5264148cc0",
+    "title": "Content Unit 260",
+    "content_type": "video",
+    "difficulty": 0.5460871558429735,
+    "concept_id": "concept_10",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.18445341338083798
+  },
+  {
+    "content_id": "content_89506bef-4bc3-4ff0-b0f8-76055ab4d410",
+    "title": "Content Unit 261",
+    "content_type": "reading",
+    "difficulty": 0.22246878445883614,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.13148249785828925
+  },
+  {
+    "content_id": "content_78b30f8d-3796-40b1-94a4-7016bd9daa5d",
+    "title": "Content Unit 262",
+    "content_type": "video",
+    "difficulty": 0.3266163482442691,
+    "concept_id": "concept_31",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.18432890174103064
+  },
+  {
+    "content_id": "content_32bac548-4cab-4524-98f4-fe08a2400813",
+    "title": "Content Unit 263",
+    "content_type": "video",
+    "difficulty": 0.12652457422893076,
+    "concept_id": "concept_30",
+    "estimated_time_minutes": 13,
+    "effectiveness_score": 0.12444202175168247
+  },
+  {
+    "content_id": "content_fd2d378d-1f03-4802-a1da-5ddaddfb66ce",
+    "title": "Content Unit 264",
+    "content_type": "quiz",
+    "difficulty": 0.4815528565048366,
+    "concept_id": "concept_32",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.1832417776381906
+  },
+  {
+    "content_id": "content_cd2c8ca0-aedb-4d82-aa77-2c916382d35b",
+    "title": "Content Unit 265",
+    "content_type": "video",
+    "difficulty": 0.1373572788967782,
+    "concept_id": "concept_30",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.2380485805406982
+  },
+  {
+    "content_id": "content_cb07afc8-c0db-4f8d-8e35-ef4d5cbefa6e",
+    "title": "Content Unit 266",
+    "content_type": "reading",
+    "difficulty": 0.8973421225176839,
+    "concept_id": "concept_10",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.17033700880907388
+  },
+  {
+    "content_id": "content_c1233c0c-9239-4f07-9736-6b5aa5bc4d85",
+    "title": "Content Unit 267",
+    "content_type": "video",
+    "difficulty": 0.560944537916893,
+    "concept_id": "concept_18",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.13960725998952972
+  },
+  {
+    "content_id": "content_44fc822c-cc3c-4928-9cb0-c07ac506b513",
+    "title": "Content Unit 268",
+    "content_type": "interactive",
+    "difficulty": 0.41788690245764226,
+    "concept_id": "concept_27",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.23278748672254496
+  },
+  {
+    "content_id": "content_d8802cc8-d3df-45c8-b48e-4888b64dd2ef",
+    "title": "Content Unit 269",
+    "content_type": "reading",
+    "difficulty": 0.24123894525827386,
+    "concept_id": "concept_26",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.19219144365166713
+  },
+  {
+    "content_id": "content_754a66d5-cfc3-4a6b-a8ed-67e2bab23dca",
+    "title": "Content Unit 270",
+    "content_type": "interactive",
+    "difficulty": 0.5770234204042989,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.2452258447904971
+  },
+  {
+    "content_id": "content_da990933-333b-4b76-a0e6-8b6387961b5e",
+    "title": "Content Unit 271",
+    "content_type": "quiz",
+    "difficulty": 0.8589646204045794,
+    "concept_id": "concept_24",
+    "estimated_time_minutes": 13,
+    "effectiveness_score": 0.12123950772869255
+  },
+  {
+    "content_id": "content_b0cde8b9-218e-4222-a50d-ba97844e3798",
+    "title": "Content Unit 272",
+    "content_type": "reading",
+    "difficulty": 0.6035147553059502,
+    "concept_id": "concept_40",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.13422839951551616
+  },
+  {
+    "content_id": "content_7b19c0e2-f297-4109-92ed-c313ee86cbca",
+    "title": "Content Unit 273",
+    "content_type": "video",
+    "difficulty": 0.13837970408744918,
+    "concept_id": "concept_38",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.15149615952001227
+  },
+  {
+    "content_id": "content_2af327f5-a5ee-4191-9dc9-86aa6d513037",
+    "title": "Content Unit 274",
+    "content_type": "reading",
+    "difficulty": 0.8129747265625841,
+    "concept_id": "concept_37",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.22620131850559888
+  },
+  {
+    "content_id": "content_3b265e69-e38c-4682-b9df-6d945b400eca",
+    "title": "Content Unit 275",
+    "content_type": "interactive",
+    "difficulty": 0.26452107490650845,
+    "concept_id": "concept_43",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.10125431652037319
+  },
+  {
+    "content_id": "content_0587286a-d62f-41c0-a886-0233cc350894",
+    "title": "Content Unit 276",
+    "content_type": "interactive",
+    "difficulty": 0.21301844153243776,
+    "concept_id": "concept_27",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.14319835749470328
+  },
+  {
+    "content_id": "content_4a29d695-f235-408f-b932-99742692d8f6",
+    "title": "Content Unit 277",
+    "content_type": "interactive",
+    "difficulty": 0.7742874333242936,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.12262575408841297
+  },
+  {
+    "content_id": "content_1f6479e2-6321-4865-871b-8a32c69ec1d2",
+    "title": "Content Unit 278",
+    "content_type": "reading",
+    "difficulty": 0.21506195236547862,
+    "concept_id": "concept_7",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.19575612022982147
+  },
+  {
+    "content_id": "content_c055036f-03f4-49c3-bd24-1e63f227fcc9",
+    "title": "Content Unit 279",
+    "content_type": "quiz",
+    "difficulty": 0.7808279431863939,
+    "concept_id": "concept_15",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.1332467029567528
+  },
+  {
+    "content_id": "content_69193864-0afd-46bb-94a7-8fb1d6ec6fef",
+    "title": "Content Unit 280",
+    "content_type": "interactive",
+    "difficulty": 0.28881034225819047,
+    "concept_id": "concept_39",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.10440160507914277
+  },
+  {
+    "content_id": "content_616e9d64-3f95-4824-be0b-4f285e87e248",
+    "title": "Content Unit 281",
+    "content_type": "video",
+    "difficulty": 0.21982311411119895,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.22429108626311897
+  },
+  {
+    "content_id": "content_2ac5e2e0-a90e-4bd5-896d-2409585257fe",
+    "title": "Content Unit 282",
+    "content_type": "reading",
+    "difficulty": 0.8050707631103035,
+    "concept_id": "concept_36",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.1445678104251026
+  },
+  {
+    "content_id": "content_244b59c8-15a9-4b7f-a246-0b8518a35b24",
+    "title": "Content Unit 283",
+    "content_type": "reading",
+    "difficulty": 0.8309899173993875,
+    "concept_id": "concept_26",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.11219631182288402
+  },
+  {
+    "content_id": "content_3b241064-a0a3-4b0a-9894-519ffc863290",
+    "title": "Content Unit 284",
+    "content_type": "video",
+    "difficulty": 0.29768534970815486,
+    "concept_id": "concept_19",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.2172765228454284
+  },
+  {
+    "content_id": "content_87ca9cc5-4e57-465b-bd45-64c99c82ce97",
+    "title": "Content Unit 285",
+    "content_type": "video",
+    "difficulty": 0.8468112045462173,
+    "concept_id": "concept_34",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.1614595645034188
+  },
+  {
+    "content_id": "content_6bf91674-9246-48e5-8b28-cbc83bffbaa9",
+    "title": "Content Unit 286",
+    "content_type": "video",
+    "difficulty": 0.5530142540745263,
+    "concept_id": "concept_29",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.1091936102158905
+  },
+  {
+    "content_id": "content_6f612ec3-6ce5-4001-ae61-e187b5940abe",
+    "title": "Content Unit 287",
+    "content_type": "video",
+    "difficulty": 0.8736939957305807,
+    "concept_id": "concept_31",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.16226331118743187
+  },
+  {
+    "content_id": "content_2fd2551e-160e-40c1-b657-6cc7c483ec08",
+    "title": "Content Unit 288",
+    "content_type": "video",
+    "difficulty": 0.3238859690694376,
+    "concept_id": "concept_46",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.20872594303307707
+  },
+  {
+    "content_id": "content_980bda43-4c73-47c1-9896-30ec8162e90f",
+    "title": "Content Unit 289",
+    "content_type": "interactive",
+    "difficulty": 0.5423301554589596,
+    "concept_id": "concept_38",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.11202384358753796
+  },
+  {
+    "content_id": "content_4ae3e8ff-ab84-4ac4-bdaa-86f78ac9edd6",
+    "title": "Content Unit 290",
+    "content_type": "reading",
+    "difficulty": 0.7973520662302195,
+    "concept_id": "concept_14",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.18238320964771065
+  },
+  {
+    "content_id": "content_4e8dd09b-9737-4098-a0d7-e11d08ae0c61",
+    "title": "Content Unit 291",
+    "content_type": "video",
+    "difficulty": 0.6254909413650709,
+    "concept_id": "concept_22",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.22288727836047026
+  },
+  {
+    "content_id": "content_97e90256-061a-4304-ab2f-d55da2721eb7",
+    "title": "Content Unit 292",
+    "content_type": "interactive",
+    "difficulty": 0.6614992123723996,
+    "concept_id": "concept_15",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.21850812456635788
+  },
+  {
+    "content_id": "content_798adc8c-3fcf-4833-9af6-cde22694661b",
+    "title": "Content Unit 293",
+    "content_type": "video",
+    "difficulty": 0.8328282080219188,
+    "concept_id": "concept_42",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.24104260277121475
+  },
+  {
+    "content_id": "content_baba4a4c-5401-47a0-a1f7-8d023e9dd138",
+    "title": "Content Unit 294",
+    "content_type": "interactive",
+    "difficulty": 0.725069558926504,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.1927733694045135
+  },
+  {
+    "content_id": "content_8c6ce1f3-dde0-4b1d-8536-75b455d55897",
+    "title": "Content Unit 295",
+    "content_type": "quiz",
+    "difficulty": 0.6214460029213208,
+    "concept_id": "concept_29",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.2408176403850122
+  },
+  {
+    "content_id": "content_968b8961-532b-46d0-af84-bc321a07f2a1",
+    "title": "Content Unit 296",
+    "content_type": "reading",
+    "difficulty": 0.11510489113866802,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.15055802570119067
+  },
+  {
+    "content_id": "content_6c5f1841-f9d9-4394-ae88-c499c567e174",
+    "title": "Content Unit 297",
+    "content_type": "video",
+    "difficulty": 0.33362648020599406,
+    "concept_id": "concept_48",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.13150983588081397
+  },
+  {
+    "content_id": "content_6b128d43-a207-4729-ba85-6d7740e36cc6",
+    "title": "Content Unit 298",
+    "content_type": "interactive",
+    "difficulty": 0.2971737809636038,
+    "concept_id": "concept_36",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.23921049686933066
+  },
+  {
+    "content_id": "content_f95ad69b-b9c1-4809-9bbd-95359e7d2ff7",
+    "title": "Content Unit 299",
+    "content_type": "video",
+    "difficulty": 0.3946994638798994,
+    "concept_id": "concept_10",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.2432125766713081
+  },
+  {
+    "content_id": "content_5a712127-9eaa-4fbd-9149-4286faf3bb05",
+    "title": "Content Unit 300",
+    "content_type": "quiz",
+    "difficulty": 0.5159283656804945,
+    "concept_id": "concept_6",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.12600478952720062
+  },
+  {
+    "content_id": "content_dd6cef0d-c098-4fa7-b260-8ef0b9262da2",
+    "title": "Content Unit 301",
+    "content_type": "quiz",
+    "difficulty": 0.3034351004691854,
+    "concept_id": "concept_49",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.23461575077216007
+  },
+  {
+    "content_id": "content_a4723537-8bcb-4cc2-b6b8-d688297af8eb",
+    "title": "Content Unit 302",
+    "content_type": "quiz",
+    "difficulty": 0.13336223332217767,
+    "concept_id": "concept_1",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.24902479805673994
+  },
+  {
+    "content_id": "content_107a21e9-3bf1-4e35-b10f-71b8a3997e21",
+    "title": "Content Unit 303",
+    "content_type": "video",
+    "difficulty": 0.408410466215006,
+    "concept_id": "concept_5",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.17347024834641062
+  },
+  {
+    "content_id": "content_ceb03d09-c15e-4f3e-8d04-fa35475af2f2",
+    "title": "Content Unit 304",
+    "content_type": "quiz",
+    "difficulty": 0.21224124889020893,
+    "concept_id": "concept_13",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.1683329320480778
+  },
+  {
+    "content_id": "content_57dcc6c7-b11c-4fd5-aa46-c656377e9331",
+    "title": "Content Unit 305",
+    "content_type": "quiz",
+    "difficulty": 0.514113308298732,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.20784624498595128
+  },
+  {
+    "content_id": "content_c9e57c96-c903-4479-82e1-7a9150f95f0d",
+    "title": "Content Unit 306",
+    "content_type": "video",
+    "difficulty": 0.8982152574772653,
+    "concept_id": "concept_46",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.22794054582746948
+  },
+  {
+    "content_id": "content_baccd3f3-67d4-4a9d-8ed6-c07abcddbe05",
+    "title": "Content Unit 307",
+    "content_type": "video",
+    "difficulty": 0.24922947045385274,
+    "concept_id": "concept_13",
+    "estimated_time_minutes": 17,
+    "effectiveness_score": 0.22137013434508393
+  },
+  {
+    "content_id": "content_80678676-ae6b-48c4-acac-3d06721b58ed",
+    "title": "Content Unit 308",
+    "content_type": "quiz",
+    "difficulty": 0.6992796522220978,
+    "concept_id": "concept_21",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.1891089836123905
+  },
+  {
+    "content_id": "content_e9f3c172-02e2-40c7-8c08-a08c529e7df4",
+    "title": "Content Unit 309",
+    "content_type": "video",
+    "difficulty": 0.4162040202362388,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.1464662415865311
+  },
+  {
+    "content_id": "content_cc823bd8-5cb3-41e9-9ba3-62423910da35",
+    "title": "Content Unit 310",
+    "content_type": "video",
+    "difficulty": 0.595289463058924,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.133841809390114
+  },
+  {
+    "content_id": "content_fc6459cb-eddd-4f7a-9d7e-4ca3822cc67f",
+    "title": "Content Unit 311",
+    "content_type": "video",
+    "difficulty": 0.12441653770678417,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.15265342666053902
+  },
+  {
+    "content_id": "content_67a134d7-fd64-44cc-807c-205a6f9be072",
+    "title": "Content Unit 312",
+    "content_type": "interactive",
+    "difficulty": 0.1853917251424263,
+    "concept_id": "concept_18",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.19809338277613664
+  },
+  {
+    "content_id": "content_8443cdf0-ad51-43b3-a290-793081efcd22",
+    "title": "Content Unit 313",
+    "content_type": "quiz",
+    "difficulty": 0.3079905756934369,
+    "concept_id": "concept_32",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.18037509385287945
+  },
+  {
+    "content_id": "content_f7bf4988-46d4-47bf-b190-4df1319e72f8",
+    "title": "Content Unit 314",
+    "content_type": "quiz",
+    "difficulty": 0.8515004671514304,
+    "concept_id": "concept_39",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.19830860811414508
+  },
+  {
+    "content_id": "content_82251001-7f32-423e-aa96-4d0b9078c0c0",
+    "title": "Content Unit 315",
+    "content_type": "quiz",
+    "difficulty": 0.49325491744980743,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.10595828338568444
+  },
+  {
+    "content_id": "content_89d4ee0b-e357-4b56-835a-a9aff5a343f8",
+    "title": "Content Unit 316",
+    "content_type": "video",
+    "difficulty": 0.6054165977878361,
+    "concept_id": "concept_30",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.18722908249406733
+  },
+  {
+    "content_id": "content_16fd80b9-8c07-4ca8-8aac-da6c16a51308",
+    "title": "Content Unit 317",
+    "content_type": "video",
+    "difficulty": 0.8137381950886805,
+    "concept_id": "concept_5",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.13849525515861918
+  },
+  {
+    "content_id": "content_e798fe29-d080-4014-aa51-c18132304a93",
+    "title": "Content Unit 318",
+    "content_type": "interactive",
+    "difficulty": 0.4097145570083546,
+    "concept_id": "concept_18",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.13645067282596057
+  },
+  {
+    "content_id": "content_ebdbf880-0e50-4f8b-92a5-46b84c9b7286",
+    "title": "Content Unit 319",
+    "content_type": "interactive",
+    "difficulty": 0.8045873431827988,
+    "concept_id": "concept_38",
+    "estimated_time_minutes": 13,
+    "effectiveness_score": 0.2242963518991422
+  },
+  {
+    "content_id": "content_36b6c7b4-8065-4412-87ec-d7a5603900d5",
+    "title": "Content Unit 320",
+    "content_type": "quiz",
+    "difficulty": 0.6226831095664865,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.23185664868598777
+  },
+  {
+    "content_id": "content_84b2cdf5-89da-4b6f-af88-55d8e94149fe",
+    "title": "Content Unit 321",
+    "content_type": "interactive",
+    "difficulty": 0.4921889724845494,
+    "concept_id": "concept_21",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.2384835792745587
+  },
+  {
+    "content_id": "content_36389ff0-f77b-4c20-9dca-aed74aeed3a4",
+    "title": "Content Unit 322",
+    "content_type": "reading",
+    "difficulty": 0.29298030312473444,
+    "concept_id": "concept_13",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.14421698397497373
+  },
+  {
+    "content_id": "content_bd36baad-7cea-4bff-80df-855f0f417127",
+    "title": "Content Unit 323",
+    "content_type": "video",
+    "difficulty": 0.8100471452058237,
+    "concept_id": "concept_4",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.24577207888819108
+  },
+  {
+    "content_id": "content_a66dda8f-9eac-45ad-a565-dc6ae5b09537",
+    "title": "Content Unit 324",
+    "content_type": "video",
+    "difficulty": 0.6354991920154915,
+    "concept_id": "concept_41",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.20946250716480314
+  },
+  {
+    "content_id": "content_f5d2be52-e669-454b-963f-373a13ee7fca",
+    "title": "Content Unit 325",
+    "content_type": "reading",
+    "difficulty": 0.561277712276379,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.14940997639882683
+  },
+  {
+    "content_id": "content_074e9a6c-3f65-4047-be59-e3fd0cf3dd30",
+    "title": "Content Unit 326",
+    "content_type": "video",
+    "difficulty": 0.6133091187550892,
+    "concept_id": "concept_43",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.18160219524227056
+  },
+  {
+    "content_id": "content_cd5dc3f2-eb7f-4318-bb01-fc5047419092",
+    "title": "Content Unit 327",
+    "content_type": "interactive",
+    "difficulty": 0.35635767538529073,
+    "concept_id": "concept_28",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.10589309785818221
+  },
+  {
+    "content_id": "content_d499d344-7619-4016-8682-d463550a9dff",
+    "title": "Content Unit 328",
+    "content_type": "reading",
+    "difficulty": 0.42471961052667984,
+    "concept_id": "concept_43",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.21129315056227999
+  },
+  {
+    "content_id": "content_2a1fee40-3316-49a6-9b17-f16668f74fa3",
+    "title": "Content Unit 329",
+    "content_type": "quiz",
+    "difficulty": 0.6630175714722373,
+    "concept_id": "concept_4",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.2228350262655791
+  },
+  {
+    "content_id": "content_414e0f7b-5789-4dad-84c3-c54c3de05fb0",
+    "title": "Content Unit 330",
+    "content_type": "quiz",
+    "difficulty": 0.8073987776599214,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.19632641431138473
+  },
+  {
+    "content_id": "content_21153dff-40f4-4547-870e-1463220b318f",
+    "title": "Content Unit 331",
+    "content_type": "reading",
+    "difficulty": 0.26584372477047624,
+    "concept_id": "concept_15",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.13755201270985387
+  },
+  {
+    "content_id": "content_7873d9fc-9310-4bcd-bcda-00d2e6fbc5cd",
+    "title": "Content Unit 332",
+    "content_type": "video",
+    "difficulty": 0.6195991489945403,
+    "concept_id": "concept_34",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.19263318407447952
+  },
+  {
+    "content_id": "content_601385fa-3964-4afd-af3e-3766e35205d4",
+    "title": "Content Unit 333",
+    "content_type": "video",
+    "difficulty": 0.7917585213563233,
+    "concept_id": "concept_44",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.20535058735181577
+  },
+  {
+    "content_id": "content_f0724550-a833-4f9a-8ae0-9cfb619e28a7",
+    "title": "Content Unit 334",
+    "content_type": "reading",
+    "difficulty": 0.7619731775863975,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.15223759625872063
+  },
+  {
+    "content_id": "content_7397129e-e0b8-4e61-a69e-a87e7444fa9e",
+    "title": "Content Unit 335",
+    "content_type": "quiz",
+    "difficulty": 0.3756398683990392,
+    "concept_id": "concept_26",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.10523686127694684
+  },
+  {
+    "content_id": "content_c8bf901f-2fa3-4d38-95ba-c5e241ea62c6",
+    "title": "Content Unit 336",
+    "content_type": "quiz",
+    "difficulty": 0.7327404207262175,
+    "concept_id": "concept_11",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.1122600304309389
+  },
+  {
+    "content_id": "content_a7767d6e-9947-4a82-aa8f-10b3674a9634",
+    "title": "Content Unit 337",
+    "content_type": "video",
+    "difficulty": 0.6730689143261862,
+    "concept_id": "concept_23",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.12109342398981257
+  },
+  {
+    "content_id": "content_a54af8f5-71e8-41ca-bb88-1b8c624bbc33",
+    "title": "Content Unit 338",
+    "content_type": "reading",
+    "difficulty": 0.17342518454756642,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.23515485728435148
+  },
+  {
+    "content_id": "content_620da89a-1944-403c-97da-67a4ebac9afa",
+    "title": "Content Unit 339",
+    "content_type": "reading",
+    "difficulty": 0.6578216494033244,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.15661907527397578
+  },
+  {
+    "content_id": "content_2ec12f79-1dd2-4465-9dd2-e53234b9efde",
+    "title": "Content Unit 340",
+    "content_type": "quiz",
+    "difficulty": 0.586482098170041,
+    "concept_id": "concept_19",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.2265485489919195
+  },
+  {
+    "content_id": "content_c8acbed5-e54f-49be-bc14-fcaa6d7badd3",
+    "title": "Content Unit 341",
+    "content_type": "interactive",
+    "difficulty": 0.11360558835405028,
+    "concept_id": "concept_18",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.15420600548535182
+  },
+  {
+    "content_id": "content_ede94b59-8749-455d-9721-f60de677bd8c",
+    "title": "Content Unit 342",
+    "content_type": "interactive",
+    "difficulty": 0.23162112233885407,
+    "concept_id": "concept_29",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.17530266558991092
+  },
+  {
+    "content_id": "content_4cbc278d-55ab-472b-9215-d0545fe9e98c",
+    "title": "Content Unit 343",
+    "content_type": "quiz",
+    "difficulty": 0.4369021593046857,
+    "concept_id": "concept_29",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.19382379814414347
+  },
+  {
+    "content_id": "content_99d0d104-63c8-4e45-a34e-ecd85ae6ff95",
+    "title": "Content Unit 344",
+    "content_type": "video",
+    "difficulty": 0.466233044548935,
+    "concept_id": "concept_32",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.14260976413665943
+  },
+  {
+    "content_id": "content_99196e76-200a-4170-95ec-80591d594c98",
+    "title": "Content Unit 345",
+    "content_type": "interactive",
+    "difficulty": 0.6918047028150169,
+    "concept_id": "concept_6",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.13682793785396413
+  },
+  {
+    "content_id": "content_6394a225-b26e-4bd2-8396-f031941cd554",
+    "title": "Content Unit 346",
+    "content_type": "reading",
+    "difficulty": 0.5208073273809306,
+    "concept_id": "concept_23",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.1580551459796798
+  },
+  {
+    "content_id": "content_df036fc5-0e16-417e-92fd-20436159d5fe",
+    "title": "Content Unit 347",
+    "content_type": "video",
+    "difficulty": 0.6191878594028174,
+    "concept_id": "concept_29",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.17965779307776442
+  },
+  {
+    "content_id": "content_8551f105-7ab1-4252-942f-37692e06eb33",
+    "title": "Content Unit 348",
+    "content_type": "video",
+    "difficulty": 0.8924123216116956,
+    "concept_id": "concept_13",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.11407399840486444
+  },
+  {
+    "content_id": "content_f3cc6fff-f41d-4ed7-82ba-9605a1a169d3",
+    "title": "Content Unit 349",
+    "content_type": "interactive",
+    "difficulty": 0.4435925977973779,
+    "concept_id": "concept_1",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.13601030472781261
+  },
+  {
+    "content_id": "content_881c168d-e8e3-48cb-b118-f8241da6611f",
+    "title": "Content Unit 350",
+    "content_type": "interactive",
+    "difficulty": 0.34487596617880345,
+    "concept_id": "concept_29",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.2085974239076775
+  },
+  {
+    "content_id": "content_5933cdbb-9d3d-4e35-ad17-b56e97560113",
+    "title": "Content Unit 351",
+    "content_type": "video",
+    "difficulty": 0.3869473946157739,
+    "concept_id": "concept_18",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.22794470270975595
+  },
+  {
+    "content_id": "content_6060946f-52a9-4987-a3ae-5fadd0b991ad",
+    "title": "Content Unit 352",
+    "content_type": "interactive",
+    "difficulty": 0.31740336686012016,
+    "concept_id": "concept_23",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.16584478018180326
+  },
+  {
+    "content_id": "content_298bb634-b602-4c0f-9c02-8a1a6b5d773b",
+    "title": "Content Unit 353",
+    "content_type": "interactive",
+    "difficulty": 0.7177772489937916,
+    "concept_id": "concept_7",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.1711437820748312
+  },
+  {
+    "content_id": "content_beb5b416-6ac4-4979-8501-5e707f0baff7",
+    "title": "Content Unit 354",
+    "content_type": "interactive",
+    "difficulty": 0.19421191587817274,
+    "concept_id": "concept_1",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.17339506073087274
+  },
+  {
+    "content_id": "content_4ada316c-2a3f-413e-a82d-e7875c89500f",
+    "title": "Content Unit 355",
+    "content_type": "reading",
+    "difficulty": 0.6918305224839899,
+    "concept_id": "concept_38",
+    "estimated_time_minutes": 17,
+    "effectiveness_score": 0.13863644501287492
+  },
+  {
+    "content_id": "content_a9eeb442-f857-40fc-a0f8-bf7550483791",
+    "title": "Content Unit 356",
+    "content_type": "quiz",
+    "difficulty": 0.6938583867727595,
+    "concept_id": "concept_46",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.13301961676861362
+  },
+  {
+    "content_id": "content_94e17b35-bab5-4207-9225-cf1b520b1522",
+    "title": "Content Unit 357",
+    "content_type": "quiz",
+    "difficulty": 0.5012520738200973,
+    "concept_id": "concept_18",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.18024529715897242
+  },
+  {
+    "content_id": "content_c7295178-b350-4a09-a885-f8a593b60445",
+    "title": "Content Unit 358",
+    "content_type": "quiz",
+    "difficulty": 0.39225104243110354,
+    "concept_id": "concept_46",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.20203518009510518
+  },
+  {
+    "content_id": "content_c54cfba6-a520-4c26-a0a0-7dc1a6339bff",
+    "title": "Content Unit 359",
+    "content_type": "video",
+    "difficulty": 0.22081014076776048,
+    "concept_id": "concept_46",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.1299001377291831
+  },
+  {
+    "content_id": "content_3244e129-1b95-4536-91c2-235a724e8ddd",
+    "title": "Content Unit 360",
+    "content_type": "video",
+    "difficulty": 0.2644685614872082,
+    "concept_id": "concept_49",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.10728164276459036
+  },
+  {
+    "content_id": "content_448c099e-4ee5-4001-922e-6777850d6d2d",
+    "title": "Content Unit 361",
+    "content_type": "video",
+    "difficulty": 0.2346411351964994,
+    "concept_id": "concept_6",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.21200661881016336
+  },
+  {
+    "content_id": "content_c1599c3f-6469-4b79-b60b-b084ad1fb9a0",
+    "title": "Content Unit 362",
+    "content_type": "interactive",
+    "difficulty": 0.27168005421859054,
+    "concept_id": "concept_39",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.20834696455533946
+  },
+  {
+    "content_id": "content_08758f67-c101-4639-abbb-89516d049d7d",
+    "title": "Content Unit 363",
+    "content_type": "reading",
+    "difficulty": 0.20672929369719242,
+    "concept_id": "concept_45",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.1716246977294184
+  },
+  {
+    "content_id": "content_9c95869d-a39a-4567-bd53-bb2ff7ef8578",
+    "title": "Content Unit 364",
+    "content_type": "interactive",
+    "difficulty": 0.8013969269659603,
+    "concept_id": "concept_46",
+    "estimated_time_minutes": 17,
+    "effectiveness_score": 0.20981745566677934
+  },
+  {
+    "content_id": "content_73a2e019-fba8-4917-9e70-78dd96a26b45",
+    "title": "Content Unit 365",
+    "content_type": "quiz",
+    "difficulty": 0.4990286874528975,
+    "concept_id": "concept_24",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.1140843785509957
+  },
+  {
+    "content_id": "content_dc328bbb-2a1c-4d30-87ae-88d940dd0a25",
+    "title": "Content Unit 366",
+    "content_type": "quiz",
+    "difficulty": 0.6377952349126883,
+    "concept_id": "concept_28",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.19440669079962614
+  },
+  {
+    "content_id": "content_7653254c-0028-4393-be42-2a57ffdca30e",
+    "title": "Content Unit 367",
+    "content_type": "quiz",
+    "difficulty": 0.3111760328243734,
+    "concept_id": "concept_11",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.23253772289787503
+  },
+  {
+    "content_id": "content_f9fc08a0-53fc-418e-b6a6-274ca4e39029",
+    "title": "Content Unit 368",
+    "content_type": "quiz",
+    "difficulty": 0.6252343255623872,
+    "concept_id": "concept_38",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.2317724742093594
+  },
+  {
+    "content_id": "content_199dfe14-4d34-412c-88de-8567793dbd2d",
+    "title": "Content Unit 369",
+    "content_type": "interactive",
+    "difficulty": 0.7991661478959023,
+    "concept_id": "concept_15",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.12282789993134956
+  },
+  {
+    "content_id": "content_64808fb3-4962-48eb-a114-c388302ff381",
+    "title": "Content Unit 370",
+    "content_type": "interactive",
+    "difficulty": 0.4100598795168898,
+    "concept_id": "concept_15",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.11593101746748458
+  },
+  {
+    "content_id": "content_35bab500-6722-4abd-a78c-5d6b8ec6b456",
+    "title": "Content Unit 371",
+    "content_type": "reading",
+    "difficulty": 0.5951890853412366,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.22220602259892944
+  },
+  {
+    "content_id": "content_73a235c4-afec-4508-b9a4-cdd2cfd3b380",
+    "title": "Content Unit 372",
+    "content_type": "interactive",
+    "difficulty": 0.24489266592639736,
+    "concept_id": "concept_42",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.18208927634546374
+  },
+  {
+    "content_id": "content_1c3ad0bf-6e44-4f9b-ae40-f8441cb281d2",
+    "title": "Content Unit 373",
+    "content_type": "video",
+    "difficulty": 0.8424918714968508,
+    "concept_id": "concept_4",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.2119688744928454
+  },
+  {
+    "content_id": "content_ed9efb73-8f45-43f1-a7ef-922f09979e36",
+    "title": "Content Unit 374",
+    "content_type": "video",
+    "difficulty": 0.7687121512135101,
+    "concept_id": "concept_15",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.14892340148699448
+  },
+  {
+    "content_id": "content_de25fe53-9786-45dc-8f79-4a1b38d037d8",
+    "title": "Content Unit 375",
+    "content_type": "interactive",
+    "difficulty": 0.7403120082879102,
+    "concept_id": "concept_9",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.16564619970102634
+  },
+  {
+    "content_id": "content_9d73e943-805e-48fe-bca8-e42e71e17af4",
+    "title": "Content Unit 376",
+    "content_type": "quiz",
+    "difficulty": 0.34096937899263563,
+    "concept_id": "concept_38",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.137318399227945
+  },
+  {
+    "content_id": "content_09e7bf7f-7379-4102-b5b3-035667a4bbe3",
+    "title": "Content Unit 377",
+    "content_type": "quiz",
+    "difficulty": 0.10093277974694388,
+    "concept_id": "concept_18",
+    "estimated_time_minutes": 13,
+    "effectiveness_score": 0.22546747308885517
+  },
+  {
+    "content_id": "content_3f88b934-50c2-4f4d-a46d-22a64da59422",
+    "title": "Content Unit 378",
+    "content_type": "reading",
+    "difficulty": 0.24081681744908928,
+    "concept_id": "concept_42",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.11850209124039314
+  },
+  {
+    "content_id": "content_6504bd57-84c6-44c8-8d3e-a349256d0870",
+    "title": "Content Unit 379",
+    "content_type": "interactive",
+    "difficulty": 0.7084898141757378,
+    "concept_id": "concept_44",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.1677689439282707
+  },
+  {
+    "content_id": "content_ed9f5dd1-0ede-4ef7-b685-56e8ac7688b2",
+    "title": "Content Unit 380",
+    "content_type": "interactive",
+    "difficulty": 0.2594237409702306,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 15,
+    "effectiveness_score": 0.20407369238666895
+  },
+  {
+    "content_id": "content_4b8f26b6-f669-4d30-ac71-a5de7abe08f3",
+    "title": "Content Unit 381",
+    "content_type": "video",
+    "difficulty": 0.5748699468199135,
+    "concept_id": "concept_47",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.15251885068321092
+  },
+  {
+    "content_id": "content_c60368a2-3ec8-454e-be5d-96d755f0aa77",
+    "title": "Content Unit 382",
+    "content_type": "video",
+    "difficulty": 0.18206239266345678,
+    "concept_id": "concept_28",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.10347388051396844
+  },
+  {
+    "content_id": "content_b92351a3-b3d1-4279-9a1d-380e33bad631",
+    "title": "Content Unit 383",
+    "content_type": "reading",
+    "difficulty": 0.6109044588721074,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.24746317196942655
+  },
+  {
+    "content_id": "content_bd0a4635-de19-44ed-aee2-8595f72d9885",
+    "title": "Content Unit 384",
+    "content_type": "video",
+    "difficulty": 0.6355567626947338,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.24992808730295935
+  },
+  {
+    "content_id": "content_08321440-2ff3-451e-bb38-9c690e9aa67b",
+    "title": "Content Unit 385",
+    "content_type": "reading",
+    "difficulty": 0.8524547595655353,
+    "concept_id": "concept_13",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.12513887541270213
+  },
+  {
+    "content_id": "content_2bbc51ff-afdc-4964-b5f3-7bde9a3074f9",
+    "title": "Content Unit 386",
+    "content_type": "reading",
+    "difficulty": 0.1106859761639262,
+    "concept_id": "concept_4",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.1883992929836431
+  },
+  {
+    "content_id": "content_bcb42bdd-ccb5-4193-b1d6-849cca90ae9a",
+    "title": "Content Unit 387",
+    "content_type": "video",
+    "difficulty": 0.12024092272896132,
+    "concept_id": "concept_31",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.24417017295480103
+  },
+  {
+    "content_id": "content_6cb461cb-033a-495e-86a1-f2429f2b96d1",
+    "title": "Content Unit 388",
+    "content_type": "video",
+    "difficulty": 0.6273180996528296,
+    "concept_id": "concept_21",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.14494060307807283
+  },
+  {
+    "content_id": "content_01e9a482-f187-46e0-aa5b-ee603e3fafe3",
+    "title": "Content Unit 389",
+    "content_type": "interactive",
+    "difficulty": 0.5148069649004403,
+    "concept_id": "concept_21",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.15731888161491875
+  },
+  {
+    "content_id": "content_db64ba02-2fdb-4da2-869b-99f12702e2bc",
+    "title": "Content Unit 390",
+    "content_type": "reading",
+    "difficulty": 0.7330482045033359,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.148324551574312
+  },
+  {
+    "content_id": "content_cee5f9b8-ce50-497a-8d41-4a11917ca3c3",
+    "title": "Content Unit 391",
+    "content_type": "reading",
+    "difficulty": 0.6158845223716873,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.12952638360020927
+  },
+  {
+    "content_id": "content_da3669a4-750e-4779-a6fd-4a6daacd5e54",
+    "title": "Content Unit 392",
+    "content_type": "reading",
+    "difficulty": 0.3674795104756181,
+    "concept_id": "concept_24",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.21802291644381575
+  },
+  {
+    "content_id": "content_303a1408-192c-4d87-8a79-7470f2a0900f",
+    "title": "Content Unit 393",
+    "content_type": "interactive",
+    "difficulty": 0.3748036435447596,
+    "concept_id": "concept_5",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.22460132413392275
+  },
+  {
+    "content_id": "content_c5a56ed5-acb0-4f1f-ad6e-ed48f0158634",
+    "title": "Content Unit 394",
+    "content_type": "quiz",
+    "difficulty": 0.49634859445070645,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.24832516515692732
+  },
+  {
+    "content_id": "content_71f8b606-99e8-4a2d-9c50-80661e671981",
+    "title": "Content Unit 395",
+    "content_type": "interactive",
+    "difficulty": 0.5527561720517309,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.18643361195782754
+  },
+  {
+    "content_id": "content_c589b194-8cec-450f-8d48-fd7dcf2a9348",
+    "title": "Content Unit 396",
+    "content_type": "reading",
+    "difficulty": 0.4864187336320559,
+    "concept_id": "concept_13",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.2097821800878165
+  },
+  {
+    "content_id": "content_a5dad30d-7fac-435d-afa6-2ee1b33b7b2b",
+    "title": "Content Unit 397",
+    "content_type": "reading",
+    "difficulty": 0.8693821102925093,
+    "concept_id": "concept_39",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.13831007388351146
+  },
+  {
+    "content_id": "content_c0a86e17-e113-4263-b5e6-67471f5a5d12",
+    "title": "Content Unit 398",
+    "content_type": "interactive",
+    "difficulty": 0.4125682612905299,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.19382462805116155
+  },
+  {
+    "content_id": "content_3a8b267b-4939-4e85-b97d-f65983e16e6e",
+    "title": "Content Unit 399",
+    "content_type": "quiz",
+    "difficulty": 0.6672847587957857,
+    "concept_id": "concept_34",
+    "estimated_time_minutes": 28,
+    "effectiveness_score": 0.18269696845503935
+  },
+  {
+    "content_id": "content_2f58a414-e7c2-4bb0-9c27-ca784c281ea4",
+    "title": "Content Unit 400",
+    "content_type": "video",
+    "difficulty": 0.2825083752575138,
+    "concept_id": "concept_45",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.14534563702563552
+  },
+  {
+    "content_id": "content_8136c53a-9d25-4b41-adbf-3b5ce21ef61d",
+    "title": "Content Unit 401",
+    "content_type": "reading",
+    "difficulty": 0.7345440735773477,
+    "concept_id": "concept_31",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.1769321031480871
+  },
+  {
+    "content_id": "content_d4267720-4230-47f4-ad8b-47e35fc8c1b3",
+    "title": "Content Unit 402",
+    "content_type": "quiz",
+    "difficulty": 0.4421442440925283,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.11949218879456036
+  },
+  {
+    "content_id": "content_ffe4a742-0c41-4f0e-9f4c-1353adf2cc84",
+    "title": "Content Unit 403",
+    "content_type": "reading",
+    "difficulty": 0.7518126071805459,
+    "concept_id": "concept_11",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.11247293833592936
+  },
+  {
+    "content_id": "content_d25c70d6-49da-4ed1-be85-0c01f25173fd",
+    "title": "Content Unit 404",
+    "content_type": "quiz",
+    "difficulty": 0.6248709137126955,
+    "concept_id": "concept_13",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.2151082101298813
+  },
+  {
+    "content_id": "content_2e65a496-22a0-4369-8fc7-a4d9eba84772",
+    "title": "Content Unit 405",
+    "content_type": "interactive",
+    "difficulty": 0.3011874425976073,
+    "concept_id": "concept_17",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.1474357438457437
+  },
+  {
+    "content_id": "content_55e420d8-ec9a-4a3e-af45-d5ee98c0807a",
+    "title": "Content Unit 406",
+    "content_type": "interactive",
+    "difficulty": 0.19350819362462135,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.161888869989139
+  },
+  {
+    "content_id": "content_c262b563-53ea-4fa6-9bb9-d9df3e0ead9e",
+    "title": "Content Unit 407",
+    "content_type": "reading",
+    "difficulty": 0.7746231828954349,
+    "concept_id": "concept_45",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.16926450473257182
+  },
+  {
+    "content_id": "content_59fab87a-1956-4e69-8533-d1095a3b3f67",
+    "title": "Content Unit 408",
+    "content_type": "quiz",
+    "difficulty": 0.5274253889636419,
+    "concept_id": "concept_32",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.1767208935827691
+  },
+  {
+    "content_id": "content_4776f9e5-b02d-4c1e-a512-534e97f9c0e8",
+    "title": "Content Unit 409",
+    "content_type": "quiz",
+    "difficulty": 0.11860640872838442,
+    "concept_id": "concept_19",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.2296977923315958
+  },
+  {
+    "content_id": "content_cf19a931-a8e3-4fcb-be2a-9c6fcd50a677",
+    "title": "Content Unit 410",
+    "content_type": "video",
+    "difficulty": 0.4872792339447244,
+    "concept_id": "concept_25",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.22015780361427448
+  },
+  {
+    "content_id": "content_628d12a6-d07e-4984-b9fe-5065571ebbc1",
+    "title": "Content Unit 411",
+    "content_type": "reading",
+    "difficulty": 0.5378006936955835,
+    "concept_id": "concept_10",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.2467554163259359
+  },
+  {
+    "content_id": "content_ee5f80ac-2e0e-48a8-af3b-dc79276a6481",
+    "title": "Content Unit 412",
+    "content_type": "video",
+    "difficulty": 0.1618654616814208,
+    "concept_id": "concept_36",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.14131288667831726
+  },
+  {
+    "content_id": "content_c1295b53-31ac-4c59-b724-3a8f93d977f1",
+    "title": "Content Unit 413",
+    "content_type": "quiz",
+    "difficulty": 0.7267393175609403,
+    "concept_id": "concept_31",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.17900141021730298
+  },
+  {
+    "content_id": "content_15d2c452-77a0-4ba4-bfc6-e08cb01386da",
+    "title": "Content Unit 414",
+    "content_type": "quiz",
+    "difficulty": 0.1036976612791432,
+    "concept_id": "concept_33",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.2324558662738999
+  },
+  {
+    "content_id": "content_b4da1e50-095e-4234-beb2-bf85a6b47698",
+    "title": "Content Unit 415",
+    "content_type": "quiz",
+    "difficulty": 0.8042312685223781,
+    "concept_id": "concept_44",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.11929008415381642
+  },
+  {
+    "content_id": "content_9813a90f-8a7f-4a0e-9308-0e728eda6ba9",
+    "title": "Content Unit 416",
+    "content_type": "video",
+    "difficulty": 0.3363795136111255,
+    "concept_id": "concept_39",
+    "estimated_time_minutes": 6,
+    "effectiveness_score": 0.17530333825541694
+  },
+  {
+    "content_id": "content_fdc82e96-ca30-41a3-82fc-4e6e52691368",
+    "title": "Content Unit 417",
+    "content_type": "interactive",
+    "difficulty": 0.2807128097796312,
+    "concept_id": "concept_23",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.15979272691934565
+  },
+  {
+    "content_id": "content_f48eb25b-6c4f-48ab-8ec0-82cf3129e200",
+    "title": "Content Unit 418",
+    "content_type": "quiz",
+    "difficulty": 0.18921887684526909,
+    "concept_id": "concept_49",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.13823169710841277
+  },
+  {
+    "content_id": "content_fe445ff2-7373-4b5a-8a3f-e00539919c1b",
+    "title": "Content Unit 419",
+    "content_type": "interactive",
+    "difficulty": 0.11277896999795961,
+    "concept_id": "concept_17",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.21277821424744564
+  },
+  {
+    "content_id": "content_ecb19bba-91b8-438f-a04a-46baeff146ad",
+    "title": "Content Unit 420",
+    "content_type": "video",
+    "difficulty": 0.13976393820130006,
+    "concept_id": "concept_45",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.24534031142482116
+  },
+  {
+    "content_id": "content_16168449-f597-468b-ab0a-47f850c672e0",
+    "title": "Content Unit 421",
+    "content_type": "reading",
+    "difficulty": 0.5807726505562729,
+    "concept_id": "concept_15",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.186997537824948
+  },
+  {
+    "content_id": "content_056f5ca9-54c8-4eb0-a7b5-408b9776e364",
+    "title": "Content Unit 422",
+    "content_type": "reading",
+    "difficulty": 0.7663476305632962,
+    "concept_id": "concept_41",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.20409259131305268
+  },
+  {
+    "content_id": "content_330efc74-d668-4381-b7ee-94feafd9e7e7",
+    "title": "Content Unit 423",
+    "content_type": "interactive",
+    "difficulty": 0.5428970282814293,
+    "concept_id": "concept_19",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.10554509767382989
+  },
+  {
+    "content_id": "content_9665d98c-8cfc-4b5d-a366-79db183c0691",
+    "title": "Content Unit 424",
+    "content_type": "reading",
+    "difficulty": 0.8133291418438194,
+    "concept_id": "concept_27",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.16543982346418673
+  },
+  {
+    "content_id": "content_41dd7ccb-d522-4e78-9326-585797ed8eee",
+    "title": "Content Unit 425",
+    "content_type": "video",
+    "difficulty": 0.8340939745550883,
+    "concept_id": "concept_34",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.20435959283265692
+  },
+  {
+    "content_id": "content_b5d516a0-2b48-4d56-a82b-830c00e49cee",
+    "title": "Content Unit 426",
+    "content_type": "interactive",
+    "difficulty": 0.596358663814711,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.1575802329078239
+  },
+  {
+    "content_id": "content_e2be55af-5c80-42ea-9f09-190d29cdc95c",
+    "title": "Content Unit 427",
+    "content_type": "interactive",
+    "difficulty": 0.1871347090237574,
+    "concept_id": "concept_43",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.23895224307252694
+  },
+  {
+    "content_id": "content_b9d34daf-dea7-4899-84ee-9e4094c65076",
+    "title": "Content Unit 428",
+    "content_type": "quiz",
+    "difficulty": 0.5486846419027832,
+    "concept_id": "concept_49",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.11081823685822453
+  },
+  {
+    "content_id": "content_862f02fb-608f-48cc-aa39-948e6c4ce968",
+    "title": "Content Unit 429",
+    "content_type": "reading",
+    "difficulty": 0.6682634807266827,
+    "concept_id": "concept_34",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.11039457420027092
+  },
+  {
+    "content_id": "content_9d2a82e6-eebe-4e7e-b0b6-4546a469f13d",
+    "title": "Content Unit 430",
+    "content_type": "interactive",
+    "difficulty": 0.12334514022295187,
+    "concept_id": "concept_38",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.2495405583707406
+  },
+  {
+    "content_id": "content_bee1c255-429d-4193-8127-185efcbd4f76",
+    "title": "Content Unit 431",
+    "content_type": "video",
+    "difficulty": 0.30172871793846223,
+    "concept_id": "concept_14",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.13816427625018657
+  },
+  {
+    "content_id": "content_5bc1a24e-a554-44f1-a8d8-f471c15c24cc",
+    "title": "Content Unit 432",
+    "content_type": "video",
+    "difficulty": 0.5393490106702814,
+    "concept_id": "concept_6",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.16458348358054775
+  },
+  {
+    "content_id": "content_c56c5b2c-3c35-406a-a857-4b0709bc59d1",
+    "title": "Content Unit 433",
+    "content_type": "reading",
+    "difficulty": 0.7765520738743472,
+    "concept_id": "concept_10",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.20732302620602722
+  },
+  {
+    "content_id": "content_2ec229e2-9040-4baf-bd57-66a7e68254cf",
+    "title": "Content Unit 434",
+    "content_type": "reading",
+    "difficulty": 0.8545872208506117,
+    "concept_id": "concept_28",
+    "estimated_time_minutes": 17,
+    "effectiveness_score": 0.13408564886973354
+  },
+  {
+    "content_id": "content_4666895d-30ab-4f98-8ddb-762a9d5011c2",
+    "title": "Content Unit 435",
+    "content_type": "interactive",
+    "difficulty": 0.8284893038125357,
+    "concept_id": "concept_15",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.16250160521984966
+  },
+  {
+    "content_id": "content_1bcaae9b-7747-4f8c-9d13-6f334dc3f002",
+    "title": "Content Unit 436",
+    "content_type": "video",
+    "difficulty": 0.4586131540536993,
+    "concept_id": "concept_14",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.19811631631055676
+  },
+  {
+    "content_id": "content_86d5ad0e-5fd0-45fe-b524-1dad5c530594",
+    "title": "Content Unit 437",
+    "content_type": "interactive",
+    "difficulty": 0.5827134048951115,
+    "concept_id": "concept_11",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.10195571457497046
+  },
+  {
+    "content_id": "content_de3fad82-eac0-454a-a7e3-17c7e97f4cb9",
+    "title": "Content Unit 438",
+    "content_type": "interactive",
+    "difficulty": 0.674135854990658,
+    "concept_id": "concept_35",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.18675375369151268
+  },
+  {
+    "content_id": "content_b3d35648-b419-4b83-a48a-43c18d4051d5",
+    "title": "Content Unit 439",
+    "content_type": "reading",
+    "difficulty": 0.5208680363644984,
+    "concept_id": "concept_19",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.23515068114059398
+  },
+  {
+    "content_id": "content_ba88210b-1f85-4b9f-abc7-45b2b53382c2",
+    "title": "Content Unit 440",
+    "content_type": "quiz",
+    "difficulty": 0.16675292990908475,
+    "concept_id": "concept_32",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.22708604790250325
+  },
+  {
+    "content_id": "content_c2f38649-b83c-4b86-bb07-da8c78705a69",
+    "title": "Content Unit 441",
+    "content_type": "quiz",
+    "difficulty": 0.19496991831900676,
+    "concept_id": "concept_39",
+    "estimated_time_minutes": 22,
+    "effectiveness_score": 0.22658615064582913
+  },
+  {
+    "content_id": "content_cc0799cf-6906-4d5c-bcd3-dc3e9ea773bf",
+    "title": "Content Unit 442",
+    "content_type": "quiz",
+    "difficulty": 0.3046400661542531,
+    "concept_id": "concept_24",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.22447997000039083
+  },
+  {
+    "content_id": "content_10a6b5da-fd40-4d8e-a8a6-b3b123316faa",
+    "title": "Content Unit 443",
+    "content_type": "quiz",
+    "difficulty": 0.829199017463202,
+    "concept_id": "concept_28",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.13165838907951588
+  },
+  {
+    "content_id": "content_59ab6341-d319-4919-b9f5-82923169298b",
+    "title": "Content Unit 444",
+    "content_type": "reading",
+    "difficulty": 0.3687998118500754,
+    "concept_id": "concept_5",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.1407869502372533
+  },
+  {
+    "content_id": "content_99859945-79fe-488b-8ae4-95bd8cdc9c06",
+    "title": "Content Unit 445",
+    "content_type": "interactive",
+    "difficulty": 0.6388678305229438,
+    "concept_id": "concept_33",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.13369810172556837
+  },
+  {
+    "content_id": "content_a65daac3-27f3-41b1-88fb-1f2994fd7d4b",
+    "title": "Content Unit 446",
+    "content_type": "quiz",
+    "difficulty": 0.8309661741803002,
+    "concept_id": "concept_21",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.2486047366612671
+  },
+  {
+    "content_id": "content_dcb5454d-2be3-4812-a6bd-e2e6c2bf8cde",
+    "title": "Content Unit 447",
+    "content_type": "interactive",
+    "difficulty": 0.43617788274527214,
+    "concept_id": "concept_1",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.19427125940767576
+  },
+  {
+    "content_id": "content_1097a22f-b368-47ed-9566-e4b575c30742",
+    "title": "Content Unit 448",
+    "content_type": "quiz",
+    "difficulty": 0.7988888572573111,
+    "concept_id": "concept_27",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.1042739122796933
+  },
+  {
+    "content_id": "content_087461b6-033b-4abc-88c8-a3ed2e6a5ff5",
+    "title": "Content Unit 449",
+    "content_type": "quiz",
+    "difficulty": 0.2915644167571303,
+    "concept_id": "concept_48",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.14429172682928246
+  },
+  {
+    "content_id": "content_4ec88871-7301-41da-8724-b8778a68ab70",
+    "title": "Content Unit 450",
+    "content_type": "video",
+    "difficulty": 0.6374240008064088,
+    "concept_id": "concept_37",
+    "estimated_time_minutes": 13,
+    "effectiveness_score": 0.24230131497867025
+  },
+  {
+    "content_id": "content_83557959-aa4d-4119-8d22-8c7bcf886cb9",
+    "title": "Content Unit 451",
+    "content_type": "reading",
+    "difficulty": 0.35553206598219234,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.2492416015741316
+  },
+  {
+    "content_id": "content_6ecff89b-6f18-461a-a28d-04bb5251cac5",
+    "title": "Content Unit 452",
+    "content_type": "video",
+    "difficulty": 0.1132986391196159,
+    "concept_id": "concept_10",
+    "estimated_time_minutes": 13,
+    "effectiveness_score": 0.14536239111871496
+  },
+  {
+    "content_id": "content_1a285753-6f0c-43f4-877b-72619e5e2dd0",
+    "title": "Content Unit 453",
+    "content_type": "video",
+    "difficulty": 0.761338682008497,
+    "concept_id": "concept_43",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.12670745693223906
+  },
+  {
+    "content_id": "content_71a873cc-d400-4819-8e6f-e2ec1fc79dee",
+    "title": "Content Unit 454",
+    "content_type": "reading",
+    "difficulty": 0.7862531837545867,
+    "concept_id": "concept_20",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.1770492606997196
+  },
+  {
+    "content_id": "content_a967053a-9142-4824-85a3-5d9e69fc3136",
+    "title": "Content Unit 455",
+    "content_type": "video",
+    "difficulty": 0.48023775815189307,
+    "concept_id": "concept_18",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.10246722905221657
+  },
+  {
+    "content_id": "content_bdf74621-8f0d-4287-8e67-d4097185977c",
+    "title": "Content Unit 456",
+    "content_type": "quiz",
+    "difficulty": 0.46313846478443,
+    "concept_id": "concept_18",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.23954420673262297
+  },
+  {
+    "content_id": "content_343fc901-e12e-48d0-99e9-48fc69a0b50b",
+    "title": "Content Unit 457",
+    "content_type": "reading",
+    "difficulty": 0.1967038352669615,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 14,
+    "effectiveness_score": 0.2232009731815905
+  },
+  {
+    "content_id": "content_e4949fcc-45f6-405c-8e5b-47fe8c16e879",
+    "title": "Content Unit 458",
+    "content_type": "video",
+    "difficulty": 0.33409522901907973,
+    "concept_id": "concept_33",
+    "estimated_time_minutes": 23,
+    "effectiveness_score": 0.1712519348572899
+  },
+  {
+    "content_id": "content_9177a0b2-03c1-4f98-994a-d7e73a1ceed6",
+    "title": "Content Unit 459",
+    "content_type": "reading",
+    "difficulty": 0.5864845164144677,
+    "concept_id": "concept_7",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.16958270652593527
+  },
+  {
+    "content_id": "content_c1342899-a069-4d2c-9fd6-130cafd4e284",
+    "title": "Content Unit 460",
+    "content_type": "video",
+    "difficulty": 0.2294803861354252,
+    "concept_id": "concept_16",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.21977746022513844
+  },
+  {
+    "content_id": "content_ad610599-ca48-414a-84e1-6cbf60460eb6",
+    "title": "Content Unit 461",
+    "content_type": "quiz",
+    "difficulty": 0.20347670107439805,
+    "concept_id": "concept_1",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.11049884291202411
+  },
+  {
+    "content_id": "content_447ff51d-2512-4845-8766-70785a377321",
+    "title": "Content Unit 462",
+    "content_type": "interactive",
+    "difficulty": 0.88794172901611,
+    "concept_id": "concept_14",
+    "estimated_time_minutes": 30,
+    "effectiveness_score": 0.1228177470559576
+  },
+  {
+    "content_id": "content_4a16af28-abb3-48e5-905f-e387b71f872f",
+    "title": "Content Unit 463",
+    "content_type": "video",
+    "difficulty": 0.5575127281032882,
+    "concept_id": "concept_28",
+    "estimated_time_minutes": 11,
+    "effectiveness_score": 0.21750790128409775
+  },
+  {
+    "content_id": "content_135c0a15-675e-448c-91aa-89844133e642",
+    "title": "Content Unit 464",
+    "content_type": "quiz",
+    "difficulty": 0.2507669687010594,
+    "concept_id": "concept_22",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.10694623290544539
+  },
+  {
+    "content_id": "content_e924bb2f-abca-4a4b-a06d-72868e7a4c8d",
+    "title": "Content Unit 465",
+    "content_type": "video",
+    "difficulty": 0.33186128932078846,
+    "concept_id": "concept_26",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.24103076348183158
+  },
+  {
+    "content_id": "content_1ea8b2fb-698e-4f91-98a4-fca5ac4d5e8c",
+    "title": "Content Unit 466",
+    "content_type": "interactive",
+    "difficulty": 0.44143067900167654,
+    "concept_id": "concept_39",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.21163960592462364
+  },
+  {
+    "content_id": "content_17d8358f-c97d-4d29-983d-3383d2095b1d",
+    "title": "Content Unit 467",
+    "content_type": "interactive",
+    "difficulty": 0.5475172331241879,
+    "concept_id": "concept_15",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.11153579745015932
+  },
+  {
+    "content_id": "content_6d86490b-353c-400e-bd96-5b508f75fcb4",
+    "title": "Content Unit 468",
+    "content_type": "video",
+    "difficulty": 0.4856632926899208,
+    "concept_id": "concept_29",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.15059605467594153
+  },
+  {
+    "content_id": "content_b5e4148a-4ab0-4709-beed-d48fecdec1e2",
+    "title": "Content Unit 469",
+    "content_type": "interactive",
+    "difficulty": 0.43413430619371973,
+    "concept_id": "concept_47",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.1374243399818651
+  },
+  {
+    "content_id": "content_34fc3cc6-e095-4a24-b7db-7849a6547381",
+    "title": "Content Unit 470",
+    "content_type": "reading",
+    "difficulty": 0.2346141002971529,
+    "concept_id": "concept_4",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.2285299645564117
+  },
+  {
+    "content_id": "content_ab52ceaa-92d5-40f8-a18f-7f80a7769e48",
+    "title": "Content Unit 471",
+    "content_type": "interactive",
+    "difficulty": 0.6262255601093163,
+    "concept_id": "concept_19",
+    "estimated_time_minutes": 5,
+    "effectiveness_score": 0.19826202086056854
+  },
+  {
+    "content_id": "content_0d57c31d-68ee-4ce4-a850-7d311070b8a8",
+    "title": "Content Unit 472",
+    "content_type": "reading",
+    "difficulty": 0.7343907018314337,
+    "concept_id": "concept_43",
+    "estimated_time_minutes": 17,
+    "effectiveness_score": 0.18993974460520674
+  },
+  {
+    "content_id": "content_0bd39cf2-f05c-4d7d-8f11-def8110290d1",
+    "title": "Content Unit 473",
+    "content_type": "quiz",
+    "difficulty": 0.21500204406435738,
+    "concept_id": "concept_6",
+    "estimated_time_minutes": 28,
+    "effectiveness_score": 0.191151094524034
+  },
+  {
+    "content_id": "content_13636f0a-4cf4-4ba6-bbea-1b9366e17f3a",
+    "title": "Content Unit 474",
+    "content_type": "interactive",
+    "difficulty": 0.46234980031182416,
+    "concept_id": "concept_2",
+    "estimated_time_minutes": 18,
+    "effectiveness_score": 0.18293904165949038
+  },
+  {
+    "content_id": "content_a768ca08-c273-40b7-856d-2c74bae883ca",
+    "title": "Content Unit 475",
+    "content_type": "quiz",
+    "difficulty": 0.8492600091133391,
+    "concept_id": "concept_24",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.16792322816942945
+  },
+  {
+    "content_id": "content_16895dbd-393a-4418-b25c-042ae93c018a",
+    "title": "Content Unit 476",
+    "content_type": "video",
+    "difficulty": 0.7864457619235581,
+    "concept_id": "concept_43",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.15845138091587957
+  },
+  {
+    "content_id": "content_89a47a38-5230-4e72-b728-ae9fcece8618",
+    "title": "Content Unit 477",
+    "content_type": "video",
+    "difficulty": 0.69670572741705,
+    "concept_id": "concept_7",
+    "estimated_time_minutes": 19,
+    "effectiveness_score": 0.24800510533381473
+  },
+  {
+    "content_id": "content_733022dd-76c7-4328-93ee-b5d31d8a397a",
+    "title": "Content Unit 478",
+    "content_type": "quiz",
+    "difficulty": 0.5020304545725887,
+    "concept_id": "concept_9",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.19060616357933202
+  },
+  {
+    "content_id": "content_d15d7948-9f6f-4818-88e0-c62902b960f7",
+    "title": "Content Unit 479",
+    "content_type": "video",
+    "difficulty": 0.5284141146052889,
+    "concept_id": "concept_25",
+    "estimated_time_minutes": 28,
+    "effectiveness_score": 0.11206600370244849
+  },
+  {
+    "content_id": "content_1a39cddd-f883-4669-ad26-6a8eeef171d6",
+    "title": "Content Unit 480",
+    "content_type": "reading",
+    "difficulty": 0.4985301958999594,
+    "concept_id": "concept_14",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.20897940623468225
+  },
+  {
+    "content_id": "content_6dbea9de-ba22-456a-9391-c0979318ec3e",
+    "title": "Content Unit 481",
+    "content_type": "video",
+    "difficulty": 0.8222978100162187,
+    "concept_id": "concept_38",
+    "estimated_time_minutes": 16,
+    "effectiveness_score": 0.22267804467204128
+  },
+  {
+    "content_id": "content_7e60daeb-a745-4ce4-abe0-01f7dff90e99",
+    "title": "Content Unit 482",
+    "content_type": "quiz",
+    "difficulty": 0.4119955217469592,
+    "concept_id": "concept_27",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.11913822057718496
+  },
+  {
+    "content_id": "content_65a6ae7e-c74a-4271-9e7d-7e8a2ead7a3e",
+    "title": "Content Unit 483",
+    "content_type": "interactive",
+    "difficulty": 0.47062710273930675,
+    "concept_id": "concept_49",
+    "estimated_time_minutes": 27,
+    "effectiveness_score": 0.23705926692964652
+  },
+  {
+    "content_id": "content_e2a5b899-0e95-4b7a-bb5a-32548595c1b0",
+    "title": "Content Unit 484",
+    "content_type": "interactive",
+    "difficulty": 0.6918122285593385,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.15068086572576436
+  },
+  {
+    "content_id": "content_53a47b9d-86b6-4058-acf4-8474f243fdf1",
+    "title": "Content Unit 485",
+    "content_type": "video",
+    "difficulty": 0.6883235909627298,
+    "concept_id": "concept_28",
+    "estimated_time_minutes": 7,
+    "effectiveness_score": 0.23915758603252035
+  },
+  {
+    "content_id": "content_e284bcba-7169-4101-8ee3-64af96d2332e",
+    "title": "Content Unit 486",
+    "content_type": "reading",
+    "difficulty": 0.5498188589337093,
+    "concept_id": "concept_18",
+    "estimated_time_minutes": 13,
+    "effectiveness_score": 0.2135922051114283
+  },
+  {
+    "content_id": "content_2862de21-db60-4e27-8e97-70e2e93e2984",
+    "title": "Content Unit 487",
+    "content_type": "interactive",
+    "difficulty": 0.7888279294045232,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.19866657815239175
+  },
+  {
+    "content_id": "content_120d4602-5230-416f-9f93-4bd280de7916",
+    "title": "Content Unit 488",
+    "content_type": "reading",
+    "difficulty": 0.5590431156378123,
+    "concept_id": "concept_0",
+    "estimated_time_minutes": 20,
+    "effectiveness_score": 0.11792302565423896
+  },
+  {
+    "content_id": "content_c0a02ca4-dc3a-4735-b319-97f6d5db4900",
+    "title": "Content Unit 489",
+    "content_type": "quiz",
+    "difficulty": 0.22531984552019005,
+    "concept_id": "concept_37",
+    "estimated_time_minutes": 21,
+    "effectiveness_score": 0.24457080927192243
+  },
+  {
+    "content_id": "content_49760bff-010e-437c-8a5d-9cf4d487d57f",
+    "title": "Content Unit 490",
+    "content_type": "video",
+    "difficulty": 0.11368190240375294,
+    "concept_id": "concept_31",
+    "estimated_time_minutes": 8,
+    "effectiveness_score": 0.2191429441420738
+  },
+  {
+    "content_id": "content_5f9b93b9-cc42-44c4-9d3d-8749b9d5c21c",
+    "title": "Content Unit 491",
+    "content_type": "video",
+    "difficulty": 0.3509896543933382,
+    "concept_id": "concept_3",
+    "estimated_time_minutes": 29,
+    "effectiveness_score": 0.2132570638707603
+  },
+  {
+    "content_id": "content_2e13c344-c587-4ad7-933f-49c083949e4b",
+    "title": "Content Unit 492",
+    "content_type": "video",
+    "difficulty": 0.4877850858360868,
+    "concept_id": "concept_34",
+    "estimated_time_minutes": 25,
+    "effectiveness_score": 0.10508140546986273
+  },
+  {
+    "content_id": "content_3a48dc58-b82f-4622-9bc4-4bfb499c8736",
+    "title": "Content Unit 493",
+    "content_type": "video",
+    "difficulty": 0.15677115224022817,
+    "concept_id": "concept_12",
+    "estimated_time_minutes": 10,
+    "effectiveness_score": 0.13122561997705778
+  },
+  {
+    "content_id": "content_f1c3d040-8d84-41e0-b7af-5e57e5549f2d",
+    "title": "Content Unit 494",
+    "content_type": "interactive",
+    "difficulty": 0.10725015543817139,
+    "concept_id": "concept_8",
+    "estimated_time_minutes": 24,
+    "effectiveness_score": 0.2475046286432748
+  },
+  {
+    "content_id": "content_4db97279-48b4-4579-9eb5-ce55cf690573",
+    "title": "Content Unit 495",
+    "content_type": "video",
+    "difficulty": 0.7300908557215375,
+    "concept_id": "concept_32",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.22466691535175978
+  },
+  {
+    "content_id": "content_4cee1894-9b68-432a-911b-6588cf7d9279",
+    "title": "Content Unit 496",
+    "content_type": "video",
+    "difficulty": 0.7828479424110258,
+    "concept_id": "concept_15",
+    "estimated_time_minutes": 28,
+    "effectiveness_score": 0.23743743935880543
+  },
+  {
+    "content_id": "content_337af9ec-f790-4d1e-9ef8-f1f7b6657850",
+    "title": "Content Unit 497",
+    "content_type": "quiz",
+    "difficulty": 0.379786367654637,
+    "concept_id": "concept_10",
+    "estimated_time_minutes": 9,
+    "effectiveness_score": 0.1379788034289148
+  },
+  {
+    "content_id": "content_3755c027-96dd-4b04-9f17-3c6dcfe870d4",
+    "title": "Content Unit 498",
+    "content_type": "quiz",
+    "difficulty": 0.8064668122619579,
+    "concept_id": "concept_17",
+    "estimated_time_minutes": 12,
+    "effectiveness_score": 0.1480731202462676
+  },
+  {
+    "content_id": "content_9a4921f1-bf9e-4dfc-a222-4c6533b9d11c",
+    "title": "Content Unit 499",
+    "content_type": "reading",
+    "difficulty": 0.3222427222423847,
+    "concept_id": "concept_6",
+    "estimated_time_minutes": 26,
+    "effectiveness_score": 0.2489415165236226
+  }
+]
