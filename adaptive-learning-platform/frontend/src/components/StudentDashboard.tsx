@@ -31,8 +31,11 @@ import ProgressMap from './student/ProgressMap';
 import StudyGroups from './student/StudyGroups';
 import LearningPath from './student/LearningPath';
 import MasteryRipple from './student/MasteryRipple';
+import { MaterialUpload } from './student/MaterialUpload';
+import { MaterialLibrary } from './student/MaterialLibrary';
 import { CompletionData } from '../types/content';
 import { QuizResult } from '../types/quiz';
+import { Material } from '../types/material';
 
 const StudentDashboard: React.FC = () => {
     const dispatch = useDispatch();
@@ -44,6 +47,9 @@ const StudentDashboard: React.FC = () => {
     const [feedbackSnack, setFeedbackSnack] = useState(false);
     const [rippleOpen, setRippleOpen] = useState(false);
     const [rippleData, setRippleData] = useState<{ conceptId: number; conceptName: string; score: number } | null>(null);
+
+    const [refreshMaterials, setRefreshMaterials] = useState(0);
+    const [activeMaterial, setActiveMaterial] = useState<Material | null>(null);
 
     const DEMO_STUDENT_ID = 'sam';
 
@@ -113,6 +119,9 @@ const StudentDashboard: React.FC = () => {
                 score: result.raw_score,
             });
             setRippleOpen(true);
+        } else if (activeMaterial) {
+            setActiveMaterial(null);
+            setQuizMode(false);
         } else {
             setActiveContent(null);
             setQuizMode(false);
@@ -120,6 +129,17 @@ const StudentDashboard: React.FC = () => {
     };
 
     const handleBack = () => {
+        setActiveContent(null);
+        setActiveMaterial(null);
+        setQuizMode(false);
+    };
+
+    const handleMaterialUploadComplete = () => {
+        setRefreshMaterials(prev => prev + 1);
+    };
+
+    const handleSelectMaterial = (material: Material) => {
+        setActiveMaterial(material);
         setActiveContent(null);
         setQuizMode(false);
     };
@@ -171,7 +191,10 @@ const StudentDashboard: React.FC = () => {
     if (!student) return <Typography>No student data found.</Typography>;
 
     // Active Study Mode
-    if (activeContent) {
+    if (activeContent || activeMaterial) {
+        const isMaterial = !!activeMaterial;
+        const currentTitle = isMaterial ? activeMaterial.title : activeContent?.concept_name;
+
         return (
             <Box sx={{ p: 2, position: 'relative' }} className="animate-in">
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 3, gap: 2 }}>
@@ -187,20 +210,21 @@ const StudentDashboard: React.FC = () => {
                     </IconButton>
                     <Box>
                         <Typography variant="caption" sx={{ color: 'text.muted', letterSpacing: 1, textTransform: 'uppercase' }}>
-                            {quizMode ? 'Assessment' : 'Learning'}
+                            {quizMode ? 'Assessment' : isMaterial ? 'My Materials' : 'Learning'}
                         </Typography>
                         <Typography variant="h5" fontWeight="bold">
-                            {activeContent.concept_name}
+                            {currentTitle}
                         </Typography>
                     </Box>
                 </Box>
 
                 {!quizMode ? (
                     <ContentViewer
-                        contentId={activeContent.content_id}
+                        contentId={isMaterial ? 0 : activeContent!.content_id}
                         studentId={DEMO_STUDENT_ID}
-                        contentType={activeContent.content_type}
-                        title={activeContent.concept_name}
+                        contentType={isMaterial ? 'reading' : (activeContent!.content_type as any)}
+                        title={currentTitle!}
+                        materialId={isMaterial ? activeMaterial.material_id : undefined}
                         onComplete={handleContentComplete}
                         onProgress={(p) => console.log(`Progress: ${p}%`)}
                     />
@@ -208,15 +232,17 @@ const StudentDashboard: React.FC = () => {
                     <AdaptiveQuiz
                         quizId={`quiz_${Date.now()}`}
                         studentId={DEMO_STUDENT_ID}
-                        conceptId={activeContent.concept_id.toString()}
-                        targetDifficulty={activeContent.difficulty}
+                        conceptId={isMaterial ? 'custom' : activeContent!.concept_id.toString()}
+                        materialId={isMaterial ? activeMaterial.material_id : undefined}
+                        targetDifficulty={isMaterial ? 0.5 : activeContent!.difficulty}
                         onComplete={handleQuizComplete}
                     />
                 )}
 
                 <TutorChat
                     studentId={DEMO_STUDENT_ID}
-                    currentConceptId={activeContent.concept_name}
+                    currentConceptId={currentTitle!}
+                    materialId={isMaterial ? activeMaterial.material_id : undefined}
                     context={quizMode ? 'quiz' : 'content'}
                 />
             </Box>
@@ -416,6 +442,22 @@ const StudentDashboard: React.FC = () => {
                     </Card>
                 </Grid>
             </Grid>
+
+            {/* ── My Materials Section ── */}
+            <Box sx={{ mb: 6 }} className="animate-in animate-in-delay-1">
+                <Box sx={{ display: 'flex', gap: 4, flexDirection: { xs: 'column', md: 'row' } }}>
+                    <Box sx={{ flex: 1 }}>
+                        <MaterialUpload studentId={DEMO_STUDENT_ID} onUploadComplete={handleMaterialUploadComplete} />
+                    </Box>
+                    <Box sx={{ flex: 2 }}>
+                        <MaterialLibrary
+                            studentId={DEMO_STUDENT_ID}
+                            onSelectMaterial={handleSelectMaterial}
+                            refreshTrigger={refreshMaterials}
+                        />
+                    </Box>
+                </Box>
+            </Box>
 
             {/* ── Today's Focus - Recommendations ── */}
             <Box sx={{ mb: 5 }} className="animate-in animate-in-delay-2">

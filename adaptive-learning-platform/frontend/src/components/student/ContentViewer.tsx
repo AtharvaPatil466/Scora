@@ -15,17 +15,21 @@ import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import SyncIcon from '@mui/icons-material/Sync';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { ContentViewerProps } from '../../types/content';
+import { getMaterial } from '../../api';
 
-export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, studentId, contentType, title, contentUrl, onComplete, onProgress }) => {
+export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, studentId, contentType, title, contentUrl, materialId, onComplete, onProgress }) => {
     const safeTitle = title || 'Lesson';
     const [progress, setProgress] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     const [activeTab, setActiveTab] = useState('notes');
+    const [material, setMaterial] = useState<any>(null);
+    const [activeChapterIndex, setActiveChapterIndex] = useState(0);
 
     useEffect(() => {
         let timer: NodeJS.Timeout;
-        if (isPlaying) {
+        if (isPlaying && !material) {
             timer = setInterval(() => {
                 setProgress(p => {
                     const newP = p + 2;
@@ -40,7 +44,28 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
             }, 1000);
         }
         return () => clearInterval(timer);
-    }, [isPlaying, onProgress]);
+    }, [isPlaying, onProgress, material]);
+
+    useEffect(() => {
+        if (materialId) {
+            getMaterial(studentId, materialId).then(data => {
+                if (data.expanded) {
+                    setMaterial(data.expanded);
+                    setProgress(10); // Initial progress
+                }
+            }).catch(err => console.error("Failed to fetch material details:", err));
+        }
+    }, [materialId, studentId]);
+
+    const handleNextChapter = () => {
+        if (!material) return;
+        if (activeChapterIndex < material.chapters.length - 1) {
+            setActiveChapterIndex(prev => prev + 1);
+            setProgress(Math.min(100, Math.round(((activeChapterIndex + 2) / material.chapters.length) * 100)));
+        } else {
+            setProgress(100);
+        }
+    };
 
     const handleComplete = () => {
         onComplete({
@@ -81,100 +106,168 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
                 </Box>
             </Box>
 
-            {/* Video Player Area */}
-            <Paper
-                elevation={0}
-                sx={{
-                    position: 'relative',
-                    bgcolor: '#1A1A1A',
-                    height: 420,
-                    borderRadius: 4,
-                    overflow: 'hidden',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    mb: 4,
-                    border: '1px solid rgba(0,0,0,0.12)',
-                }}
-            >
-                {/* Animated background */}
-                <Box sx={{
-                    position: 'absolute',
-                    width: '100%',
-                    height: '100%',
-                    background: `
-                        radial-gradient(ellipse at 30% 50%, rgba(45, 90, 61, 0.2) 0%, transparent 50%),
-                        radial-gradient(ellipse at 70% 50%, rgba(74, 140, 98, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at center, rgba(45, 90, 61, 0.1) 0%, #1A1A1A 70%)
-                    `,
-                    zIndex: 0,
-                }} />
-
-                {/* Play/Pause Button */}
-                <IconButton
-                    onClick={() => setIsPlaying(!isPlaying)}
+            {/* Video Player or Material Content Area */}
+            {material ? (
+                <Paper
+                    elevation={0}
                     sx={{
-                        zIndex: 1,
-                        color: 'white',
-                        transition: 'all 300ms cubic-bezier(0.34, 1.56, 0.64, 1)',
-                        '&:hover': { transform: 'scale(1.15)' },
-                        ...(isPlaying ? {} : {
-                            animation: 'pulseGlow 3s ease-in-out infinite',
-                            borderRadius: '50%',
-                        })
+                        bgcolor: '#FFFFFF',
+                        minHeight: 420,
+                        borderRadius: 4,
+                        p: 4,
+                        mb: 4,
+                        border: '1px solid rgba(0,0,0,0.12)',
+                        boxShadow: '0 4px 24px rgba(0,0,0,0.02)',
                     }}
                 >
-                    {isPlaying
-                        ? <PauseCircleFilledIcon sx={{ fontSize: 88, opacity: 0.9 }} />
-                        : <PlayCircleFilledIcon sx={{ fontSize: 88 }} />
-                    }
-                </IconButton>
-                <Typography variant="body2" sx={{
-                    color: 'rgba(255,255,255,0.6)',
-                    zIndex: 1, mt: 1,
-                    opacity: isPlaying ? 0 : 1,
-                    transition: 'opacity 0.4s ease',
-                    fontWeight: 500,
-                }}>
-                    Click to {isPlaying ? 'pause' : 'play'}
-                </Typography>
-
-                {/* Player Controls */}
-                <Box sx={{
-                    position: 'absolute', bottom: 0, width: '100%', p: 2.5,
-                    background: 'linear-gradient(transparent, rgba(0,0,0,0.85))',
-                    zIndex: 1,
-                }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1.5 }}>
-                        <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.7)', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>01:23</Typography>
-                        <LinearProgress
-                            variant="determinate"
-                            value={progress}
-                            sx={{
-                                flexGrow: 1, height: 4, borderRadius: 2,
-                                bgcolor: 'rgba(255,255,255,0.15)',
-                                '& .MuiLinearProgress-bar': {
-                                    bgcolor: 'primary.main',
-                                    borderRadius: 2,
-                                    background: 'linear-gradient(90deg, #2D5A3D, #4A8C62)',
-                                }
-                            }}
-                        />
-                        <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.7)', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>15:00</Typography>
-                    </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Button size="small" sx={{ color: 'rgba(255,255,255,0.8)', minWidth: 'auto', fontWeight: 600, fontSize: '0.75rem' }}>1x</Button>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+                        <Box sx={{
+                            width: 48, height: 48, borderRadius: 2,
+                            bgcolor: 'rgba(45, 90, 61, 0.08)',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            color: '#2D5A3D',
+                        }}>
+                            <MenuBookIcon />
+                        </Box>
                         <Box>
-                            {[ClosedCaptionIcon, SettingsIcon, FullscreenIcon].map((Icon, i) => (
-                                <IconButton key={i} size="small" sx={{ color: 'rgba(255,255,255,0.7)', '&:hover': { color: 'white' } }}>
-                                    <Icon fontSize="small" />
-                                </IconButton>
-                            ))}
+                            <Typography variant="caption" sx={{ color: '#8C8C8C', fontWeight: 600, letterSpacing: 1, textTransform: 'uppercase' }}>
+                                Part {activeChapterIndex + 1} of {material.chapters.length}
+                            </Typography>
+                            <Typography variant="h5" sx={{ fontWeight: 700, color: '#1A1A1A', fontFamily: '"Playfair Display", serif' }}>
+                                {material.chapters[activeChapterIndex]?.title}
+                            </Typography>
                         </Box>
                     </Box>
-                </Box>
-            </Paper>
+                    <Divider sx={{ mb: 3 }} />
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            color: '#333',
+                            lineHeight: 1.8,
+                            fontSize: '1.05rem',
+                            whiteSpace: 'pre-line'
+                        }}
+                    >
+                        {material.chapters[activeChapterIndex]?.content}
+                    </Typography>
+
+                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 4 }}>
+                        {activeChapterIndex < material.chapters.length - 1 ? (
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={handleNextChapter}
+                                sx={{ bgcolor: '#2D5A3D', '&:hover': { bgcolor: '#1B4332' } }}
+                            >
+                                Continue Reading
+                            </Button>
+                        ) : (
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={() => setProgress(100)}
+                                sx={{ bgcolor: '#2D5A3D', '&:hover': { bgcolor: '#1B4332' } }}
+                            >
+                                Finish Material
+                            </Button>
+                        )}
+                    </Box>
+                </Paper>
+            ) : (
+                <Paper
+                    elevation={0}
+                    sx={{
+                        position: 'relative',
+                        bgcolor: '#1A1A1A',
+                        height: 420,
+                        borderRadius: 4,
+                        overflow: 'hidden',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        mb: 4,
+                        border: '1px solid rgba(0,0,0,0.12)',
+                    }}
+                >
+                    {/* Animated background */}
+                    <Box sx={{
+                        position: 'absolute',
+                        width: '100%',
+                        height: '100%',
+                        background: `
+                            radial-gradient(ellipse at 30% 50%, rgba(45, 90, 61, 0.2) 0%, transparent 50%),
+                            radial-gradient(ellipse at 70% 50%, rgba(74, 140, 98, 0.15) 0%, transparent 50%),
+                            radial-gradient(circle at center, rgba(45, 90, 61, 0.1) 0%, #1A1A1A 70%)
+                        `,
+                        zIndex: 0,
+                    }} />
+
+                    {/* Play/Pause Button */}
+                    <IconButton
+                        onClick={() => setIsPlaying(!isPlaying)}
+                        sx={{
+                            zIndex: 1,
+                            color: 'white',
+                            transition: 'all 300ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+                            '&:hover': { transform: 'scale(1.15)' },
+                            ...(isPlaying ? {} : {
+                                animation: 'pulseGlow 3s ease-in-out infinite',
+                                borderRadius: '50%',
+                            })
+                        }}
+                    >
+                        {isPlaying
+                            ? <PauseCircleFilledIcon sx={{ fontSize: 88, opacity: 0.9 }} />
+                            : <PlayCircleFilledIcon sx={{ fontSize: 88 }} />
+                        }
+                    </IconButton>
+                    <Typography variant="body2" sx={{
+                        color: 'rgba(255,255,255,0.6)',
+                        zIndex: 1, mt: 1,
+                        opacity: isPlaying ? 0 : 1,
+                        transition: 'opacity 0.4s ease',
+                        fontWeight: 500,
+                    }}>
+                        Click to {isPlaying ? 'pause' : 'play'}
+                    </Typography>
+
+                    {/* Player Controls */}
+                    <Box sx={{
+                        position: 'absolute', bottom: 0, width: '100%', p: 2.5,
+                        background: 'linear-gradient(transparent, rgba(0,0,0,0.85))',
+                        zIndex: 1,
+                    }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1.5 }}>
+                            <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.7)', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>01:23</Typography>
+                            <LinearProgress
+                                variant="determinate"
+                                value={progress}
+                                sx={{
+                                    flexGrow: 1, height: 4, borderRadius: 2,
+                                    bgcolor: 'rgba(255,255,255,0.15)',
+                                    '& .MuiLinearProgress-bar': {
+                                        bgcolor: 'primary.main',
+                                        borderRadius: 2,
+                                        background: 'linear-gradient(90deg, #2D5A3D, #4A8C62)',
+                                    }
+                                }}
+                            />
+                            <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.7)', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>15:00</Typography>
+                        </Box>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <Button size="small" sx={{ color: 'rgba(255,255,255,0.8)', minWidth: 'auto', fontWeight: 600, fontSize: '0.75rem' }}>1x</Button>
+                            <Box>
+                                {[ClosedCaptionIcon, SettingsIcon, FullscreenIcon].map((Icon, i) => (
+                                    <IconButton key={i} size="small" sx={{ color: 'rgba(255,255,255,0.7)', '&:hover': { color: 'white' } }}>
+                                        <Icon fontSize="small" />
+                                    </IconButton>
+                                ))}
+                            </Box>
+                        </Box>
+                    </Box>
+                </Paper>
+            )}
 
             {/* AI Generated Insight */}
             <Paper
@@ -219,62 +312,108 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ contentId, student
                         CHAPTERS
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-                        {(safeTitle.toLowerCase().includes('fraction')
-                            ? [
-                                { label: '1. What Are Fractions?', done: true, current: false },
-                                { label: '2. Finding Common Denominators', done: false, current: true },
-                                { label: '3. Adding & Subtracting', done: false, current: false },
-                            ]
-                            : safeTitle.toLowerCase().includes('geometry')
-                                ? [
-                                    { label: '1. Points, Lines & Angles', done: true, current: false },
-                                    { label: '2. Shapes & Their Properties', done: false, current: true },
-                                    { label: '3. Area & Perimeter', done: false, current: false },
-                                ]
-                                : [
-                                    { label: `1. Introduction to ${safeTitle}`, done: true, current: false },
-                                    { label: '2. Core Concepts Explained', done: false, current: true },
-                                    { label: '3. Practice Quiz', done: false, current: false },
-                                ]
-                        ).map((ch, i) => (
-                            <Box
-                                key={i}
-                                sx={{
-                                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                                    p: 1.5, borderRadius: 2,
-                                    bgcolor: ch.current ? 'rgba(45, 90, 61, 0.04)' : 'transparent',
-                                    border: ch.current ? '1px solid rgba(45, 90, 61, 0.15)' : '1px solid transparent',
-                                    transition: 'all 200ms ease',
-                                    '&:hover': { bgcolor: 'rgba(0,0,0,0.02)' },
-                                }}
-                            >
-                                <Typography
-                                    variant="body2"
+                        {material ? (
+                            material.chapters.map((ch: any, i: number) => (
+                                <Box
+                                    key={i}
+                                    onClick={() => {
+                                        setActiveChapterIndex(i);
+                                    }}
                                     sx={{
-                                        display: 'flex', gap: 1, alignItems: 'center',
-                                        color: ch.done ? '#2D5A3D' : ch.current ? '#2D5A3D' : '#8C8C8C',
-                                        fontWeight: ch.current ? 600 : 400,
+                                        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                                        p: 1.5, borderRadius: 2, cursor: 'pointer',
+                                        bgcolor: i === activeChapterIndex ? 'rgba(45, 90, 61, 0.04)' : 'transparent',
+                                        border: i === activeChapterIndex ? '1px solid rgba(45, 90, 61, 0.15)' : '1px solid transparent',
+                                        transition: 'all 200ms ease',
+                                        '&:hover': { bgcolor: 'rgba(0,0,0,0.02)' },
                                     }}
                                 >
-                                    {ch.done
-                                        ? <CheckCircleIcon sx={{ fontSize: 18, color: '#2D5A3D' }} />
-                                        : ch.current
-                                            ? <PlayCircleFilledIcon sx={{ fontSize: 18 }} />
-                                            : <RadioButtonUncheckedIcon sx={{ fontSize: 18, opacity: 0.4 }} />
-                                    }
-                                    {ch.label}
-                                </Typography>
-                                {ch.current && (
-                                    <Chip label="Current" size="small" sx={{
-                                        bgcolor: 'rgba(45, 90, 61, 0.08)',
-                                        color: '#2D5A3D',
-                                        fontWeight: 600,
-                                        fontSize: '0.6rem',
-                                        height: 22,
-                                    }} />
-                                )}
-                            </Box>
-                        ))}
+                                    <Typography
+                                        variant="body2"
+                                        sx={{
+                                            display: 'flex', gap: 1, alignItems: 'center',
+                                            color: i < activeChapterIndex ? '#2D5A3D' : i === activeChapterIndex ? '#2D5A3D' : '#8C8C8C',
+                                            fontWeight: i === activeChapterIndex ? 600 : 400,
+                                        }}
+                                    >
+                                        {i < activeChapterIndex
+                                            ? <CheckCircleIcon sx={{ fontSize: 18, color: '#2D5A3D' }} />
+                                            : i === activeChapterIndex
+                                                ? <PlayCircleFilledIcon sx={{ fontSize: 18 }} />
+                                                : <RadioButtonUncheckedIcon sx={{ fontSize: 18, opacity: 0.4 }} />
+                                        }
+                                        {ch.title}
+                                    </Typography>
+                                    {i === activeChapterIndex && (
+                                        <Chip label="Current" size="small" sx={{
+                                            bgcolor: 'rgba(45, 90, 61, 0.08)',
+                                            color: '#2D5A3D',
+                                            fontWeight: 600,
+                                            fontSize: '0.6rem',
+                                            height: 22,
+                                        }} />
+                                    )}
+                                </Box>
+                            ))
+                        ) : (
+                            // Original fallback hardcoded chapters
+                            (safeTitle.toLowerCase().includes('fraction')
+                                ? [
+                                    { label: '1. What Are Fractions?', done: true, current: false },
+                                    { label: '2. Finding Common Denominators', done: false, current: true },
+                                    { label: '3. Adding & Subtracting', done: false, current: false },
+                                ]
+                                : safeTitle.toLowerCase().includes('geometry')
+                                    ? [
+                                        { label: '1. Points, Lines & Angles', done: true, current: false },
+                                        { label: '2. Shapes & Their Properties', done: false, current: true },
+                                        { label: '3. Area & Perimeter', done: false, current: false },
+                                    ]
+                                    : [
+                                        { label: `1. Introduction to ${safeTitle}`, done: true, current: false },
+                                        { label: '2. Core Concepts Explained', done: false, current: true },
+                                        { label: '3. Practice Quiz', done: false, current: false },
+                                    ]
+                            ).map((ch, i) => (
+                                <Box
+                                    key={i}
+                                    sx={{
+                                        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                                        p: 1.5, borderRadius: 2,
+                                        bgcolor: ch.current ? 'rgba(45, 90, 61, 0.04)' : 'transparent',
+                                        border: ch.current ? '1px solid rgba(45, 90, 61, 0.15)' : '1px solid transparent',
+                                        transition: 'all 200ms ease',
+                                        '&:hover': { bgcolor: 'rgba(0,0,0,0.02)' },
+                                    }}
+                                >
+                                    <Typography
+                                        variant="body2"
+                                        sx={{
+                                            display: 'flex', gap: 1, alignItems: 'center',
+                                            color: ch.done ? '#2D5A3D' : ch.current ? '#2D5A3D' : '#8C8C8C',
+                                            fontWeight: ch.current ? 600 : 400,
+                                        }}
+                                    >
+                                        {ch.done
+                                            ? <CheckCircleIcon sx={{ fontSize: 18, color: '#2D5A3D' }} />
+                                            : ch.current
+                                                ? <PlayCircleFilledIcon sx={{ fontSize: 18 }} />
+                                                : <RadioButtonUncheckedIcon sx={{ fontSize: 18, opacity: 0.4 }} />
+                                        }
+                                        {ch.label}
+                                    </Typography>
+                                    {ch.current && (
+                                        <Chip label="Current" size="small" sx={{
+                                            bgcolor: 'rgba(45, 90, 61, 0.08)',
+                                            color: '#2D5A3D',
+                                            fontWeight: 600,
+                                            fontSize: '0.6rem',
+                                            height: 22,
+                                        }} />
+                                    )}
+                                </Box>
+                            ))
+                        )}
                     </Box>
                 </Box>
 

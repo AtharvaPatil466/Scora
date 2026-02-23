@@ -1,0 +1,62 @@
+[
+  {
+    "question": "Based on the material, explain the key concept in your own words.",
+    "options": [
+      "It describes a fundamental principle",
+      "It is unrelated to the topic",
+      "It only applies in special cases",
+      "None of the above"
+    ],
+    "correct_index": 0,
+    "explanation": "This concept is central to the material you uploaded.",
+    "chapter_ref": "Introduction & Overview"
+  },
+  {
+    "question": "What is the main takeaway from this section?",
+    "options": [
+      "The topic builds on prerequisite knowledge",
+      "The topic is self-contained",
+      "The topic has no practical applications",
+      "The topic is purely theoretical"
+    ],
+    "correct_index": 0,
+    "explanation": "Understanding prerequisites helps you build a strong foundation.",
+    "chapter_ref": "Introduction & Overview"
+  },
+  {
+    "question": "How does this concept relate to what you've learned before?",
+    "options": [
+      "It extends previous concepts with new techniques",
+      "It contradicts earlier learning",
+      "It has no connection to prior topics",
+      "It replaces all prior knowledge"
+    ],
+    "correct_index": 0,
+    "explanation": "New concepts typically build on and extend what you already know.",
+    "chapter_ref": "Introduction & Overview"
+  },
+  {
+    "question": "Which approach best applies the concepts from this material?",
+    "options": [
+      "Break down the problem step by step",
+      "Skip directly to the answer",
+      "Memorize without understanding",
+      "Ignore the methodology"
+    ],
+    "correct_index": 0,
+    "explanation": "A step-by-step approach helps you apply concepts systematically.",
+    "chapter_ref": "Introduction & Overview"
+  },
+  {
+    "question": "Why is this topic important in the broader context?",
+    "options": [
+      "It provides foundational skills for advanced topics",
+      "It is only useful for exams",
+      "It has no broader applications",
+      "It is deprecated knowledge"
+    ],
+    "correct_index": 0,
+    "explanation": "Foundational topics unlock more advanced learning paths.",
+    "chapter_ref": "Introduction & Overview"
+  }
+]

@@ -7,13 +7,16 @@ import MicIcon from '@mui/icons-material/Mic';
 import { TutorChatProps, ChatMessage } from '../../types/tutor';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 
-export const TutorChat: React.FC<TutorChatProps> = ({ studentId, currentConceptId, currentProblem, context }) => {
+export const TutorChat: React.FC<TutorChatProps> = ({ studentId, currentConceptId, materialId, currentProblem, context }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [socraticMode, setSocraticMode] = useState(true);
     const conceptName = currentConceptId ? currentConceptId.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : null;
 
     const getContextWelcome = () => {
+        if (materialId) {
+            return `I'm ready to help you study your uploaded material "${conceptName || 'Your Notes'}". You can ask me to explain specific sections, generate practice problems, or clarify confusing concepts from your material.`;
+        }
         if (context === 'quiz' && currentProblem) {
             return `I can see you're working on a quiz about ${conceptName || 'a topic'}. I won't give away answers, but I can help you think through the problem. What's tripping you up?`;
         }
@@ -62,11 +65,15 @@ export const TutorChat: React.FC<TutorChatProps> = ({ studentId, currentConceptI
             let response = "That's an interesting thought! What happens if we consider it from another perspective?";
 
             if (!socraticMode) {
-                if (conceptName) {
+                if (materialId) {
+                    response = `From your material "${conceptName}": The key takeaways are explicitly outlined in the main chapters. I recommend reviewing the core definitions and applying them step by step.`;
+                } else if (conceptName) {
                     response = `Here's a direct explanation for ${conceptName}: This concept involves understanding the fundamental relationships between quantities. The key insight is to identify the pattern and apply the relevant formula step by step.`;
                 } else {
                     response = "Since 'Just tell me' mode is on: The key is to identify the pattern, apply the relevant formula, and verify your answer by substituting back.";
                 }
+            } else if (materialId && text.toLowerCase().includes('explain')) {
+                response = `Looking at your uploaded material "${conceptName}", think about how the different chapters connect. How would you summarize the main argument in your own words?`;
             } else if (text.toLowerCase().includes('explain like i\'m 5')) {
                 response = conceptName
                     ? `Let me explain ${conceptName} simply: Imagine you have a magic box that follows special rules. We're trying to figure out what number makes the magic box happy!`
@@ -79,16 +86,20 @@ export const TutorChat: React.FC<TutorChatProps> = ({ studentId, currentConceptI
                 response = conceptName
                     ? `Before diving deeper into ${conceptName}, make sure you're solid on the foundational concepts. These are the building blocks that make this topic click.`
                     : "Check your Knowledge Map to see which concepts feed into this one.";
-            } else if (text.toLowerCase().includes('practice') || text.toLowerCase().includes('problem')) {
-                response = conceptName
-                    ? `Here's a practice problem for ${conceptName}: Try solving this step by step, and tell me where you get stuck. I'll guide you through it!`
-                    : "Let me generate a practice problem that matches your current level. What topic are you working on?";
+            } else if (text.toLowerCase().includes('practice') || text.toLowerCase().includes('problem') || text.toLowerCase().includes('quiz')) {
+                response = materialId
+                    ? `I can generate practice questions directly from your material. For example: What is the primary concept discussed in the second chapter of your notes?`
+                    : conceptName
+                        ? `Here's a practice problem for ${conceptName}: Try solving this step by step, and tell me where you get stuck. I'll guide you through it!`
+                        : "Let me generate a practice problem that matches your current level. What topic are you working on?";
             } else if (text.toLowerCase().includes('example')) {
                 response = conceptName
                     ? `Let's work through an example of ${conceptName} together. I'll show you the first step: identify what you're solving for. Now, what do you think comes next?`
                     : `Sure, let's look at x² - 5x + 6 = 0. Here, a=1, b=-5, c=6. Can you try plugging those into the formula?`;
             } else if (context === 'quiz' && currentProblem) {
                 response = `Instead of giving you the exact answer to "${currentProblem}", try to think about the inverse operation. What would that look like?`;
+            } else if (materialId) {
+                response = `That's an interesting point about your material "${conceptName}". Does your source explicitly state that, or is it an inference you made?`;
             } else if (conceptName) {
                 response = `That's a great question about ${conceptName}! Think about how the pieces connect — what happens if you change one part? That's often the key insight.`;
             }
@@ -114,6 +125,9 @@ export const TutorChat: React.FC<TutorChatProps> = ({ studentId, currentConceptI
 
     const getQuickActions = () => {
         const base = ["Explain like I'm 5", "Give me a hint"];
+        if (materialId) {
+            return [`Explain from my notes`, "Quiz me on this material", "Summarize key points"];
+        }
         if (conceptName) {
             return [`Explain ${conceptName}`, "Give me a practice problem", "Show prerequisites"];
         }

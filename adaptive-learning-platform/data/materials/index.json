@@ -1,0 +1,84 @@
+{
+  "sam/0da2d401fa52": {
+    "student_id": "sam",
+    "material_id": "0da2d401fa52",
+    "filename": "sample.md",
+    "file_type": ".md",
+    "status": "uploaded",
+    "title": "sample",
+    "summary": "",
+    "num_chapters": 0,
+    "num_questions": 0,
+    "key_concepts": [],
+    "created_at": "2026-02-23T10:11:17.294787",
+    "updated_at": "2026-02-23T10:11:17.294792"
+  },
+  "sam/4684ecce2f9a": {
+    "student_id": "sam",
+    "material_id": "4684ecce2f9a",
+    "filename": "sample.md",
+    "file_type": ".md",
+    "status": "ready",
+    "title": "Study Material Summary",
+    "summary": "This material covers key concepts that build on your existing knowledge. The AI has analyzed and structured the content for optimal learning.",
+    "num_chapters": 3,
+    "num_questions": 5,
+    "key_concepts": [
+      "core concept",
+      "fundamental principle",
+      "application"
+    ],
+    "created_at": "2026-02-23T10:11:17.295322",
+    "updated_at": "2026-02-23T10:11:17.296433"
+  },
+  "sam/091e4f91388d": {
+    "student_id": "sam",
+    "material_id": "091e4f91388d",
+    "filename": "sample.md",
+    "file_type": ".md",
+    "status": "uploaded",
+    "title": "sample",
+    "summary": "",
+    "num_chapters": 0,
+    "num_questions": 0,
+    "key_concepts": [],
+    "created_at": "2026-02-23T10:11:42.573272",
+    "updated_at": "2026-02-23T10:11:42.573278"
+  },
+  "sam/3163f92ca32f": {
+    "student_id": "sam",
+    "material_id": "3163f92ca32f",
+    "filename": "sample.md",
+    "file_type": ".md",
+    "status": "ready",
+    "title": "Study Material Summary",
+    "summary": "This material covers key concepts that build on your existing knowledge. The AI has analyzed and structured the content for optimal learning.",
+    "num_chapters": 3,
+    "num_questions": 5,
+    "key_concepts": [
+      "core concept",
+      "fundamental principle",
+      "application"
+    ],
+    "created_at": "2026-02-23T10:11:42.573776",
+    "updated_at": "2026-02-23T10:11:42.574797"
+  },
+  "sam/c0d46f69861e": {
+    "student_id": "sam",
+    "material_id": "c0d46f69861e",
+    "filename": "sample.md",
+    "file_type": ".md",
+    "status": "ready",
+    "title": "Study Material Summary",
+    "summary": "This material covers key concepts that build on your existing knowledge. The AI has analyzed and structured the content for optimal learning.",
+    "num_chapters": 3,
+    "num_questions": 5,
+    "key_concepts": [
+      "core concept",
+      "fundamental principle",
+      "application"
+    ],
+    "created_at": "2026-02-23T10:13:06.997399",
+    "updated_at": "2026-02-23T10:13:06.998772"
+  }
+}

@@ -1,0 +1,1 @@
+# Sample Notes\nThis is a test of the extraction and AI expansion pipeline.

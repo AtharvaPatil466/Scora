@@ -8,7 +8,9 @@ import SmartToyIcon from '@mui/icons-material/SmartToy';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import TimerIcon from '@mui/icons-material/Timer';
 import { QuizProps, QuizResult, QuizQuestionResult } from '../../types/quiz';
+import { getMaterialQuiz } from '../../api';
 
+// Fallback hardcoded question generator
 const getQuestion = (difficulty: number, index: number) => {
     return {
         id: `q_${index}_${Date.now()}`,
@@ -17,17 +19,21 @@ const getQuestion = (difficulty: number, index: number) => {
         correctAnswer: 'Option A',
         hints: [
             "Think about the foundational rule we just covered.",
-            "Try to eliminate the obvious wrong answers like C and D.",
-            "The answer usually starts with A."
+            "Try to eliminate the obvious wrong answers.",
+            "The answer often starts with A."
         ],
         expectedTime: 30
     };
 };
 
-export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId, targetDifficulty, maxQuestions = 5, onComplete }) => {
+export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId, materialId, targetDifficulty, maxQuestions = 5, onComplete }) => {
     const [currentDifficulty, setCurrentDifficulty] = useState(targetDifficulty);
     const [questionIndex, setQuestionIndex] = useState(0);
-    const [currentQuestion, setCurrentQuestion] = useState(getQuestion(targetDifficulty, 0));
+
+    // Remote Questions State
+    const [loading, setLoading] = useState(!!materialId);
+    const [remoteQuestions, setRemoteQuestions] = useState<any[]>([]);
+    const [currentQuestion, setCurrentQuestion] = useState<any>(null);
 
     const [selectedAnswer, setSelectedAnswer] = useState<string>('');
     const [hintsUsed, setHintsUsed] = useState(0);
@@ -43,20 +49,58 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
     const [timeElapsed, setTimeElapsed] = useState(0);
     const [diffAdjusted, setDiffAdjusted] = useState<'up' | 'down' | null>(null);
 
+    // Fetch material quiz if applicable
+    useEffect(() => {
+        if (materialId) {
+            getMaterialQuiz(studentId, materialId)
+                .then(data => {
+                    if (data && data.questions && data.questions.length > 0) {
+                        // Map the backend questions to our UI format
+                        const mapped = data.questions.map((q: any, i: number) => ({
+                            id: `m_q_${i}`,
+                            text: q.question,
+                            options: q.options,
+                            correctAnswer: q.correct_answer,
+                            hints: q.hints || ["Think about the context of the reading.", "Try to eliminate obvious wrong options."],
+                            expectedTime: 30
+                        }));
+                        setRemoteQuestions(mapped);
+                        setCurrentQuestion(mapped[0]);
+                    } else {
+                        setCurrentQuestion(getQuestion(targetDifficulty, 0));
+                    }
+                })
+                .catch(err => {
+                    console.error("Failed to load material quiz", err);
+                    setCurrentQuestion(getQuestion(targetDifficulty, 0));
+                })
+                .finally(() => setLoading(false));
+        } else {
+            setCurrentQuestion(getQuestion(targetDifficulty, 0));
+            setLoading(false);
+        }
+    }, [materialId, studentId, targetDifficulty]);
+
     useEffect(() => {
         const timer = setInterval(() => {
-            if (feedbackState === 'idle') setTimeElapsed(prev => prev + 1);
+            if (feedbackState === 'idle' && !loading) setTimeElapsed(prev => prev + 1);
         }, 1000);
         return () => clearInterval(timer);
-    }, [feedbackState]);
+    }, [feedbackState, loading]);
 
     const handleNextQuestion = () => {
-        if (questionIndex + 1 >= maxQuestions || consecutiveCorrect >= 3 || consecutiveWrong >= 3) {
+        const actualMax = remoteQuestions.length > 0 ? remoteQuestions.length : maxQuestions;
+        if (questionIndex + 1 >= actualMax || consecutiveCorrect >= 3 || consecutiveWrong >= 3) {
             finishQuiz();
             return;
         }
-        setQuestionIndex(prev => prev + 1);
-        setCurrentQuestion(getQuestion(currentDifficulty, questionIndex + 1));
+        const nextIndex = questionIndex + 1;
+        setQuestionIndex(nextIndex);
+        if (remoteQuestions.length > 0) {
+            setCurrentQuestion(remoteQuestions[nextIndex]);
+        } else {
+            setCurrentQuestion(getQuestion(currentDifficulty, nextIndex));
+        }
         setSelectedAnswer('');
         setHintsUsed(0);
         setAttempts(0);
@@ -128,6 +172,16 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
 
     const difficultyLabel = currentDifficulty > 0.7 ? 'Hard' : currentDifficulty > 0.4 ? 'Medium' : 'Easy';
     const difficultyColor = currentDifficulty > 0.7 ? '#DC2626' : currentDifficulty > 0.4 ? '#D97706' : '#2D5A3D';
+    const actualMax = remoteQuestions.length > 0 ? remoteQuestions.length : maxQuestions;
+
+    if (loading || !currentQuestion) {
+        return (
+            <Paper elevation={0} sx={{ p: 4, mt: 4, textAlign: 'center', bgcolor: '#FFFFFF', borderRadius: 4, border: '1px solid rgba(0,0,0,0.08)' }}>
+                <CircularProgress sx={{ color: '#2D5A3D', mb: 2 }} />
+                <Typography variant="body1">Generating quiz from your material...</Typography>
+            </Paper>
+        );
+    }
 
     return (
         <Paper
@@ -171,7 +225,7 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
                         }}
                     />
                     <Chip
-                        label={`${questionIndex + 1}/${maxQuestions}`}
+                        label={`${questionIndex + 1}/${actualMax}`}
                         size="small"
                         sx={{
                             bgcolor: 'rgba(45, 90, 61, 0.06)',
@@ -200,7 +254,7 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
             {/* Progress Track */}
             <Box sx={{ mb: 4 }}>
                 <Box sx={{ display: 'flex', gap: 1, mb: 1 }}>
-                    {Array.from({ length: maxQuestions }, (_, i) => (
+                    {Array.from({ length: actualMax }, (_, i) => (
                         <Box
                             key={i}
                             sx={{
@@ -227,7 +281,7 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
 
             {/* Options */}
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, mb: 4 }}>
-                {currentQuestion.options.map((opt, i) => {
+                {currentQuestion.options.map((opt: string, i: number) => {
                     const isSelected = selectedAnswer === opt;
                     const letter = String.fromCharCode(65 + i);
                     const isCorrectAnswer = feedbackState === 'correct' && opt === currentQuestion.correctAnswer;
@@ -351,7 +405,7 @@ export const AdaptiveQuiz: React.FC<QuizProps> = ({ quizId, studentId, conceptId
                         <LightbulbIcon sx={{ fontSize: 18 }} /> Hints Revealed
                     </Typography>
                     <Box component="ul" sx={{ m: 0, pl: 2 }}>
-                        {currentQuestion.hints.slice(0, hintsUsed).map((hint, i) => (
+                        {currentQuestion.hints.slice(0, hintsUsed).map((hint: string, i: number) => (
                             <li key={i}><Typography variant="body2" sx={{ color: '#5C5C5C' }}>{hint}</Typography></li>
                         ))}
                     </Box>

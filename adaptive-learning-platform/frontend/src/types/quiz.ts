@@ -30,6 +30,7 @@ export interface QuizProps {
     studentId: string;
     conceptId: string;
     targetDifficulty: number;
+    materialId?: string;
     maxQuestions?: number;
-    onComplete: (result: QuizResult) => void;
+    onComplete: (result: QuizResult) => Promise<void>;
 }

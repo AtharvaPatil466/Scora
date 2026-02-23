@@ -5,11 +5,12 @@ export interface CompletionData {
 }
 
 export interface ContentViewerProps {
-    contentId: string | number;
+    contentId: number;
     studentId: string;
-    contentType: 'video' | 'reading' | 'interactive' | string;
-    title?: string;
-    contentUrl?: string; // Optional URL representing the content
+    contentType: 'video' | 'quiz' | 'reading';
+    title: string;
+    contentUrl?: string; // Optional actual content URL
+    materialId?: string; // Optional material ID for custom uploaded content
     onComplete: (data: CompletionData) => void;
-    onProgress: (percent: number) => void;
+    onProgress: (progress: number) => void;
 }

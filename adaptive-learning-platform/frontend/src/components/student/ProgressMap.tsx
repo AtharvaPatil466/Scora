@@ -37,7 +37,11 @@ const mockEdges: MapEdge[] = [
     { source: '6', target: '7' },
 ];
 
-export const ProgressMap: React.FC = () => {
+interface ProgressMapProps {
+    highlightedConcepts?: string[];
+}
+
+export const ProgressMap: React.FC<ProgressMapProps> = ({ highlightedConcepts = [] }) => {
     const [zoom, setZoom] = useState(1);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -124,73 +128,92 @@ export const ProgressMap: React.FC = () => {
                     </svg>
 
                     {/* Nodes */}
-                    {mockNodes.map((node) => (
-                        <Box
-                            key={node.id}
-                            sx={{
-                                position: 'absolute',
-                                left: node.x,
-                                top: node.y,
-                                width: 120,
-                                textAlign: 'center'
-                            }}
-                        >
-                            <Paper
-                                elevation={0}
+                    {mockNodes.map((node) => {
+                        const isHighlighted = highlightedConcepts.some(c => c.toLowerCase() === node.label.toLowerCase());
+
+                        return (
+                            <Box
+                                key={node.id}
                                 sx={{
-                                    p: 1.5,
-                                    bgcolor: node.status === 'locked' ? 'rgba(0,0,0,0.02)' : '#FFFFFF',
-                                    border: `2px solid ${getNodeColor(node.status)}`,
-                                    borderColor: node.status === 'locked' ? 'rgba(0,0,0,0.1)' : getNodeColor(node.status),
-                                    opacity: node.status === 'locked' ? 0.5 : 1,
-                                    borderRadius: 2.5,
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    boxShadow: getNodeGlow(node.status),
-                                    transition: 'all 250ms ease',
-                                    '&:hover': {
-                                        transform: node.status !== 'locked' ? 'scale(1.05)' : 'none',
-                                    },
+                                    position: 'absolute',
+                                    left: node.x,
+                                    top: node.y,
+                                    width: 120,
+                                    textAlign: 'center'
                                 }}
                             >
-                                <Typography variant="caption" fontWeight="bold" noWrap sx={{ width: '100%', color: '#1A1A1A', fontSize: '0.7rem' }}>
-                                    {node.label}
-                                </Typography>
-                                {node.status !== 'locked' && (
-                                    <LinearProgress
-                                        variant="determinate"
-                                        value={node.mastery * 100}
+                                <Paper
+                                    elevation={0}
+                                    sx={{
+                                        p: 1.5,
+                                        bgcolor: node.status === 'locked' ? 'rgba(0,0,0,0.02)' : '#FFFFFF',
+                                        border: `2px solid ${isHighlighted ? '#7C3AED' : getNodeColor(node.status)}`,
+                                        borderColor: isHighlighted ? '#7C3AED' : node.status === 'locked' ? 'rgba(0,0,0,0.1)' : getNodeColor(node.status),
+                                        opacity: node.status === 'locked' && !isHighlighted ? 0.5 : 1,
+                                        borderRadius: 2.5,
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        boxShadow: isHighlighted ? '0 0 16px rgba(124, 58, 237, 0.4)' : getNodeGlow(node.status),
+                                        transition: 'all 250ms ease',
+                                        '&:hover': {
+                                            transform: node.status !== 'locked' || isHighlighted ? 'scale(1.05)' : 'none',
+                                        },
+                                    }}
+                                >
+                                    <Typography variant="caption" fontWeight="bold" noWrap sx={{ width: '100%', color: isHighlighted ? '#7C3AED' : '#1A1A1A', fontSize: '0.7rem' }}>
+                                        {node.label}
+                                    </Typography>
+                                    {node.status !== 'locked' && (
+                                        <LinearProgress
+                                            variant="determinate"
+                                            value={node.mastery * 100}
+                                            sx={{
+                                                width: '80%', mt: 1, height: 3, borderRadius: 2,
+                                                bgcolor: 'rgba(0,0,0,0.06)',
+                                                '& .MuiLinearProgress-bar': {
+                                                    borderRadius: 2,
+                                                    background: node.status === 'mastered'
+                                                        ? 'linear-gradient(90deg, #2D5A3D, #4A8C62)'
+                                                        : 'linear-gradient(90deg, #D97706, #F59E0B)',
+                                                }
+                                            }}
+                                        />
+                                    )}
+                                </Paper>
+                                {node.status === 'ready' && !isHighlighted && (
+                                    <Chip
+                                        label="You are here"
+                                        size="small"
                                         sx={{
-                                            width: '80%', mt: 1, height: 3, borderRadius: 2,
-                                            bgcolor: 'rgba(0,0,0,0.06)',
-                                            '& .MuiLinearProgress-bar': {
-                                                borderRadius: 2,
-                                                background: node.status === 'mastered'
-                                                    ? 'linear-gradient(90deg, #2D5A3D, #4A8C62)'
-                                                    : 'linear-gradient(90deg, #D97706, #F59E0B)',
-                                            }
+                                            mt: 0.5,
+                                            fontSize: '0.55rem',
+                                            height: 18,
+                                            bgcolor: 'rgba(217, 119, 6, 0.1)',
+                                            color: '#D97706',
+                                            fontWeight: 700,
+                                            border: '1px solid rgba(217, 119, 6, 0.25)',
                                         }}
                                     />
                                 )}
-                            </Paper>
-                            {node.status === 'ready' && (
-                                <Chip
-                                    label="You are here"
-                                    size="small"
-                                    sx={{
-                                        mt: 0.5,
-                                        fontSize: '0.55rem',
-                                        height: 18,
-                                        bgcolor: 'rgba(217, 119, 6, 0.1)',
-                                        color: '#D97706',
-                                        fontWeight: 700,
-                                        border: '1px solid rgba(217, 119, 6, 0.25)',
-                                    }}
-                                />
-                            )}
-                        </Box>
-                    ))}
+                                {isHighlighted && (
+                                    <Chip
+                                        label="From Material"
+                                        size="small"
+                                        sx={{
+                                            mt: 0.5,
+                                            fontSize: '0.55rem',
+                                            height: 18,
+                                            bgcolor: 'rgba(124, 58, 237, 0.1)',
+                                            color: '#7C3AED',
+                                            fontWeight: 700,
+                                            border: '1px solid rgba(124, 58, 237, 0.25)',
+                                        }}
+                                    />
+                                )}
+                            </Box>
+                        );
+                    })}
                 </Box>
             </Box>
         </Paper>

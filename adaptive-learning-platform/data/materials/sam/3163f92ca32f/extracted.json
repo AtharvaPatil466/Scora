@@ -1,0 +1,15 @@
+{
+  "raw_text": "# Sample Notes\\nThis is a test of the extraction and AI expansion pipeline.",
+  "sections": [
+    {
+      "heading": "Sample Notes\\nThis is a test of the extraction and AI expansion pipeline.",
+      "body": ""
+    }
+  ],
+  "metadata": {
+    "filename": "sample.md",
+    "file_type": "md",
+    "characters": 75
+  },
+  "images": []
+}

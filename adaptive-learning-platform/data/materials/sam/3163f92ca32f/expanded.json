@@ -1,0 +1,29 @@
+{
+  "material_id": "",
+  "title": "Study Material Summary",
+  "summary": "This material covers key concepts that build on your existing knowledge. The AI has analyzed and structured the content for optimal learning.",
+  "chapters": [
+    {
+      "title": "Introduction & Overview",
+      "content": "This section introduces the core ideas from your study material. The concepts here form the foundation for everything that follows.",
+      "concept_ids": []
+    },
+    {
+      "title": "Key Concepts Explained",
+      "content": "Here we break down the main ideas in detail, with connections to what you already know. Focus on understanding the relationships between concepts.",
+      "concept_ids": []
+    },
+    {
+      "title": "Practice & Application",
+      "content": "Apply what you've learned through practice problems and real-world examples. This helps cement your understanding.",
+      "concept_ids": []
+    }
+  ],
+  "key_concepts": [
+    "core concept",
+    "fundamental principle",
+    "application"
+  ],
+  "concept_mapping": {},
+  "difficulty_level": 0.5
+}

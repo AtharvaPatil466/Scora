@@ -1,14 +1,17 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, File, UploadFile, BackgroundTasks
 from pydantic import BaseModel
 from typing import List, Optional
 import os
+import asyncio
 from fastapi.middleware.cors import CORSMiddleware
 from pipeline import AdaptiveLearningPipeline as RecommendationPipeline
+from src.content_pipeline import ContentPipeline
 
 app = FastAPI(title="Adaptive Learning Platform API")
 
-# Initialize pipeline
+# Initialize pipelines
 pipeline = RecommendationPipeline()
+content_pipeline = ContentPipeline(storage_root="data/materials")
 
 # Add CORS Middleware
 app.add_middleware(
@@ -163,6 +166,144 @@ def get_student(student_id: str):
     if student_id not in students_db:
         raise HTTPException(status_code=404, detail="Student not found")
     return students_db[student_id]
+
+
+# ==============================================================================
+# MATERIAL UPLOAD & PROCESSING ENDPOINTS
+# ==============================================================================
+
+async def _process_material_background(
+    student_id: str,
+    material_id: str,
+    filename: str,
+    file_bytes: bytes,
+):
+    """Background task: run the full content pipeline."""
+    try:
+        knowledge_state = None
+        learning_style = "visual"
+        if student_id in students_db:
+            knowledge_state = students_db[student_id].get("knowledge_state")
+            # Could read learning_style from student profile in the future
+
+        result = await content_pipeline.process_material(
+            student_id=student_id,
+            material_id=material_id,
+            filename=filename,
+            knowledge_state=knowledge_state,
+            learning_style=learning_style,
+        )
+        print(f"  ✅ Material {material_id} processed: {result.get('title')}")
+    except Exception as e:
+        print(f"  ❌ Material {material_id} processing failed: {e}")
+        content_pipeline.storage.update_status(student_id, material_id, "error")
+
+
+@app.post("/materials/upload")
+async def upload_material(
+    student_id: str,
+    background_tasks: BackgroundTasks,
+    file: UploadFile = File(...),
+):
+    """Upload a study material file for processing."""
+    if not file.filename:
+        raise HTTPException(status_code=400, detail="No file provided")
+
+    # Validate file type
+    allowed_extensions = {
+        ".pdf", ".docx", ".pptx", ".txt", ".md",
+        ".png", ".jpg", ".jpeg", ".bmp", ".tiff", ".webp",
+    }
+    ext = os.path.splitext(file.filename)[1].lower()
+    if ext not in allowed_extensions:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Unsupported file type: {ext}. Allowed: {', '.join(sorted(allowed_extensions))}",
+        )
+
+    # Read file bytes
+    file_bytes = await file.read()
+
+    # Save the upload (synchronous — fast)
+    material_id = content_pipeline.storage.save_upload(
+        student_id, file.filename, file_bytes,
+    )
+
+    # Process in background (extract → expand → quiz)
+    background_tasks.add_task(
+        _process_material_background,
+        student_id,
+        material_id,
+        file.filename,
+        file_bytes,
+    )
+
+    return {
+        "material_id": material_id,
+        "filename": file.filename,
+        "status": "uploaded",
+        "message": "File uploaded. Processing started in background.",
+    }
+
+
+@app.get("/materials/{student_id}")
+def list_materials(student_id: str):
+    """List all materials for a student."""
+    materials = content_pipeline.storage.list_materials(student_id)
+    return {"student_id": student_id, "materials": materials, "count": len(materials)}
+
+
+@app.get("/materials/{student_id}/{material_id}")
+def get_material(student_id: str, material_id: str):
+    """Get processed material (expanded content)."""
+    meta = content_pipeline.storage.get_material_meta(student_id, material_id)
+    if not meta:
+        raise HTTPException(status_code=404, detail="Material not found")
+
+    result = {"meta": meta}
+
+    # Include expanded content if ready
+    expanded = content_pipeline.storage.load_expanded(student_id, material_id)
+    if expanded:
+        result["expanded"] = expanded
+
+    # Include extracted content
+    extracted = content_pipeline.storage.load_extracted(student_id, material_id)
+    if extracted:
+        result["extracted"] = extracted
+
+    return result
+
+
+@app.get("/materials/{student_id}/{material_id}/quiz")
+def get_material_quiz(student_id: str, material_id: str):
+    """Get generated quiz for a material."""
+    quiz = content_pipeline.storage.load_quiz(student_id, material_id)
+    if quiz is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Quiz not found — material may still be processing",
+        )
+    return {"material_id": material_id, "questions": quiz, "count": len(quiz)}
+
+
+@app.get("/materials/{student_id}/{material_id}/status")
+def get_material_status(student_id: str, material_id: str):
+    """Get processing status of a material."""
+    status = content_pipeline.storage.get_status(student_id, material_id)
+    if status == "not_found":
+        raise HTTPException(status_code=404, detail="Material not found")
+    return {"material_id": material_id, "status": status}
+
+
+@app.delete("/materials/{student_id}/{material_id}")
+def delete_material(student_id: str, material_id: str):
+    """Delete a material and all its processed data."""
+    success = content_pipeline.storage.delete_material(student_id, material_id)
+    if not success:
+        raise HTTPException(status_code=404, detail="Material not found")
+    return {"message": "Material deleted", "material_id": material_id}
+
 
 if __name__ == "__main__":
     import uvicorn

@@ -9,5 +9,6 @@ export interface TutorChatProps {
     studentId: string;
     currentConceptId: string;
     currentProblem?: string;
+    materialId?: string;
     context: 'content' | 'quiz' | 'general';
 }

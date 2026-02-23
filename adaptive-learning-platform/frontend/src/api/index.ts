@@ -39,3 +39,44 @@ export const logInteraction = async (
     });
     return response.data;
 };
+
+// ============================================================================
+// MATERIAL ENDPOINTS
+// ============================================================================
+
+export const uploadMaterial = async (studentId: string, file: File) => {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const response = await axios.post(`${API_BASE_URL}/materials/upload?student_id=${studentId}`, formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    });
+    return response.data;
+};
+
+export const getMaterials = async (studentId: string) => {
+    const response = await axios.get(`${API_BASE_URL}/materials/${studentId}`);
+    return response.data.materials;
+};
+
+export const getMaterial = async (studentId: string, materialId: string) => {
+    const response = await axios.get(`${API_BASE_URL}/materials/${studentId}/${materialId}`);
+    return response.data;
+};
+
+export const getMaterialQuiz = async (studentId: string, materialId: string) => {
+    const response = await axios.get(`${API_BASE_URL}/materials/${studentId}/${materialId}/quiz`);
+    return response.data.questions;
+};
+
+export const getMaterialStatus = async (studentId: string, materialId: string) => {
+    const response = await axios.get(`${API_BASE_URL}/materials/${studentId}/${materialId}/status`);
+    return response.data.status;
+};
+
+export const deleteMaterial = async (studentId: string, materialId: string) => {
+    const response = await axios.delete(`${API_BASE_URL}/materials/${studentId}/${materialId}`);
+    return response.data;
+};
